@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GOLDENFIINE — Joyería</title>
+<meta name="description" content="GOLDENFIINE — cadenas, pulseras, anillos y dijes.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announcement">ENVÍOS A TODO EL PAÍS · CONSULTÁ POR INSTAGRAM</div>
+<header class="header">
+  <button class="icon mobile-menu" id="mobileMenu">☰</button>
+  <a href="#inicio" class="logo logo-img"><img src="images/logo-goldenfiine.png" alt="GOLDENFIINE"></a>
+  <nav id="nav"><a href="#inicio">Inicio</a><a href="#cadenas">Cadenas</a><a href="#pulseras">Pulseras</a><a href="#anillos">Anillos</a><a href="#dijes">Dijes</a><a href="#contacto">Contacto</a></nav>
+  <button class="icon cart-open" id="openCart">🛒<b id="cartCount">0</b></button>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-text"><p>GOLDENFIINE</p><h1>Joyería que<br><em>marca la diferencia.</em></h1><a href="#catalogo" class="btn">VER PRODUCTOS</a></div>
+</section>
+
+<section class="trust">
+  <div><strong>✦</strong><span>Calidad<br><small>seleccionada</small></span></div>
+  <div><strong>✧</strong><span>Envíos<br><small>a todo el país</small></span></div>
+  <div><strong>◇</strong><span>Compra<br><small>por Instagram</small></span></div>
+</section>
+
+<section class="shop" id="catalogo">
+  <aside class="filters">
+    <div class="filter-head"><h2>Categorías</h2><button id="closeFilters">×</button></div>
+    <button class="filter active" data-cat="Todos">Todos los productos</button>
+    <button class="filter" data-cat="Cadenas">Cadenas</button>
+    <button class="filter" data-cat="Pulseras">Pulseras</button>
+    <button class="filter" data-cat="Anillos">Anillos</button>
+    <button class="filter" data-cat="Dijes">Dijes</button>
+    <hr>
+    <p class="filter-note">¿Buscás una medida o modelo específico?</p>
+    <a id="sideInstagram" target="_blank" class="outline">CONSULTAR</a>
+  </aside>
+  <main class="catalog">
+    <div class="catalog-top"><div><p class="mini">COLECCIÓN</p><h2 id="catTitle">Todos los productos</h2></div><button class="filter-mobile" id="filterMobile">☰ FILTROS</button><select id="sort"><option value="default">Ordenar</option><option value="low">Menor precio</option><option value="high">Mayor precio</option></select></div>
+    <div class="grid" id="grid"></div>
+  </main>
+</section>
+
+<section class="banner">
+  <div><p>GOLDENFIINE</p><h2>Tu estilo.<br>Tu pieza.</h2></div><a href="#catalogo" class="btn light">EXPLORAR COLECCIÓN</a>
+</section>
+
+<section class="contact" id="contacto">
+ <p class="mini">CONTACTO</p><h2>¿Tenés alguna consulta?</h2><p>Escribinos por Instagram para consultar stock, medidas, entregas y realizar tu pedido.</p><a id="contactBtn" target="_blank" class="btn">IR A INSTAGRAM</a>
+</section>
+
+<footer><div class="logo">GOLDEN<span>FIINE</span></div><div><a href="#inicio">Inicio</a><a href="#catalogo">Productos</a><a href="#contacto">Contacto</a></div><small>© 2026 GOLDENFIINE</small></footer>
+
+<div class="shade" id="shade"></div>
+<aside class="drawer" id="drawer">
+ <div class="drawer-head"><h2>Carrito</h2><button id="closeCart">×</button></div>
+ <div class="drawer-items" id="cartItems"></div>
+ <div class="drawer-foot"><div><span>Subtotal</span><strong id="total">$0</strong></div><button id="buy" class="btn full">CONSULTAR PEDIDO</button><button id="empty" class="empty">Vaciar carrito</button></div>
+</aside>
+
+<div class="modal" id="modal"><div class="modal-card"><button class="modal-close" id="modalClose">×</button><div class="modal-img"><img id="mImg"></div><div class="modal-info"><p class="mini" id="mCat"></p><h2 id="mName"></h2><div class="modal-price" id="mPrice"></div><p class="description">Una pieza seleccionada para complementar tu estilo. Consultá disponibilidad y medidas por Instagram.</p><div class="variants"><label>Medida</label><div id="sizes"></div></div><button id="mAdd" class="btn full">AGREGAR AL CARRITO</button></div></div></div>
+<script src="script.js"></script>
+</body></html>
