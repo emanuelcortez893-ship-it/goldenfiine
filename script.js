@@ -14,7 +14,7 @@ const CONFIG = {
 const products = [
 
   // ===== CADENAS =====
-  {id:1,name:"Cadena 1",cat:"Cadenas",price:45000,img:"images/cadena-1.jpg",sizes:["45 cm","50 cm","55 cm"]},
+  {id:1,name:"rolex 1",cat:"Cadenas",price:45000,img:"images/cadena-1.jpg",sizes:["45 cm","50 cm","55 cm"]},
   {id:2,name:"Cadena 2",cat:"Cadenas",price:45000,img:"images/cadena-2.jpg",sizes:["45 cm","50 cm","55 cm"]},
   {id:3,name:"Cadena 3",cat:"Cadenas",price:45000,img:"images/cadena-3.jpg",sizes:["45 cm","50 cm","60 cm"]},
   {id:4,name:"Cadena 4",cat:"Cadenas",price:45000,img:"images/cadena-4.jpg",sizes:["45 cm","50 cm","55 cm"]},
