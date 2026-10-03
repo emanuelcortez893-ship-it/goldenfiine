@@ -26,7 +26,16 @@ let cart=JSON.parse(localStorage.getItem("gf_cart")||"[]"), category="Todos", cu
 const money=n=>"$"+n.toLocaleString("es-AR");
 const save=()=>localStorage.setItem("gf_cart",JSON.stringify(cart));
 
-function render(){
+function setCategory(cat){
+  category=cat;
+  document.querySelectorAll(".filter").forEach(x=>{
+    x.classList.toggle("active",x.dataset.cat===cat);
+  });
+  render();
+  document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
+}
+
+function render(){function render(){
  let list=category==="Todos"?[...products]:products.filter(p=>p.cat===category);
  const sort=document.getElementById("sort").value;
  if(sort==="low")list.sort((a,b)=>a.price-b.price);
