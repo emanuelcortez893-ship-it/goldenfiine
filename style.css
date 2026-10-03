@@ -4,3 +4,173 @@
 /* Logo PNG en encabezado oscuro */
 .header{background:#0a0a0a;border-bottom-color:#1f1f1f}.header nav a{color:#e9e2d2}.header nav a:hover{color:#d7b56a}.header .icon{color:#fff}.logo-img{display:flex;align-items:center;height:100%}.logo-img img{display:block;height:66px;width:auto;max-width:none}
 @media(max-width:650px){.logo-img img{height:52px}.header nav{background:#0a0a0a;border-bottom-color:#1f1f1f}}
+/* GOLDENFIINE - TEMA OSCURO */
+
+body{
+  background:#0b0b0b;
+  color:#f1eee7;
+}
+
+.header{
+  background:#0a0a0a;
+  border-bottom-color:#252525;
+}
+
+.trust{
+  background:#0b0b0b;
+  border-bottom-color:#252525;
+}
+
+.trust div{
+  border-right-color:#252525;
+}
+
+.trust span{
+  color:#f1eee7;
+}
+
+.shop{
+  background:#0b0b0b;
+}
+
+.filter{
+  color:#bdb8ae;
+  border-bottom-color:#292929;
+}
+
+.filters hr{
+  border-top-color:#292929;
+}
+
+.filter-note{
+  color:#aaa49a;
+}
+
+.outline{
+  border-color:#b38a3a;
+  color:#e4c77e;
+}
+
+.catalog-top h2,
+.filter-head h2,
+.card-info h3,
+.contact h2,
+.banner h2{
+  color:#f1eee7;
+}
+
+.catalog-top select{
+  background:#111;
+  color:#f1eee7;
+  border-color:#333;
+}
+
+.card-img{
+  background:#151515;
+}
+
+.card-info small{
+  color:#aaa49a;
+}
+
+.price{
+  color:#e4c77e;
+}
+
+.contact{
+  background:#0b0b0b;
+}
+
+.contact>p:not(.mini){
+  color:#aaa49a;
+}
+
+footer{
+  background:#080808;
+  border-top-color:#252525;
+  color:#aaa49a;
+}
+
+footer .logo{
+  color:#f1eee7;
+}
+
+/* CARRITO */
+
+.drawer{
+  background:#111;
+  color:#f1eee7;
+}
+
+.drawer-head{
+  border-bottom-color:#292929;
+}
+
+.drawer-items{
+  background:#111;
+}
+
+.cart-row{
+  border-bottom-color:#292929;
+}
+
+.cart-row small{
+  color:#aaa49a;
+}
+
+.qty button,
+.size{
+  background:#151515;
+  color:#f1eee7;
+  border-color:#444;
+}
+
+.drawer-foot{
+  border-top-color:#292929;
+  background:#111;
+}
+
+/* FILTROS MÓVILES */
+
+@media(max-width:650px){
+  .filters{
+    background:#111;
+    color:#f1eee7;
+  }
+
+  .filter-mobile{
+    background:#111;
+    color:#f1eee7;
+    border-color:#444;
+  }
+}
+
+/* FICHA DE PRODUCTO */
+
+.modal-card{
+  background:#111;
+  color:#f1eee7;
+}
+
+.modal-img{
+  background:#151515;
+}
+
+.description{
+  color:#aaa49a;
+}
+
+/* MARCA DE AGUA GOLDENFIINE */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:url("images/logo-goldenfiine.png");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:650px auto;
+  opacity:.035;
+  pointer-events:none;
+  z-index:1;
+}
