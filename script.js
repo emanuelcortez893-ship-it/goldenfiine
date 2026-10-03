@@ -12,21 +12,66 @@ const CONFIG = {
 // ===============================
 
 const products = [
-  {id:1,name:"Cadena Venezia",cat:"Cadenas",price:45000,img:"images/cadena-1.jpg",badge:"MÁS VENDIDO",sizes:["45 cm","50 cm","55 cm"]},
-  {id:2,name:"Cadena Cuban",cat:"Cadenas",price:62000,img:"images/cadena-2.jpg",badge:"NUEVO",sizes:["45 cm","50 cm","55 cm"]},
-  {id:3,name:"Cadena Figaro",cat:"Cadenas",price:54000,img:"images/cadena-3.jpg",sizes:["45 cm","50 cm","60 cm"]},
 
-  {id:4,name:"Pulsera Classic",cat:"Pulseras",price:38000,img:"images/pulsera-1.jpg",sizes:["18 cm","20 cm","22 cm"]},
-  {id:5,name:"Pulsera Gold",cat:"Pulseras",price:52000,img:"images/pulsera-2.jpg",badge:"NUEVO",sizes:["18 cm","20 cm","22 cm"]},
-  {id:6,name:"Pulsera Cuban",cat:"Pulseras",price:58000,img:"images/pulsera-3.jpg",sizes:["18 cm","20 cm","22 cm"]},
+  // ===== CADENAS =====
+  {id:1,name:"Cadena 1",cat:"Cadenas",price:45000,img:"images/cadena-1.jpg",sizes:["45 cm","50 cm","55 cm"]},
+  {id:2,name:"Cadena 2",cat:"Cadenas",price:45000,img:"images/cadena-2.jpg",sizes:["45 cm","50 cm","55 cm"]},
+  {id:3,name:"Cadena 3",cat:"Cadenas",price:45000,img:"images/cadena-3.jpg",sizes:["45 cm","50 cm","60 cm"]},
+  {id:4,name:"Cadena 4",cat:"Cadenas",price:45000,img:"images/cadena-4.jpg",sizes:["45 cm","50 cm","55 cm"]},
+  {id:5,name:"Cadena 5",cat:"Cadenas",price:45000,img:"images/cadena-5.jpg",sizes:["45 cm","50 cm","55 cm"]},
+  {id:6,name:"Cadena 6",cat:"Cadenas",price:45000,img:"images/cadena-6.jpg",sizes:["45 cm","50 cm","60 cm"]},
+  {id:7,name:"Cadena 7",cat:"Cadenas",price:45000,img:"images/cadena-7.jpg",sizes:["45 cm","50 cm","55 cm"]},
+  {id:8,name:"Cadena 8",cat:"Cadenas",price:45000,img:"images/cadena-8.jpg",sizes:["45 cm","50 cm","55 cm"]},
+  {id:9,name:"Cadena 9",cat:"Cadenas",price:45000,img:"images/cadena-9.jpg",sizes:["45 cm","50 cm","60 cm"]},
+  {id:10,name:"Cadena 10",cat:"Cadenas",price:45000,img:"images/cadena-10.jpg",sizes:["45 cm","50 cm","55 cm"]},
 
-  {id:7,name:"Anillo Milano",cat:"Anillos",price:35000,img:"images/anillo-1.jpg",sizes:["16","18","20","22"]},
-  {id:8,name:"Anillo Royal",cat:"Anillos",price:49000,img:"images/anillo-2.jpg",badge:"DESTACADO",sizes:["16","18","20","22"]},
-  {id:9,name:"Anillo Signet",cat:"Anillos",price:43000,img:"images/anillo-3.jpg",sizes:["16","18","20","22"]},
+  // ===== PULSERAS =====
+  {id:11,name:"Pulsera 1",cat:"Pulseras",price:38000,img:"images/pulsera-1.jpg",sizes:["18 cm","20 cm","22 cm"]},
+  {id:12,name:"Pulsera 2",cat:"Pulseras",price:38000,img:"images/pulsera-2.jpg",sizes:["18 cm","20 cm","22 cm"]},
+  {id:13,name:"Pulsera 3",cat:"Pulseras",price:38000,img:"images/pulsera-3.jpg",sizes:["18 cm","20 cm","22 cm"]},
+  {id:14,name:"Pulsera 4",cat:"Pulseras",price:38000,img:"images/pulsera-4.jpg",sizes:["18 cm","20 cm","22 cm"]},
+  {id:15,name:"Pulsera 5",cat:"Pulseras",price:38000,img:"images/pulsera-5.jpg",sizes:["18 cm","20 cm","22 cm"]},
+  {id:16,name:"Pulsera 6",cat:"Pulseras",price:38000,img:"images/pulsera-6.jpg",sizes:["18 cm","20 cm","22 cm"]},
+  {id:17,name:"Pulsera 7",cat:"Pulseras",price:38000,img:"images/pulsera-7.jpg",sizes:["18 cm","20 cm","22 cm"]},
+  {id:18,name:"Pulsera 8",cat:"Pulseras",price:38000,img:"images/pulsera-8.jpg",sizes:["18 cm","20 cm","22 cm"]},
+  {id:19,name:"Pulsera 9",cat:"Pulseras",price:38000,img:"images/pulsera-9.jpg",sizes:["18 cm","20 cm","22 cm"]},
+  {id:20,name:"Pulsera 10",cat:"Pulseras",price:38000,img:"images/pulsera-10.jpg",sizes:["18 cm","20 cm","22 cm"]},
 
-  {id:10,name:"Dije Corazón",cat:"Dijes",price:28000,img:"images/dije-1.jpg",sizes:["Único"]},
-  {id:11,name:"Dije Inicial",cat:"Dijes",price:30000,img:"images/dije-2.jpg",sizes:["A","B","C","D","E"]},
-  {id:12,name:"Dije Cruz",cat:"Dijes",price:32000,img:"images/dije-3.jpg",sizes:["Único"]}
+  // ===== ANILLOS =====
+  {id:21,name:"Anillo 1",cat:"Anillos",price:35000,img:"images/anillo-1.jpg",sizes:["16","18","20","22"]},
+  {id:22,name:"Anillo 2",cat:"Anillos",price:35000,img:"images/anillo-2.jpg",sizes:["16","18","20","22"]},
+  {id:23,name:"Anillo 3",cat:"Anillos",price:35000,img:"images/anillo-3.jpg",sizes:["16","18","20","22"]},
+  {id:24,name:"Anillo 4",cat:"Anillos",price:35000,img:"images/anillo-4.jpg",sizes:["16","18","20","22"]},
+  {id:25,name:"Anillo 5",cat:"Anillos",price:35000,img:"images/anillo-5.jpg",sizes:["16","18","20","22"]},
+  {id:26,name:"Anillo 6",cat:"Anillos",price:35000,img:"images/anillo-6.jpg",sizes:["16","18","20","22"]},
+  {id:27,name:"Anillo 7",cat:"Anillos",price:35000,img:"images/anillo-7.jpg",sizes:["16","18","20","22"]},
+  {id:28,name:"Anillo 8",cat:"Anillos",price:35000,img:"images/anillo-8.jpg",sizes:["16","18","20","22"]},
+  {id:29,name:"Anillo 9",cat:"Anillos",price:35000,img:"images/anillo-9.jpg",sizes:["16","18","20","22"]},
+  {id:30,name:"Anillo 10",cat:"Anillos",price:35000,img:"images/anillo-10.jpg",sizes:["16","18","20","22"]},
+
+  // ===== DIJES =====
+  {id:31,name:"Dije 1",cat:"Dijes",price:28000,img:"images/dije-1.jpg",sizes:["Único"]},
+  {id:32,name:"Dije 2",cat:"Dijes",price:28000,img:"images/dije-2.jpg",sizes:["Único"]},
+  {id:33,name:"Dije 3",cat:"Dijes",price:28000,img:"images/dije-3.jpg",sizes:["Único"]},
+  {id:34,name:"Dije 4",cat:"Dijes",price:28000,img:"images/dije-4.jpg",sizes:["Único"]},
+  {id:35,name:"Dije 5",cat:"Dijes",price:28000,img:"images/dije-5.jpg",sizes:["Único"]},
+  {id:36,name:"Dije 6",cat:"Dijes",price:28000,img:"images/dije-6.jpg",sizes:["Único"]},
+  {id:37,name:"Dije 7",cat:"Dijes",price:28000,img:"images/dije-7.jpg",sizes:["Único"]},
+  {id:38,name:"Dije 8",cat:"Dijes",price:28000,img:"images/dije-8.jpg",sizes:["Único"]},
+  {id:39,name:"Dije 9",cat:"Dijes",price:28000,img:"images/dije-9.jpg",sizes:["Único"]},
+  {id:40,name:"Dije 10",cat:"Dijes",price:28000,img:"images/dije-10.jpg",sizes:["Único"]},
+
+  // ===== ARITOS =====
+  {id:41,name:"Arito 1",cat:"Aritos",price:30000,img:"images/arito-1.jpg",sizes:["Único"]},
+  {id:42,name:"Arito 2",cat:"Aritos",price:30000,img:"images/arito-2.jpg",sizes:["Único"]},
+  {id:43,name:"Arito 3",cat:"Aritos",price:30000,img:"images/arito-3.jpg",sizes:["Único"]},
+  {id:44,name:"Arito 4",cat:"Aritos",price:30000,img:"images/arito-4.jpg",sizes:["Único"]},
+  {id:45,name:"Arito 5",cat:"Aritos",price:30000,img:"images/arito-5.jpg",sizes:["Único"]},
+  {id:46,name:"Arito 6",cat:"Aritos",price:30000,img:"images/arito-6.jpg",sizes:["Único"]},
+  {id:47,name:"Arito 7",cat:"Aritos",price:30000,img:"images/arito-7.jpg",sizes:["Único"]},
+  {id:48,name:"Arito 8",cat:"Aritos",price:30000,img:"images/arito-8.jpg",sizes:["Único"]},
+  {id:49,name:"Arito 9",cat:"Aritos",price:30000,img:"images/arito-9.jpg",sizes:["Único"]},
+  {id:50,name:"Arito 10",cat:"Aritos",price:30000,img:"images/arito-10.jpg",sizes:["Único"]}
 ];
 
 // ===============================
