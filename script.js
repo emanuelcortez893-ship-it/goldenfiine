@@ -92,6 +92,7 @@ const save = () =>
 // ===============================
 
 function setCategory(cat) {
+
   category = cat;
 
   document.querySelectorAll(".filter").forEach(x => {
@@ -241,9 +242,23 @@ document.getElementById("modal").onclick = e => {
 
 };
 
+// ===============================
+// AGREGAR PRODUCTO CON MEDIDA
+// ===============================
+
 document.getElementById("mAdd").onclick = () => {
 
-  add(current.id);
+  if (!current) return;
+
+  const selected =
+    document.querySelector("#sizes .size.selected");
+
+  const size =
+    selected
+      ? selected.textContent.trim()
+      : "Único";
+
+  add(current.id, size);
 
   document
     .getElementById("modal")
@@ -256,41 +271,78 @@ document.getElementById("mAdd").onclick = () => {
 // CARRITO
 // ===============================
 
-function add(id) {
+function add(id, size = "Único") {
 
-  let x = cart.find(a => a.id === id);
+  /*
+   * Cada combinación producto + medida
+   * se guarda como un elemento independiente.
+   */
 
-  if (x)
+  let x = cart.find(
+    a => a.id === id && a.size === size
+  );
+
+  if (x) {
+
     x.qty++;
-  else
-    cart.push({id,qty:1});
+
+  } else {
+
+    cart.push({
+      id: id,
+      size: size,
+      qty: 1
+    });
+
+  }
 
   save();
   renderCart();
 }
 
-function qty(id,n) {
+// ===============================
+// CANTIDAD
+// ===============================
 
-  let x = cart.find(a => a.id === id);
+function qty(id, size, n) {
+
+  let x = cart.find(
+    a => a.id === id && a.size === size
+  );
 
   if (!x) return;
 
   x.qty += n;
 
-  if (x.qty < 1)
-    cart = cart.filter(a => a.id !== id);
+  if (x.qty < 1) {
+
+    cart = cart.filter(
+      a => !(a.id === id && a.size === size)
+    );
+
+  }
 
   save();
   renderCart();
 }
 
-function remove(id) {
+// ===============================
+// ELIMINAR
+// ===============================
 
-  cart = cart.filter(a => a.id !== id);
+function remove(id, size) {
+
+  cart = cart.filter(
+    a => !(a.id === id && a.size === size)
+  );
 
   save();
   renderCart();
 }
+
+// ===============================
+// RENDER CARRITO
+// ===============================
 
 function renderCart() {
 
@@ -317,26 +369,34 @@ function renderCart() {
 
       let p = products.find(a => a.id === x.id);
 
+      if (!p) return "";
+
       return `
         <div class="cart-row">
 
-          <img src="${p.img}">
+          <img src="${p.img}" alt="${p.name}">
 
           <div>
 
             <h4>${p.name}</h4>
 
-            <small>${money(p.price)}</small>
+            <small>
+              ${money(p.price)}
+              <br>
+              Medida: ${x.size || "Único"}
+            </small>
 
             <div class="qty">
 
-              <button onclick="qty(${p.id},-1)">
+              <button
+                onclick='qty(${p.id}, ${JSON.stringify(x.size)}, -1)'>
                 −
               </button>
 
               <span>${x.qty}</span>
 
-              <button onclick="qty(${p.id},1)">
+              <button
+                onclick='qty(${p.id}, ${JSON.stringify(x.size)}, 1)'>
                 +
               </button>
 
@@ -346,7 +406,7 @@ function renderCart() {
 
           <button
             class="remove"
-            onclick="remove(${p.id})">
+            onclick='remove(${p.id}, ${JSON.stringify(x.size)})'>
             ×
           </button>
 
@@ -356,10 +416,14 @@ function renderCart() {
     }).join("");
   }
 
-  let total = cart.reduce(
-    (a,x) =>
-      a +
-      products.find(p => p.id === x.id).price * x.qty,
+  const total = cart.reduce(
+    (a,x) => {
+
+      const p = products.find(p => p.id === x.id);
+
+      return a + (p ? p.price * x.qty : 0);
+
+    },
     0
   );
 
@@ -409,14 +473,122 @@ document.getElementById("empty").onclick = () => {
 };
 
 // ===============================
-// PEDIDO → INSTAGRAM
+// ARMAR PEDIDO
+// ===============================
+
+function buildOrderMessage() {
+
+  if (!cart.length) {
+
+    return null;
+
+  }
+
+  let total = 0;
+
+  let message =
+`✨ *GOLDENFIINE — NUEVO PEDIDO* ✨
+
+Hola! Quiero realizar el siguiente pedido:
+
+`;
+
+  cart.forEach((x, index) => {
+
+    const p = products.find(a => a.id === x.id);
+
+    if (!p) return;
+
+    const subtotal = p.price * x.qty;
+
+    total += subtotal;
+
+    message +=
+`${index + 1}. *${p.name}*
+   Categoría: ${p.cat}
+   Medida: ${x.size || "Único"}
+   Cantidad: ${x.qty}
+   Precio: ${money(p.price)}
+   Subtotal: ${money(subtotal)}
+
+`;
+
+  });
+
+  message +=
+`━━━━━━━━━━━━━━━━━━
+*TOTAL: ${money(total)}*
+
+Quedo a la espera de confirmación. ¡Gracias! 💎`;
+
+  return message;
+}
+
+// ===============================
+// PEDIDO → WHATSAPP
 // ===============================
 
 document.getElementById("buy").onclick = () => {
 
-  window.open(CONFIG.instagram, "_blank");
+  const message = buildOrderMessage();
+
+  if (!message) {
+
+    alert("Tu carrito está vacío.");
+
+    return;
+  }
+
+  const url =
+    CONFIG.whatsapp +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(url, "_blank");
 
 };
+
+// ===============================
+// PEDIDO → INSTAGRAM
+// ===============================
+
+function sendInstagramOrder() {
+
+  const message = buildOrderMessage();
+
+  if (!message) {
+
+    alert("Tu carrito está vacío.");
+
+    return;
+  }
+
+  /*
+   * Instagram no permite garantizar un DM
+   * con texto precargado desde una web.
+   *
+   * Copiamos el pedido al portapapeles
+   * y abrimos el perfil de GOLDENFIINE.
+   */
+
+  navigator.clipboard
+    .writeText(message)
+    .then(() => {
+
+      alert(
+        "¡Pedido copiado! Ahora se abrirá Instagram. Pegalo en el mensaje de GOLDENFIINE."
+      );
+
+      window.open(CONFIG.instagram, "_blank");
+
+    })
+    .catch(() => {
+
+      window.open(CONFIG.instagram, "_blank");
+
+    });
+
+}
 
 // ===============================
 // CONSULTAS → WHATSAPP
@@ -426,7 +598,7 @@ document.getElementById("contactBtn").href =
   CONFIG.whatsapp;
 
 document.getElementById("sideInstagram").href =
-  CONFIG.whatsapp;
+  CONFIG.instagram;
 
 // ===============================
 // MENÚ CELULAR
@@ -441,6 +613,10 @@ document.getElementById("mobileMenu").onclick = () => {
       ? "none"
       : "flex";
 };
+
+// ===============================
+// FILTRO CELULAR
+// ===============================
 
 document.getElementById("filterMobile").onclick = () => {
 
@@ -459,8 +635,63 @@ document.getElementById("closeFilters").onclick = () => {
 };
 
 // ===============================
+// BOTÓN INSTAGRAM
+// ===============================
+
+function createInstagramButton() {
+
+  const buyButton = document.getElementById("buy");
+
+  if (!buyButton) return;
+
+  if (document.getElementById("instagramOrder"))
+    return;
+
+  const button = document.createElement("button");
+
+  button.id = "instagramOrder";
+  button.className = "btn full";
+  button.type = "button";
+
+  button.textContent =
+    "PEDIR POR INSTAGRAM";
+
+  button.style.marginTop = "10px";
+
+  button.onclick = sendInstagramOrder;
+
+  buyButton.parentNode.insertBefore(
+    button,
+    buyButton.nextSibling
+  );
+}
+
+// ===============================
+// CORREGIR CARRITOS ANTIGUOS
+// ===============================
+
+/*
+ * Si ya tenías productos guardados antes
+ * de esta actualización, les asignamos
+ * automáticamente la primera medida.
+ */
+
+cart = cart.map(x => {
+
+  const p = products.find(a => a.id === x.id);
+
+  return {
+    id: x.id,
+    qty: x.qty || 1,
+    size: x.size || (p?.sizes?.[0] || "Único")
+  };
+
+});
+
+// ===============================
 // INICIAR
 // ===============================
 
 render();
 renderCart();
+createInstagramButton();
