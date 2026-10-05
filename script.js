@@ -4,6 +4,7 @@
 
 const CONFIG = {
   instagram: "https://www.instagram.com/joyas_goldenfiine/",
+  instagramDM: "https://ig.me/m/joyas_goldenfiine",
   whatsapp: "https://wa.me/5491153894764"
 };
 
@@ -84,8 +85,9 @@ let current = null;
 
 const money = n => "$" + n.toLocaleString("es-AR");
 
-const save = () =>
+const save = () => {
   localStorage.setItem("gf_cart", JSON.stringify(cart));
+};
 
 // ===============================
 // CATEGORÍAS
@@ -118,11 +120,13 @@ function render() {
 
   const sort = document.getElementById("sort").value;
 
-  if (sort === "low")
+  if (sort === "low") {
     list.sort((a,b) => a.price - b.price);
+  }
 
-  if (sort === "high")
+  if (sort === "high") {
     list.sort((a,b) => b.price - a.price);
+  }
 
   document.getElementById("catTitle").textContent =
     category === "Todos"
@@ -237,13 +241,14 @@ document.getElementById("modalClose").onclick = () =>
 
 document.getElementById("modal").onclick = e => {
 
-  if (e.target.id === "modal")
+  if (e.target.id === "modal") {
     e.currentTarget.classList.remove("show");
+  }
 
 };
 
 // ===============================
-// AGREGAR PRODUCTO CON MEDIDA
+// AGREGAR AL CARRITO
 // ===============================
 
 document.getElementById("mAdd").onclick = () => {
@@ -268,15 +273,10 @@ document.getElementById("mAdd").onclick = () => {
 };
 
 // ===============================
-// CARRITO
+// AGREGAR PRODUCTO
 // ===============================
 
 function add(id, size = "Único") {
-
-  /*
-   * Cada combinación producto + medida
-   * se guarda como un elemento independiente.
-   */
 
   let x = cart.find(
     a => a.id === id && a.size === size
@@ -367,7 +367,7 @@ function renderCart() {
 
     box.innerHTML = cart.map(x => {
 
-      let p = products.find(a => a.id === x.id);
+      const p = products.find(a => a.id === x.id);
 
       if (!p) return "";
 
@@ -479,15 +479,13 @@ document.getElementById("empty").onclick = () => {
 function buildOrderMessage() {
 
   if (!cart.length) {
-
     return null;
-
   }
 
   let total = 0;
 
   let message =
-`✨ *GOLDENFIINE — NUEVO PEDIDO* ✨
+`✨ GOLDENFIINE — NUEVO PEDIDO ✨
 
 Hola! Quiero realizar el siguiente pedido:
 
@@ -504,7 +502,7 @@ Hola! Quiero realizar el siguiente pedido:
     total += subtotal;
 
     message +=
-`${index + 1}. *${p.name}*
+`${index + 1}. ${p.name}
    Categoría: ${p.cat}
    Medida: ${x.size || "Único"}
    Cantidad: ${x.qty}
@@ -517,7 +515,7 @@ Hola! Quiero realizar el siguiente pedido:
 
   message +=
 `━━━━━━━━━━━━━━━━━━
-*TOTAL: ${money(total)}*
+TOTAL: ${money(total)}
 
 Quedo a la espera de confirmación. ¡Gracias! 💎`;
 
@@ -525,7 +523,7 @@ Quedo a la espera de confirmación. ¡Gracias! 💎`;
 }
 
 // ===============================
-// PEDIDO → WHATSAPP
+// WHATSAPP
 // ===============================
 
 document.getElementById("buy").onclick = () => {
@@ -545,11 +543,10 @@ document.getElementById("buy").onclick = () => {
     encodeURIComponent(message);
 
   window.open(url, "_blank");
-
 };
 
 // ===============================
-// PEDIDO → INSTAGRAM
+// INSTAGRAM DM
 // ===============================
 
 function sendInstagramOrder() {
@@ -564,38 +561,90 @@ function sendInstagramOrder() {
   }
 
   /*
-   * Instagram no permite garantizar un DM
-   * con texto precargado desde una web.
+   * Instagram no permite que una web
+   * introduzca automáticamente texto
+   * dentro del campo del DM.
    *
-   * Copiamos el pedido al portapapeles
-   * y abrimos el perfil de GOLDENFIINE.
+   * Primero copiamos el pedido.
+   * Después abrimos directamente el DM.
    */
 
-  navigator.clipboard
-    .writeText(message)
-    .then(() => {
+  const openDM = () => {
+    window.open(CONFIG.instagramDM, "_blank");
+  };
 
-      alert(
-        "¡Pedido copiado! Ahora se abrirá Instagram. Pegalo en el mensaje de GOLDENFIINE."
-      );
+  if (navigator.clipboard) {
 
-      window.open(CONFIG.instagram, "_blank");
+    navigator.clipboard
+      .writeText(message)
+      .then(() => {
 
-    })
-    .catch(() => {
+        openDM();
 
-      window.open(CONFIG.instagram, "_blank");
+      })
+      .catch(() => {
 
-    });
+        openDM();
 
+      });
+
+  } else {
+
+    openDM();
+
+  }
 }
 
 // ===============================
-// CONSULTAS → WHATSAPP
+// CREAR BOTÓN INSTAGRAM
+// ===============================
+
+function createInstagramButton() {
+
+  const buyButton =
+    document.getElementById("buy");
+
+  if (!buyButton) return;
+
+  if (
+    document.getElementById("instagramOrder")
+  ) return;
+
+  const button =
+    document.createElement("button");
+
+  button.id = "instagramOrder";
+
+  button.className =
+    "btn full";
+
+  button.type = "button";
+
+  button.textContent =
+    "PEDIR POR INSTAGRAM";
+
+  button.style.marginTop =
+    "10px";
+
+  button.onclick =
+    sendInstagramOrder;
+
+  buyButton.parentNode.insertBefore(
+    button,
+    buyButton.nextSibling
+  );
+}
+
+// ===============================
+// CONTACTO WHATSAPP
 // ===============================
 
 document.getElementById("contactBtn").href =
   CONFIG.whatsapp;
+
+// ===============================
+// INSTAGRAM
+// ===============================
 
 document.getElementById("sideInstagram").href =
   CONFIG.instagram;
@@ -606,7 +655,8 @@ document.getElementById("sideInstagram").href =
 
 document.getElementById("mobileMenu").onclick = () => {
 
-  let n = document.getElementById("nav");
+  const n =
+    document.getElementById("nav");
 
   n.style.display =
     n.style.display === "flex"
@@ -635,58 +685,25 @@ document.getElementById("closeFilters").onclick = () => {
 };
 
 // ===============================
-// BOTÓN INSTAGRAM
+// COMPATIBILIDAD CON CARRITO ANTERIOR
 // ===============================
-
-function createInstagramButton() {
-
-  const buyButton = document.getElementById("buy");
-
-  if (!buyButton) return;
-
-  if (document.getElementById("instagramOrder"))
-    return;
-
-  const button = document.createElement("button");
-
-  button.id = "instagramOrder";
-  button.className = "btn full";
-  button.type = "button";
-
-  button.textContent =
-    "PEDIR POR INSTAGRAM";
-
-  button.style.marginTop = "10px";
-
-  button.onclick = sendInstagramOrder;
-
-  buyButton.parentNode.insertBefore(
-    button,
-    buyButton.nextSibling
-  );
-}
-
-// ===============================
-// CORREGIR CARRITOS ANTIGUOS
-// ===============================
-
-/*
- * Si ya tenías productos guardados antes
- * de esta actualización, les asignamos
- * automáticamente la primera medida.
- */
 
 cart = cart.map(x => {
 
-  const p = products.find(a => a.id === x.id);
+  const p =
+    products.find(a => a.id === x.id);
 
   return {
     id: x.id,
     qty: x.qty || 1,
-    size: x.size || (p?.sizes?.[0] || "Único")
+    size:
+      x.size ||
+      (p?.sizes?.[0] || "Único")
   };
 
 });
+
+save();
 
 // ===============================
 // INICIAR
