@@ -16,14 +16,14 @@ const products = [
 
   // ===== CADENAS =====
 
-  {
-    id: 1,
-    name: "Rosario enchapado brasileño 18k",
-    cat: "Cadenas",
-    price: 45000,
-    img: "Rosario enchapado brasileño 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
-  },
+ {
+  id: 1,
+  name: "Rosario enchapado brasileño 18k",
+  category: "Cadenas",
+  price: 45000,
+  img: "Rosario enchapado brasileño 18k.jpeg",
+  sizes: ["45 cm", "50 cm", "60 cm"]
+},
 
   {
     id: 2,
@@ -102,10 +102,377 @@ const products = [
     name: "Cadena Rolo Gruesa 60cm - Oro 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "cadena-rolo-gruesa-60cm-Oro -18k.jpeg",
+    "img: "Cadena Rolo Gruesa 60cm - Oro 18k.jpeg","
     sizes: ["60 cm"]
-  }
+  },
 
+  // ===== PULSERAS =====
+
+  {
+    id: 11,
+    name: "Pulsera 1",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-1.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 12,
+    name: "Pulsera 2",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-2.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 13,
+    name: "Pulsera 3",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-3.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 14,
+    name: "Pulsera 4",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-4.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 15,
+    name: "Pulsera 5",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-5.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 16,
+    name: "Pulsera 6",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-6.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 17,
+    name: "Pulsera 7",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-7.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 18,
+    name: "Pulsera 8",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-8.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 19,
+    name: "Pulsera 9",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-9.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 20,
+    name: "Pulsera 10",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-10.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  // ===== ANILLOS =====
+
+  {
+    id: 21,
+    name: "Anillo 1",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-1.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 22,
+    name: "Anillo 2",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-2.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 23,
+    name: "Anillo 3",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-3.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 24,
+    name: "Anillo 4",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-4.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 25,
+    name: "Anillo 5",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-5.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 26,
+    name: "Anillo 6",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-6.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 27,
+    name: "Anillo 7",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-7.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 28,
+    name: "Anillo 8",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-8.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 29,
+    name: "Anillo 9",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-9.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 30,
+    name: "Anillo 10",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-10.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  // ===== DIJES =====
+
+  {
+    id: 31,
+    name: "Dije 1",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-1.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 32,
+    name: "Dije 2",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-2.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 33,
+    name: "Dije 3",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-3.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 34,
+    name: "Dije 4",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-4.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 35,
+    name: "Dije 5",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-5.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 36,
+    name: "Dije 6",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-6.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 37,
+    name: "Dije 7",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-7.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 38,
+    name: "Dije 8",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-8.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 39,
+    name: "Dije 9",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-9.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 40,
+    name: "Dije 10",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-10.jpg",
+    sizes: ["Único"]
+  },
+
+  // ===== ARITOS =====
+
+  {
+    id: 41,
+    name: "Arito 1",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-1.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 42,
+    name: "Arito 2",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-2.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 43,
+    name: "Arito 3",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-3.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 44,
+    name: "Arito 4",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-4.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 45,
+    name: "Arito 5",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-5.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 46,
+    name: "Arito 6",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-6.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 47,
+    name: "Arito 7",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-7.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 48,
+    name: "Arito 8",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-8.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 49,
+    name: "Arito 9",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-9.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 50,
+    name: "Arito 10",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-10.jpg",
+    sizes: ["Único"]
+  }
 ];
 
 // ===============================
