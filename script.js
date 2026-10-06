@@ -21,7 +21,7 @@ const products = [
     name: "Rosario enchapado brasileño 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "Rosario enchapado brasileño 18k.jpeg",
+    img: "Rosario enchapado brasileño18k.jpeg",
     sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
@@ -102,10 +102,9 @@ const products = [
     name: "Cadena Rolo Gruesa 60cm - Oro 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "cadena-rolo-gruesa-60cm-Oro - 18k.jpeg",
+    img: "cadena-rolo-gruesa-60cm-Oro -18k.jpeg",
     sizes: ["60 cm"]
   },
-
 
   // ===== PULSERAS =====
 
@@ -199,7 +198,6 @@ const products = [
     sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
-
   // ===== ANILLOS =====
 
   {
@@ -292,7 +290,6 @@ const products = [
     sizes: ["16", "18", "20", "22"]
   },
 
-
   // ===== DIJES =====
 
   {
@@ -384,7 +381,6 @@ const products = [
     img: "images/dije-10.jpg",
     sizes: ["Único"]
   },
-
 
   // ===== ARITOS =====
 
@@ -479,1068 +475,379 @@ const products = [
   }
 ];
 
-
 // ===============================
-// VARIABLES
+// CARRITO
 // ===============================
 
-let cart =
-  JSON.parse(
-    localStorage.getItem("gf_cart") || "[]"
-  );
-
+let cart = JSON.parse(localStorage.getItem("gf_cart") || "[]");
 let category = "Todos";
 let current = null;
 
-const money = n =>
-  "$" + Number(n).toLocaleString("es-AR");
-
+const money = n => "$" + Number(n).toLocaleString("es-AR");
 
 function save() {
-  localStorage.setItem(
-    "gf_cart",
-    JSON.stringify(cart)
-  );
+  localStorage.setItem("gf_cart", JSON.stringify(cart));
 }
-
 
 // ===============================
 // CATEGORÍAS
 // ===============================
 
 function setCategory(cat) {
-
   category = cat;
 
-  document
-    .querySelectorAll(".filter")
-    .forEach(button => {
-
-      button.classList.toggle(
-        "active",
-        button.dataset.cat === cat
-      );
-
-    });
+  document.querySelectorAll("[data-category]").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.category === cat);
+  });
 
   render();
-
-  document
-    .getElementById("catalogo")
-    ?.scrollIntoView({
-      behavior: "smooth"
-    });
 }
 
-
 // ===============================
-// MOSTRAR PRODUCTOS
+// RENDER PRODUCTOS
 // ===============================
 
 function render() {
-
-  const grid =
-    document.getElementById("grid");
-
+  const grid = document.querySelector("#productGrid");
   if (!grid) return;
 
-  let list =
-    category === "Todos"
-      ? [...products]
-      : products.filter(
-          product =>
-            product.cat === category
-        );
+  const list = category === "Todos"
+    ? products
+    : products.filter(p => p.cat === category);
 
-  const sort =
-    document.getElementById("sort")
-      ?.value || "default";
+  grid.innerHTML = list.map(product => `
+    <article class="product-card" onclick="openProduct(${product.id})">
+      <div class="product-image">
+        <img
+          src="${product.img}"
+          alt="${product.name}"
+          onerror="this.style.display='none'"
+        >
+      </div>
 
-  if (sort === "low") {
-
-    list.sort(
-      (a, b) =>
-        a.price - b.price
-    );
-
-  }
-
-  if (sort === "high") {
-
-    list.sort(
-      (a, b) =>
-        b.price - a.price
-    );
-
-  }
-
-  const title =
-    document.getElementById(
-      "catTitle"
-    );
-
-  if (title) {
-
-    title.textContent =
-      category === "Todos"
-        ? "Todos los productos"
-        : category;
-
-  }
-
-  grid.innerHTML =
-    list.map(product => `
-
-      <article
-        class="card"
-        onclick="openProduct(${product.id})"
-      >
-
-        <div class="card-img">
-
-          ${
-            product.badge
-              ? `<span class="badge">${product.badge}</span>`
-              : ""
-          }
-
-          <button
-            class="heart"
-            onclick="event.stopPropagation()"
-            aria-label="Favorito"
-          >
-            ♡
-          </button>
-
-          <img
-            src="${product.img}"
-            alt="${product.name}"
-            loading="lazy"
-          >
-
-        </div>
-
-        <div class="card-info">
-
-          <small>
-            ${product.cat}
-          </small>
-
-          <h3>
-            ${product.name}
-          </h3>
-
-          <div class="price">
-            ${money(product.price)}
-          </div>
-
-        </div>
-
-      </article>
-
-    `).join("");
+      <div class="product-info">
+        <span class="product-category">${product.cat}</span>
+        <h3>${product.name}</h3>
+        <strong>${money(product.price)}</strong>
+      </div>
+    </article>
+  `).join("");
 }
 
-
 // ===============================
-// FILTROS
-// ===============================
-
-document
-  .querySelectorAll(".filter")
-  .forEach(button => {
-
-    button.onclick = () => {
-
-      document
-        .querySelectorAll(".filter")
-        .forEach(x =>
-          x.classList.remove("active")
-        );
-
-      button.classList.add("active");
-
-      category =
-        button.dataset.cat;
-
-      render();
-
-      document
-        .querySelector(".filters")
-        ?.classList.remove("show");
-
-    };
-
-  });
-
-
-document
-  .getElementById("sort")
-  ?.addEventListener(
-    "change",
-    render
-  );
-
-
-// ===============================
-// PRODUCTO
+// MODAL PRODUCTO
 // ===============================
 
 function openProduct(id) {
-
-  current =
-    products.find(
-      product =>
-        product.id === id
-    );
-
+  current = products.find(p => p.id === id);
   if (!current) return;
 
-  document.getElementById("mImg").src =
-    current.img;
+  const modal = document.querySelector("#productModal");
+  if (!modal) return;
 
-  document.getElementById("mImg").alt =
-    current.name;
+  const title = modal.querySelector(".modal-title");
+  const image = modal.querySelector(".modal-image");
+  const price = modal.querySelector(".modal-price");
+  const sizes = modal.querySelector(".size-options");
 
-  document.getElementById("mCat").textContent =
-    current.cat;
+  if (title) title.textContent = current.name;
+  if (image) {
+    image.src = current.img;
+    image.alt = current.name;
+  }
 
-  document.getElementById("mName").textContent =
-    current.name;
+  if (price) price.textContent = money(current.price);
 
-  document.getElementById("mPrice").textContent =
-    money(current.price);
+  if (sizes) {
+    sizes.innerHTML = current.sizes.map(size => `
+      <button class="size-btn" onclick="selectSize('${size}', this)">
+        ${size}
+      </button>
+    `).join("");
+  }
 
-  document.getElementById("sizes").innerHTML =
-    current.sizes
-      .map(
-        (size, index) => `
-
-          <button
-            class="size ${
-              index === 0
-                ? "selected"
-                : ""
-            }"
-            onclick="selectSize(this)"
-          >
-            ${size}
-          </button>
-
-        `
-      )
-      .join("");
-
-  document
-    .getElementById("modal")
-    .classList.add("show");
+  modal.classList.add("active");
 }
 
+function selectSize(size, button) {
+  document.querySelectorAll(".size-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
 
-function selectSize(element) {
+  button.classList.add("active");
 
-  document
-    .querySelectorAll(
-      "#sizes .size"
-    )
-    .forEach(button =>
-      button.classList.remove(
-        "selected"
-      )
-    );
-
-  element.classList.add(
-    "selected"
-  );
+  if (current) {
+    current.selectedSize = size;
+  }
 }
 
+function closeProduct() {
+  const modal = document.querySelector("#productModal");
+  if (modal) modal.classList.remove("active");
 
-// ===============================
-// CERRAR MODAL
-// ===============================
-
-document
-  .getElementById("modalClose")
-  ?.addEventListener(
-    "click",
-    () => {
-
-      document
-        .getElementById("modal")
-        .classList.remove(
-          "show"
-        );
-
-    }
-  );
-
-
-document
-  .getElementById("modal")
-  ?.addEventListener(
-    "click",
-    event => {
-
-      if (
-        event.target.id ===
-        "modal"
-      ) {
-
-        event.currentTarget
-          .classList.remove(
-            "show"
-          );
-
-      }
-
-    }
-  );
-
+  current = null;
+}
 
 // ===============================
 // AGREGAR AL CARRITO
 // ===============================
 
-document
-  .getElementById("mAdd")
-  ?.addEventListener(
-    "click",
-    () => {
+function addToCart() {
+  if (!current) return;
 
-      if (!current) return;
+  const selectedButton = document.querySelector(".size-btn.active");
 
-      const selected =
-        document.querySelector(
-          "#sizes .size.selected"
-        );
+  if (!selectedButton) {
+    alert("Seleccioná un tamaño antes de agregar el producto.");
+    return;
+  }
 
-      const size =
-        selected
-          ? selected.textContent.trim()
-          : "Único";
+  const size = selectedButton.textContent.trim();
 
-      add(
-        current.id,
-        size
-      );
-
-      document
-        .getElementById("modal")
-        .classList.remove(
-          "show"
-        );
-
-      openCart();
-
-    }
+  const existing = cart.find(
+    item => item.id === current.id && item.size === size
   );
 
-
-// ===============================
-// AGREGAR PRODUCTO
-// ===============================
-
-function add(
-  id,
-  size = "Único"
-) {
-
-  const existing =
-    cart.find(
-      item =>
-        item.id === id &&
-        item.size === size
-    );
-
   if (existing) {
-
     existing.qty++;
-
   } else {
-
     cart.push({
-      id: id,
+      id: current.id,
+      name: current.name,
+      price: current.price,
+      img: current.img,
       size: size,
       qty: 1
     });
-
   }
 
   save();
   renderCart();
+  closeProduct();
+  openCart();
 }
-
-
-// ===============================
-// CANTIDAD
-// ===============================
-
-function qty(
-  id,
-  size,
-  amount
-) {
-
-  const item =
-    cart.find(
-      x =>
-        x.id === id &&
-        x.size === size
-    );
-
-  if (!item) return;
-
-  item.qty += amount;
-
-  if (item.qty < 1) {
-
-    cart =
-      cart.filter(
-        x =>
-          !(
-            x.id === id &&
-            x.size === size
-          )
-      );
-
-  }
-
-  save();
-  renderCart();
-}
-
-
-// ===============================
-// ELIMINAR
-// ===============================
-
-function remove(
-  id,
-  size
-) {
-
-  cart =
-    cart.filter(
-      item =>
-        !(
-          item.id === id &&
-          item.size === size
-        )
-    );
-
-  save();
-  renderCart();
-}
-
 
 // ===============================
 // CARRITO
 // ===============================
 
 function renderCart() {
+  const container = document.querySelector("#cartItems");
+  const totalElement = document.querySelector("#cartTotal");
+  const countElement = document.querySelector("#cartCount");
 
-  const count =
-    document.getElementById(
-      "cartCount"
-    );
+  if (!container) return;
 
-  if (count) {
-
-    count.textContent =
-      cart.reduce(
-        (total, item) =>
-          total + item.qty,
-        0
-      );
-
-  }
-
-  const box =
-    document.getElementById(
-      "cartItems"
-    );
-
-  if (!box) return;
-
-  if (!cart.length) {
-
-    box.innerHTML = `
-
-      <div
-        style="
-          text-align:center;
-          color:#999;
-          padding:70px 10px;
-          font-size:12px;
-        "
-      >
-        Tu carrito está vacío.
+  if (cart.length === 0) {
+    container.innerHTML = `
+      <div class="empty-cart">
+        <p>Tu carrito está vacío.</p>
       </div>
-
     `;
-
   } else {
+    container.innerHTML = cart.map((item, index) => `
+      <div class="cart-item">
 
-    box.innerHTML =
-      cart.map(item => {
+        <img src="${item.img}" alt="${item.name}">
 
-        const product =
-          products.find(
-            p =>
-              p.id === item.id
-          );
+        <div class="cart-item-info">
+          <h4>${item.name}</h4>
+          <p>Tamaño: ${item.size}</p>
+          <strong>${money(item.price)}</strong>
 
-        if (!product) return "";
-
-        return `
-
-          <div class="cart-row">
-
-            <img
-              src="${product.img}"
-              alt="${product.name}"
-            >
-
-            <div>
-
-              <h4>
-                ${product.name}
-              </h4>
-
-              <small>
-
-                ${money(product.price)}
-
-                <br>
-
-                Medida:
-                ${item.size || "Único"}
-
-              </small>
-
-              <div class="qty">
-
-                <button
-                  onclick='qty(
-                    ${product.id},
-                    ${JSON.stringify(
-                      item.size
-                    )},
-                    -1
-                  )'
-                >
-                  −
-                </button>
-
-                <span>
-                  ${item.qty}
-                </span>
-
-                <button
-                  onclick='qty(
-                    ${product.id},
-                    ${JSON.stringify(
-                      item.size
-                    )},
-                    1
-                  )'
-                >
-                  +
-                </button>
-
-              </div>
-
-            </div>
-
-            <button
-              class="remove"
-              onclick='remove(
-                ${product.id},
-                ${JSON.stringify(
-                  item.size
-                )}
-              )'
-            >
-              ×
-            </button>
-
+          <div class="cart-controls">
+            <button onclick="changeQty(${index}, -1)">−</button>
+            <span>${item.qty}</span>
+            <button onclick="changeQty(${index}, 1)">+</button>
+            <button onclick="removeFromCart(${index})">Eliminar</button>
           </div>
+        </div>
 
-        `;
-
-      }).join("");
-
+      </div>
+    `).join("");
   }
 
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.qty,
+    0
+  );
 
-  const total =
-    cart.reduce(
-      (sum, item) => {
+  const count = cart.reduce(
+    (sum, item) => sum + item.qty,
+    0
+  );
 
-        const product =
-          products.find(
-            p =>
-              p.id === item.id
-          );
-
-        return sum +
-          (
-            product
-              ? product.price *
-                item.qty
-              : 0
-          );
-
-      },
-      0
-    );
-
-
-  const totalElement =
-    document.getElementById(
-      "total"
-    );
-
-  if (totalElement) {
-
-    totalElement.textContent =
-      money(total);
-
-  }
-
+  if (totalElement) totalElement.textContent = money(total);
+  if (countElement) countElement.textContent = count;
 }
 
+function changeQty(index, amount) {
+  if (!cart[index]) return;
 
-// ===============================
-// ABRIR / CERRAR CARRITO
-// ===============================
+  cart[index].qty += amount;
+
+  if (cart[index].qty <= 0) {
+    cart.splice(index, 1);
+  }
+
+  save();
+  renderCart();
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  save();
+  renderCart();
+}
+
+function emptyCart() {
+  if (cart.length === 0) return;
+
+  if (confirm("¿Querés vaciar el carrito?")) {
+    cart = [];
+    save();
+    renderCart();
+  }
+}
 
 function openCart() {
+  const cartPanel = document.querySelector("#cartPanel");
 
-  document
-    .getElementById("drawer")
-    ?.classList.add(
-      "open"
-    );
+  if (cartPanel) {
+    cartPanel.classList.add("active");
+  }
 
-  document
-    .getElementById("shade")
-    ?.classList.add(
-      "show"
-    );
+  renderCart();
 }
-
 
 function closeCart() {
+  const cartPanel = document.querySelector("#cartPanel");
 
-  document
-    .getElementById("drawer")
-    ?.classList.remove(
-      "open"
-    );
-
-  document
-    .getElementById("shade")
-    ?.classList.remove(
-      "show"
-    );
+  if (cartPanel) {
+    cartPanel.classList.remove("active");
+  }
 }
-
-
-document
-  .getElementById("openCart")
-  ?.addEventListener(
-    "click",
-    openCart
-  );
-
-
-document
-  .getElementById("closeCart")
-  ?.addEventListener(
-    "click",
-    closeCart
-  );
-
-
-document
-  .getElementById("shade")
-  ?.addEventListener(
-    "click",
-    closeCart
-  );
-
-
-// ===============================
-// VACIAR CARRITO
-// ===============================
-
-document
-  .getElementById("empty")
-  ?.addEventListener(
-    "click",
-    () => {
-
-      cart = [];
-
-      save();
-
-      renderCart();
-
-    }
-  );
-
 
 // ===============================
 // PEDIDO
 // ===============================
 
 function buildOrderMessage() {
-
-  if (!cart.length) {
-    return null;
+  if (cart.length === 0) {
+    return "Hola GoldenFiine, quiero consultar por algunos productos.";
   }
 
-  let total = 0;
+  let message = "Hola GoldenFiine 👋\n\n";
+  message += "Quiero hacer el siguiente pedido:\n\n";
 
-  let message =
-`✨ GOLDENFIINE — NUEVO PEDIDO ✨
+  cart.forEach(item => {
+    message += `• ${item.name}\n`;
+    message += `  Tamaño: ${item.size}\n`;
+    message += `  Cantidad: ${item.qty}\n`;
+    message += `  Precio: ${money(item.price * item.qty)}\n\n`;
+  });
 
-Hola! Quiero realizar el siguiente pedido:
-
-`;
-
-
-  cart.forEach(
-    (item, index) => {
-
-      const product =
-        products.find(
-          p =>
-            p.id === item.id
-        );
-
-      if (!product) return;
-
-      const subtotal =
-        product.price *
-        item.qty;
-
-      total += subtotal;
-
-      message +=
-`${index + 1}. ${product.name}
-   Categoría: ${product.cat}
-   Medida: ${item.size || "Único"}
-   Cantidad: ${item.qty}
-   Precio: ${money(product.price)}
-   Subtotal: ${money(subtotal)}
-
-`;
-
-    }
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.qty,
+    0
   );
 
-
-  message +=
-`━━━━━━━━━━━━━━━━━━
-TOTAL: ${money(total)}
-
-Quedo a la espera de confirmación. ¡Gracias! 💎`;
+  message += `Total: ${money(total)}\n\n`;
+  message += "¿Me pueden confirmar disponibilidad?";
 
   return message;
 }
-
 
 // ===============================
 // WHATSAPP
 // ===============================
 
-document
-  .getElementById("buy")
-  ?.addEventListener(
-    "click",
-    () => {
+function sendWhatsApp() {
+  const message = encodeURIComponent(buildOrderMessage());
 
-      const message =
-        buildOrderMessage();
-
-      if (!message) {
-
-        alert(
-          "Tu carrito está vacío."
-        );
-
-        return;
-      }
-
-      const url =
-        CONFIG.whatsapp +
-        "?text=" +
-        encodeURIComponent(
-          message
-        );
-
-      window.open(
-        url,
-        "_blank"
-      );
-
-    }
+  window.open(
+    `${CONFIG.whatsapp}?text=${message}`,
+    "_blank"
   );
-
+}
 
 // ===============================
 // INSTAGRAM
 // ===============================
 
-function sendInstagramOrder() {
-
-  const message =
-    buildOrderMessage();
-
-  if (!message) {
-
-    alert(
-      "Tu carrito está vacío."
-    );
-
-    return;
-  }
-
-  const openDM = () => {
-
-    window.open(
-      CONFIG.instagramDM,
-      "_blank"
-    );
-
-  };
-
-
-  if (
-    navigator.clipboard &&
-    navigator.clipboard.writeText
-  ) {
-
-    navigator.clipboard
-      .writeText(message)
-      .then(openDM)
-      .catch(openDM);
-
-  } else {
-
-    openDM();
-
-  }
-
+function sendInstagram() {
+  window.open(CONFIG.instagramDM, "_blank");
 }
-
-
-// ===============================
-// BOTÓN INSTAGRAM
-// ===============================
-
-function createInstagramButton() {
-
-  const buyButton =
-    document.getElementById(
-      "buy"
-    );
-
-  if (!buyButton) return;
-
-  if (
-    document.getElementById(
-      "instagramOrder"
-    )
-  ) {
-    return;
-  }
-
-  const button =
-    document.createElement(
-      "button"
-    );
-
-  button.id =
-    "instagramOrder";
-
-  button.className =
-    "btn full";
-
-  button.type =
-    "button";
-
-  button.textContent =
-    "PEDIR POR INSTAGRAM";
-
-  button.style.marginTop =
-    "10px";
-
-  button.onclick =
-    sendInstagramOrder;
-
-  buyButton.parentNode.insertBefore(
-    button,
-    buyButton.nextSibling
-  );
-
-}
-
 
 // ===============================
 // CONTACTO
 // ===============================
 
-const contactBtn =
-  document.getElementById(
-    "contactBtn"
-  );
-
-if (contactBtn) {
-
-  contactBtn.href =
-    CONFIG.whatsapp;
-
+function contactInstagram() {
+  window.open(CONFIG.instagram, "_blank");
 }
 
+function createInstagramButton() {
+  const buttons = document.querySelectorAll("[data-instagram]");
 
-const sideInstagram =
-  document.getElementById(
-    "sideInstagram"
-  );
-
-if (sideInstagram) {
-
-  sideInstagram.href =
-    CONFIG.whatsapp;
-
+  buttons.forEach(button => {
+    button.addEventListener("click", sendInstagram);
+  });
 }
 
-
 // ===============================
-// MENÚ CELULAR
+// FILTROS
 // ===============================
 
-const mobileMenu =
-  document.getElementById(
-    "mobileMenu"
-  );
-
-if (mobileMenu) {
-
-  mobileMenu.onclick = () => {
-
-    const nav =
-      document.getElementById(
-        "nav"
-      );
-
-    if (!nav) return;
-
-    nav.style.display =
-      nav.style.display === "flex"
-        ? "none"
-        : "flex";
-
-  };
-
+function setupFilters() {
+  document.querySelectorAll("[data-category]").forEach(button => {
+    button.addEventListener("click", () => {
+      setCategory(button.dataset.category);
+    });
+  });
 }
 
-
 // ===============================
-// FILTRO CELULAR
+// MENÚ MOBILE
 // ===============================
 
-const filterMobile =
-  document.getElementById(
-    "filterMobile"
-  );
+function setupMobileMenu() {
+  const menuButton = document.querySelector("#menuButton");
+  const mobileMenu = document.querySelector("#mobileMenu");
 
-if (filterMobile) {
+  if (!menuButton || !mobileMenu) return;
 
-  filterMobile.onclick = () => {
-
-    document
-      .querySelector(".filters")
-      ?.classList.add(
-        "show"
-      );
-
-  };
-
+  menuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+  });
 }
 
+// ===============================
+// CERRAR MODAL AL HACER CLICK AFUERA
+// ===============================
 
-const closeFilters =
-  document.getElementById(
-    "closeFilters"
-  );
+function setupModal() {
+  const modal = document.querySelector("#productModal");
 
-if (closeFilters) {
+  if (!modal) return;
 
-  closeFilters.onclick = () => {
-
-    document
-      .querySelector(".filters")
-      ?.classList.remove(
-        "show"
-      );
-
-  };
-
+  modal.addEventListener("click", event => {
+    if (event.target === modal) {
+      closeProduct();
+    }
+  });
 }
 
-
 // ===============================
-// COMPATIBILIDAD CARRITO
-// ===============================
-
-cart =
-  cart
-    .map(item => {
-
-      const product =
-        products.find(
-          p =>
-            p.id === item.id
-        );
-
-      return {
-
-        id: item.id,
-
-        qty:
-          item.qty || 1,
-
-        size:
-          item.size ||
-          (
-            product?.sizes?.[0] ||
-            "Único"
-          )
-
-      };
-
-    })
-    .filter(item =>
-      products.some(
-        product =>
-          product.id === item.id
-      )
-    );
-
-
-save();
-
-
-// ===============================
-// INICIAR
+// INICIO
 // ===============================
 
-render();
+document.addEventListener("DOMContentLoaded", () => {
+  setupFilters();
+  setupMobileMenu();
+  setupModal();
+  createInstagramButton();
 
-renderCart();
-
-createInstagramButton();
+  render();
+  renderCart();
+});
