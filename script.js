@@ -66,7 +66,7 @@ const products = [
     name: "Combo cadena París plana enchapada 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "combo cadena paris plana enchapada 18kjpeg",
+    img: "combo cadena paris plana enchapada 18k.jpeg",
     sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
@@ -75,7 +75,7 @@ const products = [
     name: "Juliana con cierre marinero",
     cat: "Cadenas",
     price: 45000,
-    img: "juliana con cierre marinero jpeg",
+    img: "juliana con cierre marinero.jpeg",
     sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
@@ -104,51 +104,7 @@ const products = [
     price: 45000,
     img: "cadena-rolo-gruesa-60cm-Oro -18k.jpeg",
     sizes: ["60 cm"]
-  },
-
-  // ===== PULSERAS =====
-
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 11 + i,
-    name: `Pulsera ${i + 1}`,
-    cat: "Pulseras",
-    price: 38000,
-    img: `imagenes/pulsera-${i + 1}.jpg`,
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  })),
-
-  // ===== ANILLOS =====
-
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 21 + i,
-    name: `Anillo ${i + 1}`,
-    cat: "Anillos",
-    price: 35000,
-    img: `imagenes/anillo-${i + 1}.jpg`,
-    sizes: ["16", "18", "20", "22"]
-  })),
-
-  // ===== DIJES =====
-
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 31 + i,
-    name: `Dije ${i + 1}`,
-    cat: "Dijes",
-    price: 28000,
-    img: `imagenes/dije-${i + 1}.jpg`,
-    sizes: ["Único"]
-  })),
-
-  // ===== ARITOS =====
-
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 41 + i,
-    name: `Arito ${i + 1}`,
-    cat: "Aritos",
-    price: 30000,
-    img: `imagenes/arito-${i + 1}.jpg`,
-    sizes: ["Único"]
-  }))
+  }
 
 ];
 
@@ -156,9 +112,10 @@ const products = [
 // VARIABLES
 // ===============================
 
-let cart = JSON.parse(
-  localStorage.getItem("gf_cart") || "[]"
-);
+let cart =
+  JSON.parse(
+    localStorage.getItem("gf_cart") || "[]"
+  );
 
 let category = "Todos";
 let current = null;
@@ -184,10 +141,12 @@ function setCategory(cat) {
   document
     .querySelectorAll(".filter")
     .forEach(button => {
+
       button.classList.toggle(
         "active",
         button.dataset.cat === cat
       );
+
     });
 
   render();
@@ -223,38 +182,46 @@ function render() {
       ?.value || "default";
 
   if (sort === "low") {
+
     list.sort(
       (a, b) =>
         a.price - b.price
     );
+
   }
 
   if (sort === "high") {
+
     list.sort(
       (a, b) =>
         b.price - a.price
     );
+
   }
 
   const title =
-    document.getElementById("catTitle");
+    document.getElementById(
+      "catTitle"
+    );
 
   if (title) {
+
     title.textContent =
       category === "Todos"
         ? "Todos los productos"
         : category;
+
   }
 
   grid.innerHTML =
     list.map(product => `
 
       <article
-        class="product-card"
+        class="card"
         onclick="openProduct(${product.id})"
       >
 
-        <div class="product-image">
+        <div class="card-img">
 
           ${
             product.badge
@@ -278,7 +245,7 @@ function render() {
 
         </div>
 
-        <div class="product-info">
+        <div class="card-info">
 
           <small>
             ${product.cat}
@@ -324,7 +291,8 @@ document
 
       document
         .querySelector(".filters")
-        ?.classList.remove("open");
+        ?.classList.remove("show");
+
     };
 
   });
@@ -387,20 +355,24 @@ function openProduct(id) {
 
   document
     .getElementById("modal")
-    .classList.add("open");
+    .classList.add("show");
 }
 
 function selectSize(element) {
 
   document
-    .querySelectorAll("#sizes .size")
+    .querySelectorAll(
+      "#sizes .size"
+    )
     .forEach(button =>
       button.classList.remove(
         "selected"
       )
     );
 
-  element.classList.add("selected");
+  element.classList.add(
+    "selected"
+  );
 }
 
 // ===============================
@@ -415,7 +387,9 @@ document
 
       document
         .getElementById("modal")
-        .classList.remove("open");
+        .classList.remove(
+          "show"
+        );
 
     }
   );
@@ -427,11 +401,14 @@ document
     event => {
 
       if (
-        event.target.id === "modal"
+        event.target.id ===
+        "modal"
       ) {
 
         event.currentTarget
-          .classList.remove("open");
+          .classList.remove(
+            "show"
+          );
 
       }
 
@@ -460,11 +437,16 @@ document
           ? selected.textContent.trim()
           : "Único";
 
-      add(current.id, size);
+      add(
+        current.id,
+        size
+      );
 
       document
         .getElementById("modal")
-        .classList.remove("open");
+        .classList.remove(
+          "show"
+        );
 
       openCart();
 
@@ -494,8 +476,8 @@ function add(
   } else {
 
     cart.push({
-      id,
-      size,
+      id: id,
+      size: size,
       qty: 1
     });
 
@@ -572,7 +554,9 @@ function remove(
 function renderCart() {
 
   const count =
-    document.getElementById("cartCount");
+    document.getElementById(
+      "cartCount"
+    );
 
   if (count) {
 
@@ -586,13 +570,16 @@ function renderCart() {
   }
 
   const box =
-    document.getElementById("cartItems");
+    document.getElementById(
+      "cartItems"
+    );
 
   if (!box) return;
 
   if (!cart.length) {
 
     box.innerHTML = `
+
       <div
         style="
           text-align:center;
@@ -603,6 +590,7 @@ function renderCart() {
       >
         Tu carrito está vacío.
       </div>
+
     `;
 
   } else {
@@ -634,10 +622,14 @@ function renderCart() {
               </h4>
 
               <small>
+
                 ${money(product.price)}
+
                 <br>
+
                 Medida:
                 ${item.size || "Único"}
+
               </small>
 
               <div class="qty">
@@ -645,7 +637,9 @@ function renderCart() {
                 <button
                   onclick='qty(
                     ${product.id},
-                    ${JSON.stringify(item.size)},
+                    ${JSON.stringify(
+                      item.size
+                    )},
                     -1
                   )'
                 >
@@ -659,7 +653,9 @@ function renderCart() {
                 <button
                   onclick='qty(
                     ${product.id},
-                    ${JSON.stringify(item.size)},
+                    ${JSON.stringify(
+                      item.size
+                    )},
                     1
                   )'
                 >
@@ -674,7 +670,9 @@ function renderCart() {
               class="remove"
               onclick='remove(
                 ${product.id},
-                ${JSON.stringify(item.size)}
+                ${JSON.stringify(
+                  item.size
+                )}
               )'
             >
               ×
@@ -701,7 +699,8 @@ function renderCart() {
         return sum +
           (
             product
-              ? product.price * item.qty
+              ? product.price *
+                item.qty
               : 0
           );
 
@@ -710,11 +709,15 @@ function renderCart() {
     );
 
   const totalElement =
-    document.getElementById("total");
+    document.getElementById(
+      "total"
+    );
 
   if (totalElement) {
+
     totalElement.textContent =
       money(total);
+
   }
 
 }
@@ -727,22 +730,30 @@ function openCart() {
 
   document
     .getElementById("drawer")
-    ?.classList.add("open");
+    ?.classList.add(
+      "open"
+    );
 
   document
     .getElementById("shade")
-    ?.classList.add("open");
+    ?.classList.add(
+      "show"
+    );
 }
 
 function closeCart() {
 
   document
     .getElementById("drawer")
-    ?.classList.remove("open");
+    ?.classList.remove(
+      "open"
+    );
 
   document
     .getElementById("shade")
-    ?.classList.remove("open");
+    ?.classList.remove(
+      "show"
+    );
 }
 
 document
@@ -868,7 +879,9 @@ document
       const url =
         CONFIG.whatsapp +
         "?text=" +
-        encodeURIComponent(message);
+        encodeURIComponent(
+          message
+        );
 
       window.open(
         url,
@@ -930,7 +943,9 @@ function sendInstagramOrder() {
 function createInstagramButton() {
 
   const buyButton =
-    document.getElementById("buy");
+    document.getElementById(
+      "buy"
+    );
 
   if (!buyButton) return;
 
@@ -943,7 +958,9 @@ function createInstagramButton() {
   }
 
   const button =
-    document.createElement("button");
+    document.createElement(
+      "button"
+    );
 
   button.id =
     "instagramOrder";
@@ -971,22 +988,57 @@ function createInstagramButton() {
 }
 
 // ===============================
+// CONTACTO
+// ===============================
+
+const contactBtn =
+  document.getElementById(
+    "contactBtn"
+  );
+
+if (contactBtn) {
+
+  contactBtn.href =
+    CONFIG.whatsapp;
+
+}
+
+const sideInstagram =
+  document.getElementById(
+    "sideInstagram"
+  );
+
+if (sideInstagram) {
+
+  sideInstagram.href =
+    CONFIG.whatsapp;
+
+}
+
+// ===============================
 // MENÚ CELULAR
 // ===============================
 
 const mobileMenu =
-  document.getElementById("mobileMenu");
+  document.getElementById(
+    "mobileMenu"
+  );
 
 if (mobileMenu) {
 
   mobileMenu.onclick = () => {
 
     const nav =
-      document.getElementById("nav");
+      document.getElementById(
+        "nav"
+      );
 
     if (!nav) return;
 
-    nav.classList.toggle("open");
+    nav.style.display =
+      nav.style.display === "flex"
+        ? "none"
+        : "flex";
 
   };
 
@@ -997,7 +1049,9 @@ if (mobileMenu) {
 // ===============================
 
 const filterMobile =
-  document.getElementById("filterMobile");
+  document.getElementById(
+    "filterMobile"
+  );
 
 if (filterMobile) {
 
@@ -1005,14 +1059,18 @@ if (filterMobile) {
 
     document
       .querySelector(".filters")
-      ?.classList.add("open");
+      ?.classList.add(
+        "show"
+      );
 
   };
 
 }
 
 const closeFilters =
-  document.getElementById("closeFilters");
+  document.getElementById(
+    "closeFilters"
+  );
 
 if (closeFilters) {
 
@@ -1020,7 +1078,9 @@ if (closeFilters) {
 
     document
       .querySelector(".filters")
-      ?.classList.remove("open");
+      ?.classList.remove(
+        "show"
+      );
 
   };
 
