@@ -11,11 +11,16 @@ body {
   background: #0b0b0b;
   color: #f1eee7;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  font-family: inherit;
 }
 
 /* =========================
@@ -35,7 +40,6 @@ a {
   z-index: 30;
 }
 
-/* LOGO DE ARRIBA */
 .logo-text {
   color: #d7b56a !important;
   font-family: Georgia, serif;
@@ -313,76 +317,66 @@ nav a:hover {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px 18px;
 }
 
-.card {
+/* TARJETA REAL DEL SCRIPT */
+
+.product-card {
+  min-width: 0;
   position: relative;
+}
+
+.product-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
   cursor: pointer;
 }
 
-.card-img {
+.product-image {
+  width: 100%;
   height: 350px;
   background: #151515;
   overflow: hidden;
   position: relative;
 }
 
-.card-img img {
+.product-image img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: .45s;
+  transition: transform .45s ease;
 }
 
-.card:hover img {
+.product-open:hover .product-image img {
   transform: scale(1.035);
 }
 
-.badge {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  background: #111;
-  color: white;
-  padding: 6px 9px;
-  font-size: 8px;
-  letter-spacing: 1px;
-}
-
-.heart {
-  position: absolute;
-  right: 12px;
-  top: 10px;
-  border: 0;
-  background: white;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.card-info {
+.product-info {
   padding: 13px 2px;
 }
 
-.card-info small {
-  color: #aaa49a;
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
+.product-info .mini {
+  margin-bottom: 6px;
 }
 
-.card-info h3 {
+.product-info h3 {
   font-family: Georgia, serif;
-  font-size: 20px;
+  font-size: 19px;
+  line-height: 1.25;
   font-weight: 500;
-  margin: 6px 0;
+  margin: 5px 0 7px;
   color: #f1eee7;
 }
 
-.price {
+.product-info strong {
   font-size: 13px;
   font-weight: 600;
   color: #e4c77e;
@@ -479,7 +473,7 @@ footer > div:nth-child(2) {
   display: none;
 }
 
-.shade.show {
+.shade.open {
   display: block;
 }
 
@@ -530,54 +524,37 @@ footer > div:nth-child(2) {
   padding: 10px 25px;
 }
 
-.cart-row {
-  display: grid;
-  grid-template-columns: 70px 1fr auto;
-  gap: 12px;
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
   padding: 17px 0;
   border-bottom: 1px solid #292929;
 }
 
-.cart-row img {
-  width: 70px;
-  height: 80px;
-  object-fit: cover;
-  background: #151515;
+.cart-item strong,
+.cart-item span,
+.cart-item small {
+  display: block;
 }
 
-.cart-row h4 {
+.cart-item strong {
   font-family: Georgia, serif;
   font-weight: 500;
-  margin: 4px 0;
-  font-size: 16px;
+  margin-bottom: 5px;
 }
 
-.cart-row small {
+.cart-item span,
+.cart-item small {
   color: #aaa49a;
+  margin-top: 4px;
 }
 
-.qty {
-  margin-top: 10px;
-}
-
-.qty button {
-  background: #151515;
-  color: white;
-  border: 1px solid #444;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-}
-
-.qty span {
-  padding: 0 8px;
-  font-size: 11px;
-}
-
-.remove {
+.remove-item {
   border: 0;
   background: none;
   color: #999;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -617,7 +594,7 @@ footer > div:nth-child(2) {
   padding: 20px;
 }
 
-.modal.show {
+.modal.open {
   display: flex;
 }
 
@@ -673,7 +650,7 @@ footer > div:nth-child(2) {
   cursor: pointer;
 }
 
-.size {
+.size-option {
   border: 1px solid #444;
   background: #151515;
   color: #f1eee7;
@@ -682,14 +659,14 @@ footer > div:nth-child(2) {
   cursor: pointer;
 }
 
-.size.selected {
+.size-option.active {
   border-color: #ad8231;
   background: #ad8231;
   color: white;
 }
 
 /* =========================
-   CELULAR
+   TABLET
 ========================= */
 
 @media (max-width: 900px) {
@@ -699,7 +676,7 @@ footer > div:nth-child(2) {
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .shop {
@@ -710,13 +687,22 @@ footer > div:nth-child(2) {
   .hero h1 {
     font-size: 52px;
   }
+
+  .product-image {
+    height: 300px;
+  }
 }
+
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 650px) {
 
   .header {
     height: 65px;
     padding: 0 18px;
+    gap: 15px;
   }
 
   .mobile-menu {
@@ -736,8 +722,13 @@ footer > div:nth-child(2) {
     align-items: flex-start;
   }
 
+  nav.open {
+    display: flex;
+  }
+
   .logo-text {
     font-size: 19px;
+    letter-spacing: 2px;
   }
 
   .hero {
@@ -746,12 +737,17 @@ footer > div:nth-child(2) {
   }
 
   .hero h1 {
-    font-size: 44px;
+    font-size: 42px;
+  }
+
+  .trust {
+    grid-template-columns: 1fr;
   }
 
   .trust div {
-    padding: 18px 7px;
-    gap: 7px;
+    padding: 15px;
+    border-right: 0;
+    border-bottom: 1px solid #252525;
   }
 
   .trust strong {
@@ -764,7 +760,7 @@ footer > div:nth-child(2) {
 
   .shop {
     display: block;
-    padding: 45px 18px;
+    padding: 40px 14px;
   }
 
   .filters {
@@ -780,7 +776,7 @@ footer > div:nth-child(2) {
     box-shadow: 5px 0 20px #0002;
   }
 
-  .filters.show {
+  .filters.open {
     display: block;
   }
 
@@ -804,6 +800,7 @@ footer > div:nth-child(2) {
   .catalog-top {
     align-items: center;
     gap: 10px;
+    margin-bottom: 22px;
   }
 
   .catalog-top select {
@@ -814,17 +811,35 @@ footer > div:nth-child(2) {
     font-size: 24px;
   }
 
+  /* 2 PRODUCTOS POR FILA */
+
   .grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 9px;
   }
 
-  .card-img {
-    height: 220px;
+  .product-image {
+    width: 100%;
+    height: 210px;
   }
 
-  .card-info h3 {
-    font-size: 17px;
+  .product-info {
+    padding: 10px 1px;
+  }
+
+  .product-info h3 {
+    font-size: 15px;
+    line-height: 1.2;
+    margin: 4px 0 6px;
+  }
+
+  .product-info .mini {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .product-info strong {
+    font-size: 12px;
   }
 
   .banner {
@@ -838,28 +853,71 @@ footer > div:nth-child(2) {
     margin-bottom: 35px;
   }
 
+  .modal {
+    padding: 10px;
+  }
+
   .modal-card {
     grid-template-columns: 1fr;
+    max-height: 94vh;
   }
 
   .modal-img {
-    height: 330px;
+    height: 300px;
   }
 
   .modal-info {
-    padding: 30px;
+    padding: 25px;
+  }
+
+  .modal-info h2 {
+    font-size: 28px;
   }
 
   .contact {
     padding: 65px 20px;
   }
 
+  .contact h2 {
+    font-size: 32px;
+  }
+
   footer {
     flex-direction: column;
     gap: 20px;
+    text-align: center;
   }
 
   footer > div:nth-child(2) {
     display: none;
   }
+
+}
+
+/* =========================
+   CELULARES MUY CHICOS
+========================= */
+
+@media (max-width: 380px) {
+
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .grid {
+    gap: 24px 7px;
+  }
+
+  .product-image {
+    height: 185px;
+  }
+
+  .product-info h3 {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
 }
