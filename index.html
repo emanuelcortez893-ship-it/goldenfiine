@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>GOLDENFIINE | Joyería</title>
-  <meta name="description" content="GOLDENFIINE - Joyería">
+
+  <meta
+    name="description"
+    content="GOLDENFIINE - Joyería. Cadenas, pulseras, anillos, dijes y aritos."
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,41 +18,86 @@
 
 <header class="header">
 
-  <button class="icon mobile-menu" id="mobileMenu" aria-label="Menú">
+  <!-- MENÚ CELULAR -->
+  <button
+    class="icon mobile-menu"
+    id="mobileMenu"
+    aria-label="Abrir menú"
+  >
     ☰
   </button>
 
-  <a href="#inicio" class="logo logo-img">
-    <img src="images/logo-goldenfiine.png" alt="GOLDENFIINE">
+
+  <!-- LOGO -->
+  <a
+    href="#inicio"
+    class="logo-text"
+  >
+    GOLDENFIINE
   </a>
 
-  <nav id="nav">
-    <a href="#inicio">Inicio</a>
 
-    <a href="#catalogo" onclick="setCategory('Cadenas'); return false;">
+  <!-- NAVEGACIÓN -->
+  <nav id="nav">
+
+    <a href="#inicio">
+      Inicio
+    </a>
+
+    <a
+      href="#catalogo"
+      onclick="setCategory('Cadenas'); return false;"
+    >
       Cadenas
     </a>
 
-    <a href="#catalogo" onclick="setCategory('Pulseras'); return false;">
+    <a
+      href="#catalogo"
+      onclick="setCategory('Pulseras'); return false;"
+    >
       Pulseras
     </a>
 
-    <a href="#catalogo" onclick="setCategory('Anillos'); return false;">
+    <a
+      href="#catalogo"
+      onclick="setCategory('Anillos'); return false;"
+    >
       Anillos
     </a>
 
-    <a href="#catalogo" onclick="setCategory('Dijes'); return false;">
+    <a
+      href="#catalogo"
+      onclick="setCategory('Dijes'); return false;"
+    >
       Dijes
+    </a>
+
+    <a
+      href="#catalogo"
+      onclick="setCategory('Aritos'); return false;"
+    >
+      Aritos
     </a>
 
     <a href="#contacto">
       Contacto
     </a>
+
   </nav>
 
-  <button class="icon cart-open" id="openCart" aria-label="Carrito">
+
+  <!-- CARRITO -->
+  <button
+    class="icon cart-open"
+    id="openCart"
+    aria-label="Abrir carrito"
+  >
     🛒
-    <b id="cartCount">0</b>
+
+    <b id="cartCount">
+      0
+    </b>
+
   </button>
 
 </header>
@@ -54,9 +105,15 @@
 
 <main>
 
-  <!-- INICIO -->
 
-  <section class="hero" id="inicio">
+  <!-- =========================
+       INICIO
+  ========================== -->
+
+  <section
+    class="hero"
+    id="inicio"
+  >
 
     <div class="hero-content">
 
@@ -74,7 +131,10 @@
         diseñada para destacar.
       </p>
 
-      <a href="#catalogo" class="btn">
+      <a
+        href="#catalogo"
+        class="btn"
+      >
         VER COLECCIÓN
       </a>
 
@@ -83,33 +143,63 @@
   </section>
 
 
-  <!-- INFORMACIÓN -->
+  <!-- =========================
+       INFORMACIÓN
+  ========================== -->
 
   <section class="trust">
 
     <div>
-      <strong>ENVÍOS</strong>
-      <span>A TODO EL PAÍS</span>
+      <strong>
+        ENVÍOS
+      </strong>
+
+      <span>
+        A TODO EL PAÍS
+      </span>
     </div>
 
-    <div>
-      <strong>CALIDAD</strong>
-      <span>PRODUCTOS SELECCIONADOS</span>
-    </div>
 
     <div>
-      <strong>CONSULTAS</strong>
-      <span>POR WHATSAPP</span>
+      <strong>
+        CALIDAD
+      </strong>
+
+      <span>
+        PRODUCTOS SELECCIONADOS
+      </span>
+    </div>
+
+
+    <div>
+      <strong>
+        CONSULTAS
+      </strong>
+
+      <span>
+        POR WHATSAPP
+      </span>
     </div>
 
   </section>
 
 
-  <!-- CATÁLOGO -->
+  <!-- =========================
+       CATÁLOGO
+  ========================== -->
 
-  <section class="shop" id="catalogo">
+  <section
+    class="shop"
+    id="catalogo"
+  >
 
-    <aside class="filters" id="filters">
+
+    <!-- FILTROS -->
+
+    <aside
+      class="filters"
+      id="filters"
+    >
 
       <div class="filter-head">
 
@@ -117,39 +207,72 @@
           CATEGORÍAS
         </h2>
 
-        <button id="closeFilters" class="filter-close">
+        <button
+          id="closeFilters"
+          class="filter-close"
+          aria-label="Cerrar filtros"
+        >
           ×
         </button>
 
       </div>
 
 
-      <button class="filter active" data-cat="Todos">
+      <button
+        class="filter active"
+        data-cat="Todos"
+      >
         Todos
       </button>
 
-      <button class="filter" data-cat="Cadenas">
+
+      <button
+        class="filter"
+        data-cat="Cadenas"
+      >
         Cadenas
       </button>
 
-      <button class="filter" data-cat="Pulseras">
+
+      <button
+        class="filter"
+        data-cat="Pulseras"
+      >
         Pulseras
       </button>
 
-      <button class="filter" data-cat="Anillos">
+
+      <button
+        class="filter"
+        data-cat="Anillos"
+      >
         Anillos
       </button>
 
-      <button class="filter" data-cat="Dijes">
+
+      <button
+        class="filter"
+        data-cat="Dijes"
+      >
         Dijes
+      </button>
+
+
+      <button
+        class="filter"
+        data-cat="Aritos"
+      >
+        Aritos
       </button>
 
 
       <hr>
 
+
       <p class="filter-note">
         ¿Buscás algo en particular?
       </p>
+
 
       <a
         id="sideInstagram"
@@ -164,7 +287,10 @@
     </aside>
 
 
+    <!-- PRODUCTOS -->
+
     <div class="catalog">
+
 
       <div class="catalog-top">
 
@@ -190,6 +316,7 @@
             FILTRAR
           </button>
 
+
           <select id="sort">
 
             <option value="default">
@@ -211,14 +338,21 @@
       </div>
 
 
-      <div class="grid" id="grid"></div>
+      <!-- LOS PRODUCTOS LOS CARGA SCRIPT.JS -->
+
+      <div
+        class="grid"
+        id="grid"
+      ></div>
 
     </div>
 
   </section>
 
 
-  <!-- BANNER -->
+  <!-- =========================
+       BANNER
+  ========================== -->
 
   <section class="banner">
 
@@ -242,9 +376,14 @@
   </section>
 
 
-  <!-- CONTACTO -->
+  <!-- =========================
+       CONTACTO
+  ========================== -->
 
-  <section class="contact" id="contacto">
+  <section
+    class="contact"
+    id="contacto"
+  >
 
     <p class="mini">
       CONTACTO
@@ -263,6 +402,7 @@
       +54 9 11 5389-4764
     </p>
 
+
     <a
       id="contactBtn"
       href="https://wa.me/5491153894764"
@@ -278,9 +418,12 @@
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
+
 
   <div class="footer-brand">
 
@@ -331,14 +474,25 @@
 </footer>
 
 
-<!-- FONDO DEL CARRITO -->
+<!-- =========================
+     FONDO DEL CARRITO
+========================= -->
 
-<div class="shade" id="shade"></div>
+<div
+  class="shade"
+  id="shade"
+></div>
 
 
-<!-- CARRITO -->
+<!-- =========================
+     CARRITO
+========================= -->
 
-<aside class="drawer" id="drawer">
+<aside
+  class="drawer"
+  id="drawer"
+>
+
 
   <div class="drawer-head">
 
@@ -346,7 +500,10 @@
       Tu carrito
     </h2>
 
-    <button id="closeCart">
+    <button
+      id="closeCart"
+      aria-label="Cerrar carrito"
+    >
       ×
     </button>
 
@@ -360,6 +517,7 @@
 
 
   <div class="drawer-foot">
+
 
     <div class="cart-total">
 
@@ -394,15 +552,22 @@
 </aside>
 
 
-<!-- MODAL DEL PRODUCTO -->
+<!-- =========================
+     MODAL PRODUCTO
+========================= -->
 
-<div class="modal" id="modal">
+<div
+  class="modal"
+  id="modal"
+>
 
   <div class="modal-card">
+
 
     <button
       id="modalClose"
       class="modal-close"
+      aria-label="Cerrar producto"
     >
       ×
     </button>
@@ -413,7 +578,7 @@
       <img
         id="mImg"
         src=""
-        alt=""
+        alt="Producto"
       >
 
     </div>
@@ -421,13 +586,16 @@
 
     <div class="modal-info">
 
+
       <p
         class="mini"
         id="mCat"
       ></p>
 
 
-      <h2 id="mName"></h2>
+      <h2
+        id="mName"
+      ></h2>
 
 
       <div
@@ -464,6 +632,10 @@
 
 </div>
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script src="script.js"></script>
 
