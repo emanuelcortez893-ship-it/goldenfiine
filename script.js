@@ -21,7 +21,7 @@ const products = [
     name: "Rosario enchapado brasileño 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "Rosario enchapado brasileño 18kjpeg",
+    img: "Rosario enchapado brasileño 18k.jpeg",
     sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
@@ -102,7 +102,7 @@ const products = [
     name: "Cadena Rolo Gruesa 60cm - Oro 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "cadena-rolo-gruesa-60cm-Oro - 18k.jpeg",
+    "img: "Cadena Rolo Gruesa 60cm - Oro 18k.jpeg","
     sizes: ["60 cm"]
   },
 
