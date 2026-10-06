@@ -1,304 +1,509 @@
+// ===============================
+// GOLDENFIINE
+// ===============================
+
+const CONFIG = {
+  instagram: "https://www.instagram.com/joyas_goldenfiine/",
+  instagramDM: "https://ig.me/m/joyas_goldenfiine",
+  whatsapp: "https://wa.me/5491153894764"
+};
+
+// ===============================
+// PRODUCTOS
+// ===============================
+
 const products = [
 
-  /* =========================
-     CADENAS
-  ========================== */
+  // ===== CADENAS =====
 
-  {
-    id: 1,
-    name: "Rosario Enchapado Brasileño 18K",
-    category: "Cadenas",
-    price: 45000,
-    img: "Rosario enchapado brasileño18k.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
-  },
+ {
+  id: 1,
+  name: "Rosario enchapado brasileño 18k",
+  category: "Cadenas",
+  price: 45000,
+  img: "Rosario enchapado brasileño 18k.jpeg",
+  sizes: ["45 cm", "50 cm", "60 cm"]
+},
 
   {
     id: 2,
-    name: "Cadena Espiga",
-    category: "Cadenas",
+    name: "Cadena espiga con cierre mosquetón",
+    cat: "Cadenas",
     price: 45000,
     img: "cadena espiga con cierre mosqueton.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
     id: 3,
-    name: "Cadena París",
-    category: "Cadenas",
+    name: "Cadena París con cierre marinero",
+    cat: "Cadenas",
     price: 45000,
     img: "cadena paris con cierre marinero.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
     id: 4,
-    name: "Cadena Singapur Fina",
-    category: "Cadenas",
+    name: "Cadena Singapur fina enchapada 18k",
+    cat: "Cadenas",
     price: 45000,
     img: "cadena singapur fina enchapada 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
     id: 5,
-    name: "Cadena Triple Gourmet",
-    category: "Cadenas",
+    name: "Cadena triple gourmet con cierre mosquetón",
+    cat: "Cadenas",
     price: 45000,
     img: "cadena triple gourmet con cierre mosqueton.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
     id: 6,
-    name: "Combo Cadena París Plana",
-    category: "Cadenas",
+    name: "Combo cadena París plana enchapada 18k",
+    cat: "Cadenas",
     price: 45000,
     img: "combo cadena paris plana enchapada 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
     id: 7,
-    name: "Juliana",
-    category: "Cadenas",
+    name: "Juliana con cierre marinero",
+    cat: "Cadenas",
     price: 45000,
     img: "juliana con cierre marinero.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
     id: 8,
-    name: "Tourbillon con Puntera Versace",
-    category: "Cadenas",
+    name: "Tourbillon con puntera Versace",
+    cat: "Cadenas",
     price: 45000,
     img: "tourbillon con puntera versace.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
     id: 9,
-    name: "Conjunto Triple Cadena Singapur",
-    category: "Cadenas",
+    name: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D - Oro 18k",
+    cat: "Cadenas",
     price: 45000,
     img: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D - Oro 18k - 45cm + 50cm + 60cm.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm + 50 cm + 60 cm"]
   },
 
   {
     id: 10,
-    name: "Cadena Rolo Gruesa 60cm",
-    category: "Cadenas",
+    name: "Cadena Rolo Gruesa 60cm - Oro 18k",
+    cat: "Cadenas",
     price: 45000,
-    img: "cadena-rolo-gruesa-60cm-Oro -18k.jpeg",
+    "img: "Cadena Rolo Gruesa 60cm - Oro 18k.jpeg","
     sizes: ["60 cm"]
   },
 
+  // ===== PULSERAS =====
 
-  /* =========================
-     PULSERAS
-  ========================== */
-
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 101 + i,
-    name: `Pulsera ${i + 1}`,
-    category: "Pulseras",
+  {
+    id: 11,
+    name: "Pulsera 1",
+    cat: "Pulseras",
     price: 38000,
-    img: `images/pulsera-${i + 1}.jpg`,
-    sizes: ["16 cm", "18 cm", "20 cm"]
-  })),
+    img: "images/pulsera-1.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
 
+  {
+    id: 12,
+    name: "Pulsera 2",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-2.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
 
-  /* =========================
-     ANILLOS
-  ========================== */
+  {
+    id: 13,
+    name: "Pulsera 3",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-3.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
 
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 201 + i,
-    name: `Anillo ${i + 1}`,
-    category: "Anillos",
+  {
+    id: 14,
+    name: "Pulsera 4",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-4.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 15,
+    name: "Pulsera 5",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-5.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 16,
+    name: "Pulsera 6",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-6.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 17,
+    name: "Pulsera 7",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-7.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 18,
+    name: "Pulsera 8",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-8.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 19,
+    name: "Pulsera 9",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-9.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  {
+    id: 20,
+    name: "Pulsera 10",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-10.jpg",
+    sizes: ["18 cm", "20 cm", "22 cm"]
+  },
+
+  // ===== ANILLOS =====
+
+  {
+    id: 21,
+    name: "Anillo 1",
+    cat: "Anillos",
     price: 35000,
-    img: `images/anillo-${i + 1}.jpg`,
+    img: "images/anillo-1.jpg",
     sizes: ["16", "18", "20", "22"]
-  })),
+  },
 
+  {
+    id: 22,
+    name: "Anillo 2",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-2.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
 
-  /* =========================
-     DIJES
-  ========================== */
+  {
+    id: 23,
+    name: "Anillo 3",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-3.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
 
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 301 + i,
-    name: `Dije ${i + 1}`,
-    category: "Dijes",
+  {
+    id: 24,
+    name: "Anillo 4",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-4.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 25,
+    name: "Anillo 5",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-5.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 26,
+    name: "Anillo 6",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-6.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 27,
+    name: "Anillo 7",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-7.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 28,
+    name: "Anillo 8",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-8.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 29,
+    name: "Anillo 9",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-9.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 30,
+    name: "Anillo 10",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-10.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  // ===== DIJES =====
+
+  {
+    id: 31,
+    name: "Dije 1",
+    cat: "Dijes",
     price: 28000,
-    img: `images/dije-${i + 1}.jpg`,
+    img: "images/dije-1.jpg",
     sizes: ["Único"]
-  })),
+  },
 
+  {
+    id: 32,
+    name: "Dije 2",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-2.jpg",
+    sizes: ["Único"]
+  },
 
-  /* =========================
-     ARITOS
-  ========================== */
+  {
+    id: 33,
+    name: "Dije 3",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-3.jpg",
+    sizes: ["Único"]
+  },
 
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 401 + i,
-    name: `Arito ${i + 1}`,
-    category: "Aritos",
+  {
+    id: 34,
+    name: "Dije 4",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-4.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 35,
+    name: "Dije 5",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-5.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 36,
+    name: "Dije 6",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-6.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 37,
+    name: "Dije 7",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-7.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 38,
+    name: "Dije 8",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-8.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 39,
+    name: "Dije 9",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-9.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 40,
+    name: "Dije 10",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-10.jpg",
+    sizes: ["Único"]
+  },
+
+  // ===== ARITOS =====
+
+  {
+    id: 41,
+    name: "Arito 1",
+    cat: "Aritos",
     price: 30000,
-    img: `images/arito-${i + 1}.jpg`,
+    img: "images/arito-1.jpg",
     sizes: ["Único"]
-  }))
+  },
 
+  {
+    id: 42,
+    name: "Arito 2",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-2.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 43,
+    name: "Arito 3",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-3.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 44,
+    name: "Arito 4",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-4.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 45,
+    name: "Arito 5",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-5.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 46,
+    name: "Arito 6",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-6.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 47,
+    name: "Arito 7",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-7.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 48,
+    name: "Arito 8",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-8.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 49,
+    name: "Arito 9",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-9.jpg",
+    sizes: ["Único"]
+  },
+
+  {
+    id: 50,
+    name: "Arito 10",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-10.jpg",
+    sizes: ["Único"]
+  }
 ];
 
+// ===============================
+// VARIABLES
+// ===============================
 
-let currentCategory = "Todos";
-let cart = [];
-let selectedProduct = null;
-let selectedSize = null;
+let cart =
+  JSON.parse(
+    localStorage.getItem("gf_cart") || "[]"
+  );
 
+let category = "Todos";
+let current = null;
 
-/* =========================
-   ELEMENTOS
-========================= */
+const money = n =>
+  "$" + Number(n).toLocaleString("es-AR");
 
-const grid = document.getElementById("grid");
-const catTitle = document.getElementById("catTitle");
-const sort = document.getElementById("sort");
-
-const modal = document.getElementById("modal");
-const mImg = document.getElementById("mImg");
-const mCat = document.getElementById("mCat");
-const mName = document.getElementById("mName");
-const mPrice = document.getElementById("mPrice");
-const sizes = document.getElementById("sizes");
-
-const cartCount = document.getElementById("cartCount");
-const cartItems = document.getElementById("cartItems");
-const total = document.getElementById("total");
-
-const drawer = document.getElementById("drawer");
-const shade = document.getElementById("shade");
-
-
-/* =========================
-   PRECIO
-========================= */
-
-function money(value) {
-
-  return "$" + value.toLocaleString("es-AR");
-
+function save() {
+  localStorage.setItem(
+    "gf_cart",
+    JSON.stringify(cart)
+  );
 }
 
+// ===============================
+// CATEGORÍAS
+// ===============================
 
-/* =========================
-   PRODUCTOS
-========================= */
+function setCategory(cat) {
 
-function renderProducts() {
-
-  let list = products.filter(product => {
-
-    return currentCategory === "Todos"
-      || product.category === currentCategory;
-
-  });
-
-
-  if (sort.value === "low") {
-
-    list.sort((a, b) => a.price - b.price);
-
-  }
-
-  if (sort.value === "high") {
-
-    list.sort((a, b) => b.price - a.price);
-
-  }
-
-
-  grid.innerHTML = "";
-
-
-  list.forEach(product => {
-
-    const card = document.createElement("article");
-
-    card.className = "product-card";
-
-
-    card.innerHTML = `
-
-      <button
-        class="product-open"
-        data-id="${product.id}"
-      >
-
-        <div class="product-image">
-
-          <img
-            src="${product.img}"
-            alt="${product.name}"
-            loading="lazy"
-            onerror="this.style.display='none'"
-          >
-
-        </div>
-
-        <div class="product-info">
-
-          <p class="mini">
-            ${product.category}
-          </p>
-
-          <h3>
-            ${product.name}
-          </h3>
-
-          <strong>
-            ${money(product.price)}
-          </strong>
-
-        </div>
-
-      </button>
-
-    `;
-
-
-    grid.appendChild(card);
-
-  });
-
-
-  document
-    .querySelectorAll(".product-open")
-    .forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        const id = Number(button.dataset.id);
-
-        openProduct(id);
-
-      });
-
-    });
-
-}
-
-
-/* =========================
-   CATEGORÍAS
-========================= */
-
-function setCategory(category) {
-
-  currentCategory = category;
-
+  category = cat;
 
   document
     .querySelectorAll(".filter")
@@ -306,400 +511,994 @@ function setCategory(category) {
 
       button.classList.toggle(
         "active",
-        button.dataset.cat === category
+        button.dataset.cat === cat
       );
 
     });
 
-
-  if (category === "Todos") {
-
-    catTitle.textContent = "Todos los productos";
-
-  } else {
-
-    catTitle.textContent = category;
-
-  }
-
-
-  renderProducts();
-
+  render();
 
   document
     .getElementById("catalogo")
-    .scrollIntoView({
+    ?.scrollIntoView({
       behavior: "smooth"
     });
-
 }
 
+// ===============================
+// MOSTRAR PRODUCTOS
+// ===============================
+
+function render() {
+
+  const grid =
+    document.getElementById("grid");
+
+  if (!grid) return;
+
+  let list =
+    category === "Todos"
+      ? [...products]
+      : products.filter(
+          product =>
+            product.cat === category
+        );
+
+  const sort =
+    document.getElementById("sort")
+      ?.value || "default";
+
+  if (sort === "low") {
+
+    list.sort(
+      (a, b) =>
+        a.price - b.price
+    );
+
+  }
+
+  if (sort === "high") {
+
+    list.sort(
+      (a, b) =>
+        b.price - a.price
+    );
+
+  }
+
+  const title =
+    document.getElementById(
+      "catTitle"
+    );
+
+  if (title) {
+
+    title.textContent =
+      category === "Todos"
+        ? "Todos los productos"
+        : category;
+
+  }
+
+  grid.innerHTML =
+    list.map(product => `
+
+      <article
+        class="card"
+        onclick="openProduct(${product.id})"
+      >
+
+        <div class="card-img">
+
+          ${
+            product.badge
+              ? `<span class="badge">${product.badge}</span>`
+              : ""
+          }
+
+          <button
+            class="heart"
+            onclick="event.stopPropagation()"
+            aria-label="Favorito"
+          >
+            ♡
+          </button>
+
+          <img
+            src="${product.img}"
+            alt="${product.name}"
+            loading="lazy"
+          >
+
+        </div>
+
+        <div class="card-info">
+
+          <small>
+            ${product.cat}
+          </small>
+
+          <h3>
+            ${product.name}
+          </h3>
+
+          <div class="price">
+            ${money(product.price)}
+          </div>
+
+        </div>
+
+      </article>
+
+    `).join("");
+}
+
+// ===============================
+// FILTROS
+// ===============================
 
 document
   .querySelectorAll(".filter")
   .forEach(button => {
 
-    button.addEventListener("click", () => {
-
-      setCategory(button.dataset.cat);
-
-    });
-
-  });
-
-
-/* =========================
-   ORDENAR
-========================= */
-
-sort.addEventListener("change", renderProducts);
-
-
-/* =========================
-   MODAL
-========================= */
-
-function openProduct(id) {
-
-  selectedProduct =
-    products.find(product => product.id === id);
-
-  if (!selectedProduct) return;
-
-
-  selectedSize =
-    selectedProduct.sizes[0];
-
-
-  mImg.src = selectedProduct.img;
-
-  mImg.alt = selectedProduct.name;
-
-  mCat.textContent = selectedProduct.category;
-
-  mName.textContent = selectedProduct.name;
-
-  mPrice.textContent =
-    money(selectedProduct.price);
-
-
-  sizes.innerHTML = "";
-
-
-  selectedProduct.sizes.forEach(size => {
-
-    const button =
-      document.createElement("button");
-
-    button.textContent = size;
-
-    button.className =
-      "size-option";
-
-
-    if (size === selectedSize) {
-
-      button.classList.add("active");
-
-    }
-
-
-    button.addEventListener("click", () => {
-
-      selectedSize = size;
+    button.onclick = () => {
 
       document
-        .querySelectorAll(".size-option")
-        .forEach(item =>
-          item.classList.remove("active")
+        .querySelectorAll(".filter")
+        .forEach(x =>
+          x.classList.remove("active")
         );
 
       button.classList.add("active");
 
-    });
+      category =
+        button.dataset.cat;
 
+      render();
 
-    sizes.appendChild(button);
+      document
+        .querySelector(".filters")
+        ?.classList.remove("show");
+
+    };
 
   });
 
+document
+  .getElementById("sort")
+  ?.addEventListener(
+    "change",
+    render
+  );
 
-  modal.classList.add("open");
+// ===============================
+// PRODUCTO
+// ===============================
 
+function openProduct(id) {
+
+  current =
+    products.find(
+      product =>
+        product.id === id
+    );
+
+  if (!current) return;
+
+  document.getElementById("mImg").src =
+    current.img;
+
+  document.getElementById("mImg").alt =
+    current.name;
+
+  document.getElementById("mCat").textContent =
+    current.cat;
+
+  document.getElementById("mName").textContent =
+    current.name;
+
+  document.getElementById("mPrice").textContent =
+    money(current.price);
+
+  document.getElementById("sizes").innerHTML =
+    current.sizes
+      .map(
+        (size, index) => `
+
+          <button
+            class="size ${
+              index === 0
+                ? "selected"
+                : ""
+            }"
+            onclick="selectSize(this)"
+          >
+            ${size}
+          </button>
+
+        `
+      )
+      .join("");
+
+  document
+    .getElementById("modal")
+    .classList.add("show");
 }
 
+function selectSize(element) {
+
+  document
+    .querySelectorAll(
+      "#sizes .size"
+    )
+    .forEach(button =>
+      button.classList.remove(
+        "selected"
+      )
+    );
+
+  element.classList.add(
+    "selected"
+  );
+}
+
+// ===============================
+// CERRAR MODAL
+// ===============================
 
 document
   .getElementById("modalClose")
-  .addEventListener("click", () => {
+  ?.addEventListener(
+    "click",
+    () => {
 
-    modal.classList.remove("open");
+      document
+        .getElementById("modal")
+        .classList.remove(
+          "show"
+        );
 
-  });
+    }
+  );
 
+document
+  .getElementById("modal")
+  ?.addEventListener(
+    "click",
+    event => {
 
-modal.addEventListener("click", event => {
+      if (
+        event.target.id ===
+        "modal"
+      ) {
 
-  if (event.target === modal) {
+        event.currentTarget
+          .classList.remove(
+            "show"
+          );
 
-    modal.classList.remove("open");
+      }
 
-  }
+    }
+  );
 
-});
-
-
-/* =========================
-   CARRITO
-========================= */
+// ===============================
+// AGREGAR AL CARRITO
+// ===============================
 
 document
   .getElementById("mAdd")
-  .addEventListener("click", () => {
-
-    if (!selectedProduct) return;
-
-
-    cart.push({
-
-      ...selectedProduct,
-
-      selectedSize
-
-    });
-
-
-    updateCart();
-
-    modal.classList.remove("open");
-
-    openCart();
-
-  });
-
-
-function updateCart() {
-
-  cartItems.innerHTML = "";
-
-
-  let cartTotal = 0;
-
-
-  cart.forEach((item, index) => {
-
-    cartTotal += item.price;
-
-
-    const row =
-      document.createElement("div");
-
-    row.className = "cart-item";
-
-
-    row.innerHTML = `
-
-      <div>
-
-        <strong>
-          ${item.name}
-        </strong>
-
-        <span>
-          ${item.selectedSize}
-        </span>
-
-        <small>
-          ${money(item.price)}
-        </small>
-
-      </div>
-
-      <button
-        class="remove-item"
-        data-index="${index}"
-      >
-        ×
-      </button>
-
-    `;
-
-
-    cartItems.appendChild(row);
-
-  });
-
-
-  total.textContent =
-    money(cartTotal);
-
-
-  cartCount.textContent =
-    cart.length;
-
-
-  document
-    .querySelectorAll(".remove-item")
-    .forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        const index =
-          Number(button.dataset.index);
-
-        cart.splice(index, 1);
-
-        updateCart();
-
-      });
-
-    });
-
-}
-
-
-/* =========================
-   ABRIR / CERRAR CARRITO
-========================= */
-
-function openCart() {
-
-  drawer.classList.add("open");
-
-  shade.classList.add("open");
-
-}
-
-
-function closeCart() {
-
-  drawer.classList.remove("open");
-
-  shade.classList.remove("open");
-
-}
-
-
-document
-  .getElementById("openCart")
-  .addEventListener("click", openCart);
-
-
-document
-  .getElementById("closeCart")
-  .addEventListener("click", closeCart);
-
-
-shade.addEventListener("click", closeCart);
-
-
-/* =========================
-   VACIAR
-========================= */
-
-document
-  .getElementById("empty")
-  .addEventListener("click", () => {
-
-    cart = [];
-
-    updateCart();
-
-  });
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
-document
-  .getElementById("buy")
-  .addEventListener("click", () => {
-
-    if (cart.length === 0) {
-
-      alert("El carrito está vacío.");
-
-      return;
+  ?.addEventListener(
+    "click",
+    () => {
+
+      if (!current) return;
+
+      const selected =
+        document.querySelector(
+          "#sizes .size.selected"
+        );
+
+      const size =
+        selected
+          ? selected.textContent.trim()
+          : "Único";
+
+      add(
+        current.id,
+        size
+      );
+
+      document
+        .getElementById("modal")
+        .classList.remove(
+          "show"
+        );
+
+      openCart();
 
     }
+  );
 
+// ===============================
+// AGREGAR PRODUCTO
+// ===============================
 
-    let message =
-      "Hola GOLDENFIINE! Quiero consultar por:%0A%0A";
+function add(
+  id,
+  size = "Único"
+) {
 
+  const existing =
+    cart.find(
+      item =>
+        item.id === id &&
+        item.size === size
+    );
 
-    cart.forEach(item => {
+  if (existing) {
 
-      message +=
-        `• ${item.name} - ${item.selectedSize} - ${money(item.price)}%0A`;
+    existing.qty++;
 
+  } else {
+
+    cart.push({
+      id: id,
+      size: size,
+      qty: 1
     });
 
+  }
 
-    const cartTotal =
+  save();
+  renderCart();
+}
+
+// ===============================
+// CANTIDAD
+// ===============================
+
+function qty(
+  id,
+  size,
+  amount
+) {
+
+  const item =
+    cart.find(
+      x =>
+        x.id === id &&
+        x.size === size
+    );
+
+  if (!item) return;
+
+  item.qty += amount;
+
+  if (item.qty < 1) {
+
+    cart =
+      cart.filter(
+        x =>
+          !(
+            x.id === id &&
+            x.size === size
+          )
+      );
+
+  }
+
+  save();
+  renderCart();
+}
+
+// ===============================
+// ELIMINAR
+// ===============================
+
+function remove(
+  id,
+  size
+) {
+
+  cart =
+    cart.filter(
+      item =>
+        !(
+          item.id === id &&
+          item.size === size
+        )
+    );
+
+  save();
+  renderCart();
+}
+
+// ===============================
+// CARRITO
+// ===============================
+
+function renderCart() {
+
+  const count =
+    document.getElementById(
+      "cartCount"
+    );
+
+  if (count) {
+
+    count.textContent =
       cart.reduce(
-        (sum, item) => sum + item.price,
+        (total, item) =>
+          total + item.qty,
         0
       );
 
+  }
 
-    message +=
-      `%0ATotal: ${money(cartTotal)}`;
+  const box =
+    document.getElementById(
+      "cartItems"
+    );
 
+  if (!box) return;
+
+  if (!cart.length) {
+
+    box.innerHTML = `
+
+      <div
+        style="
+          text-align:center;
+          color:#999;
+          padding:70px 10px;
+          font-size:12px;
+        "
+      >
+        Tu carrito está vacío.
+      </div>
+
+    `;
+
+  } else {
+
+    box.innerHTML =
+      cart.map(item => {
+
+        const product =
+          products.find(
+            p =>
+              p.id === item.id
+          );
+
+        if (!product) return "";
+
+        return `
+
+          <div class="cart-row">
+
+            <img
+              src="${product.img}"
+              alt="${product.name}"
+            >
+
+            <div>
+
+              <h4>
+                ${product.name}
+              </h4>
+
+              <small>
+
+                ${money(product.price)}
+
+                <br>
+
+                Medida:
+                ${item.size || "Único"}
+
+              </small>
+
+              <div class="qty">
+
+                <button
+                  onclick='qty(
+                    ${product.id},
+                    ${JSON.stringify(
+                      item.size
+                    )},
+                    -1
+                  )'
+                >
+                  −
+                </button>
+
+                <span>
+                  ${item.qty}
+                </span>
+
+                <button
+                  onclick='qty(
+                    ${product.id},
+                    ${JSON.stringify(
+                      item.size
+                    )},
+                    1
+                  )'
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+            <button
+              class="remove"
+              onclick='remove(
+                ${product.id},
+                ${JSON.stringify(
+                  item.size
+                )}
+              )'
+            >
+              ×
+            </button>
+
+          </div>
+
+        `;
+
+      }).join("");
+
+  }
+
+  const total =
+    cart.reduce(
+      (sum, item) => {
+
+        const product =
+          products.find(
+            p =>
+              p.id === item.id
+          );
+
+        return sum +
+          (
+            product
+              ? product.price *
+                item.qty
+              : 0
+          );
+
+      },
+      0
+    );
+
+  const totalElement =
+    document.getElementById(
+      "total"
+    );
+
+  if (totalElement) {
+
+    totalElement.textContent =
+      money(total);
+
+  }
+
+}
+
+// ===============================
+// ABRIR / CERRAR CARRITO
+// ===============================
+
+function openCart() {
+
+  document
+    .getElementById("drawer")
+    ?.classList.add(
+      "open"
+    );
+
+  document
+    .getElementById("shade")
+    ?.classList.add(
+      "show"
+    );
+}
+
+function closeCart() {
+
+  document
+    .getElementById("drawer")
+    ?.classList.remove(
+      "open"
+    );
+
+  document
+    .getElementById("shade")
+    ?.classList.remove(
+      "show"
+    );
+}
+
+document
+  .getElementById("openCart")
+  ?.addEventListener(
+    "click",
+    openCart
+  );
+
+document
+  .getElementById("closeCart")
+  ?.addEventListener(
+    "click",
+    closeCart
+  );
+
+document
+  .getElementById("shade")
+  ?.addEventListener(
+    "click",
+    closeCart
+  );
+
+// ===============================
+// VACIAR CARRITO
+// ===============================
+
+document
+  .getElementById("empty")
+  ?.addEventListener(
+    "click",
+    () => {
+
+      cart = [];
+
+      save();
+
+      renderCart();
+
+    }
+  );
+
+// ===============================
+// PEDIDO
+// ===============================
+
+function buildOrderMessage() {
+
+  if (!cart.length) {
+    return null;
+  }
+
+  let total = 0;
+
+  let message =
+`✨ GOLDENFIINE — NUEVO PEDIDO ✨
+
+Hola! Quiero realizar el siguiente pedido:
+
+`;
+
+  cart.forEach(
+    (item, index) => {
+
+      const product =
+        products.find(
+          p =>
+            p.id === item.id
+        );
+
+      if (!product) return;
+
+      const subtotal =
+        product.price *
+        item.qty;
+
+      total += subtotal;
+
+      message +=
+`${index + 1}. ${product.name}
+   Categoría: ${product.cat}
+   Medida: ${item.size || "Único"}
+   Cantidad: ${item.qty}
+   Precio: ${money(product.price)}
+   Subtotal: ${money(subtotal)}
+
+`;
+
+    }
+  );
+
+  message +=
+`━━━━━━━━━━━━━━━━━━
+TOTAL: ${money(total)}
+
+Quedo a la espera de confirmación. ¡Gracias! 💎`;
+
+  return message;
+}
+
+// ===============================
+// WHATSAPP
+// ===============================
+
+document
+  .getElementById("buy")
+  ?.addEventListener(
+    "click",
+    () => {
+
+      const message =
+        buildOrderMessage();
+
+      if (!message) {
+
+        alert(
+          "Tu carrito está vacío."
+        );
+
+        return;
+      }
+
+      const url =
+        CONFIG.whatsapp +
+        "?text=" +
+        encodeURIComponent(
+          message
+        );
+
+      window.open(
+        url,
+        "_blank"
+      );
+
+    }
+  );
+
+// ===============================
+// INSTAGRAM
+// ===============================
+
+function sendInstagramOrder() {
+
+  const message =
+    buildOrderMessage();
+
+  if (!message) {
+
+    alert(
+      "Tu carrito está vacío."
+    );
+
+    return;
+  }
+
+  const openDM = () => {
 
     window.open(
-      `https://wa.me/5491153894764?text=${message}`,
+      CONFIG.instagramDM,
       "_blank"
     );
 
-  });
+  };
 
+  if (
+    navigator.clipboard &&
+    navigator.clipboard.writeText
+  ) {
 
-/* =========================
-   MENÚ CELULAR
-========================= */
+    navigator.clipboard
+      .writeText(message)
+      .then(openDM)
+      .catch(openDM);
 
-document
-  .getElementById("mobileMenu")
-  .addEventListener("click", () => {
+  } else {
+
+    openDM();
+
+  }
+
+}
+
+// ===============================
+// BOTÓN INSTAGRAM
+// ===============================
+
+function createInstagramButton() {
+
+  const buyButton =
+    document.getElementById(
+      "buy"
+    );
+
+  if (!buyButton) return;
+
+  if (
+    document.getElementById(
+      "instagramOrder"
+    )
+  ) {
+    return;
+  }
+
+  const button =
+    document.createElement(
+      "button"
+    );
+
+  button.id =
+    "instagramOrder";
+
+  button.className =
+    "btn full";
+
+  button.type =
+    "button";
+
+  button.textContent =
+    "PEDIR POR INSTAGRAM";
+
+  button.style.marginTop =
+    "10px";
+
+  button.onclick =
+    sendInstagramOrder;
+
+  buyButton.parentNode.insertBefore(
+    button,
+    buyButton.nextSibling
+  );
+
+}
+
+// ===============================
+// CONTACTO
+// ===============================
+
+const contactBtn =
+  document.getElementById(
+    "contactBtn"
+  );
+
+if (contactBtn) {
+
+  contactBtn.href =
+    CONFIG.whatsapp;
+
+}
+
+const sideInstagram =
+  document.getElementById(
+    "sideInstagram"
+  );
+
+if (sideInstagram) {
+
+  sideInstagram.href =
+    CONFIG.whatsapp;
+
+}
+
+// ===============================
+// MENÚ CELULAR
+// ===============================
+
+const mobileMenu =
+  document.getElementById(
+    "mobileMenu"
+  );
+
+if (mobileMenu) {
+
+  mobileMenu.onclick = () => {
+
+    const nav =
+      document.getElementById(
+        "nav"
+      );
+
+    if (!nav) return;
+
+    nav.style.display =
+      nav.style.display === "flex"
+        ? "none"
+        : "flex";
+
+  };
+
+}
+
+// ===============================
+// FILTRO CELULAR
+// ===============================
+
+const filterMobile =
+  document.getElementById(
+    "filterMobile"
+  );
+
+if (filterMobile) {
+
+  filterMobile.onclick = () => {
 
     document
-      .getElementById("nav")
-      .classList.toggle("open");
+      .querySelector(".filters")
+      ?.classList.add(
+        "show"
+      );
 
-  });
+  };
 
+}
 
-/* =========================
-   FILTROS CELULAR
-========================= */
+const closeFilters =
+  document.getElementById(
+    "closeFilters"
+  );
 
-document
-  .getElementById("filterMobile")
-  .addEventListener("click", () => {
+if (closeFilters) {
 
-    document
-      .getElementById("filters")
-      .classList.add("open");
-
-  });
-
-
-document
-  .getElementById("closeFilters")
-  .addEventListener("click", () => {
+  closeFilters.onclick = () => {
 
     document
-      .getElementById("filters")
-      .classList.remove("open");
+      .querySelector(".filters")
+      ?.classList.remove(
+        "show"
+      );
 
-  });
+  };
 
+}
 
-/* =========================
-   INICIO
-========================= */
+// ===============================
+// COMPATIBILIDAD CARRITO
+// ===============================
 
-renderProducts();
-updateCart();
+cart =
+  cart
+    .map(item => {
+
+      const product =
+        products.find(
+          p =>
+            p.id === item.id
+        );
+
+      return {
+
+        id: item.id,
+
+        qty:
+          item.qty || 1,
+
+        size:
+          item.size ||
+          (
+            product?.sizes?.[0] ||
+            "Único"
+          )
+
+      };
+
+    })
+    .filter(item =>
+      products.some(
+        product =>
+          product.id === item.id
+      )
+    );
+
+save();
+
+// ===============================
+// INICIAR
+// ===============================
+
+render();
+
+renderCart();
+
+createInstagramButton();
