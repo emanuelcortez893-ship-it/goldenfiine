@@ -21,7 +21,7 @@ const products = [
     name: "Rosario enchapado brasileño 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "Rosario enchapado brasileño 18kjpeg",
+    img: "Rosario enchapado brasileño 18k.jpeg",
     sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
