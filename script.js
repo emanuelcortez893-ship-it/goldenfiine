@@ -16,14 +16,14 @@ const products = [
 
   // ===== CADENAS =====
 
-  {
-    id: 1,
-    name: "Rosario enchapado brasileño 18k",
-    cat: "Cadenas",
-    price: 45000,
-    img: "Rosario enchapado brasileño 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
-  },
+ {
+  id: 1,
+  name: "Rosario enchapado brasileño 18k",
+  category: "Cadenas",
+  price: 45000,
+  img: "Rosario enchapado brasileño 18k.jpeg",
+  sizes: ["45 cm", "50 cm", "60 cm"]
+},
 
   {
     id: 2,
