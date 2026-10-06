@@ -1,21 +1,28 @@
+// ===============================
+// GOLDENFIINE
+// ===============================
+
 const CONFIG = {
   instagram: "https://www.instagram.com/joyas_goldenfiine/",
   instagramDM: "https://ig.me/m/joyas_goldenfiine",
   whatsapp: "https://wa.me/5491153894764"
 };
 
+// ===============================
+// PRODUCTOS
+// ===============================
+
 const products = [
-  // =========================
-  // CADENAS
-  // =========================
+
+  // ===== CADENAS =====
 
   {
     id: 1,
     name: "Rosario enchapado brasileño 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "Rosario enchapado brasileño 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    img: "Rosario enchapado brasileño 18kjpeg",
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
@@ -24,7 +31,7 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "cadena espiga con cierre mosqueton.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
@@ -33,7 +40,7 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "cadena paris con cierre marinero.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
@@ -42,7 +49,7 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "cadena singapur fina enchapada 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
@@ -51,7 +58,7 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "cadena triple gourmet con cierre mosqueton.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
@@ -60,7 +67,7 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "combo cadena paris plana enchapada 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
@@ -69,7 +76,7 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "juliana con cierre marinero.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
@@ -78,16 +85,16 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "tourbillon con puntera versace.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
   {
     id: 9,
-    name: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D",
+    name: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D - Oro 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D - Oro 18k - 45cm + 50cm + 60cm.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    img: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D",
+    sizes: ["45 cm + 50 cm + 60 cm"]
   },
 
   {
@@ -95,14 +102,12 @@ const products = [
     name: "Cadena Rolo Gruesa 60cm - Oro 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "cadena-rolo-gruesa-60cm-Oro -18k.jpeg",
+    img: "cadena-rolo-gruesa-60cm-Oro -18k",
     sizes: ["60 cm"]
   },
 
 
-  // =========================
-  // PULSERAS
-  // =========================
+  // ===== PULSERAS =====
 
   {
     id: 11,
@@ -110,7 +115,7 @@ const products = [
     cat: "Pulseras",
     price: 38000,
     img: "images/pulsera-1.jpg",
-    sizes: ["Única"]
+    sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
   {
@@ -119,7 +124,7 @@ const products = [
     cat: "Pulseras",
     price: 38000,
     img: "images/pulsera-2.jpg",
-    sizes: ["Única"]
+    sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
   {
@@ -128,7 +133,7 @@ const products = [
     cat: "Pulseras",
     price: 38000,
     img: "images/pulsera-3.jpg",
-    sizes: ["Única"]
+    sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
   {
@@ -137,7 +142,7 @@ const products = [
     cat: "Pulseras",
     price: 38000,
     img: "images/pulsera-4.jpg",
-    sizes: ["Única"]
+    sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
   {
@@ -146,7 +151,7 @@ const products = [
     cat: "Pulseras",
     price: 38000,
     img: "images/pulsera-5.jpg",
-    sizes: ["Única"]
+    sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
   {
@@ -155,7 +160,7 @@ const products = [
     cat: "Pulseras",
     price: 38000,
     img: "images/pulsera-6.jpg",
-    sizes: ["Única"]
+    sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
   {
@@ -164,7 +169,7 @@ const products = [
     cat: "Pulseras",
     price: 38000,
     img: "images/pulsera-7.jpg",
-    sizes: ["Única"]
+    sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
   {
@@ -173,7 +178,7 @@ const products = [
     cat: "Pulseras",
     price: 38000,
     img: "images/pulsera-8.jpg",
-    sizes: ["Única"]
+    sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
   {
@@ -182,7 +187,7 @@ const products = [
     cat: "Pulseras",
     price: 38000,
     img: "images/pulsera-9.jpg",
-    sizes: ["Única"]
+    sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
   {
@@ -191,13 +196,11 @@ const products = [
     cat: "Pulseras",
     price: 38000,
     img: "images/pulsera-10.jpg",
-    sizes: ["Única"]
+    sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
 
-  // =========================
-  // ANILLOS
-  // =========================
+  // ===== ANILLOS =====
 
   {
     id: 21,
@@ -290,9 +293,7 @@ const products = [
   },
 
 
-  // =========================
-  // DIJES
-  // =========================
+  // ===== DIJES =====
 
   {
     id: 31,
@@ -385,9 +386,7 @@ const products = [
   },
 
 
-  // =========================
-  // ARITOS
-  // =========================
+  // ===== ARITOS =====
 
   {
     id: 41,
@@ -481,510 +480,983 @@ const products = [
 ];
 
 
+// ===============================
+// VARIABLES
+// ===============================
+
 let cart = JSON.parse(localStorage.getItem("gf_cart") || "[]");
 let category = "Todos";
 let current = null;
 
-
-// =========================
-// FUNCIONES GENERALES
-// =========================
-
-function money(value) {
-  return new Intl.NumberFormat("es-AR", {
-    style: "currency",
-    currency: "ARS",
-    maximumFractionDigits: 0
-  }).format(value);
-}
+const money = n => "$" + Number(n).toLocaleString("es-AR");
 
 function save() {
   localStorage.setItem("gf_cart", JSON.stringify(cart));
 }
 
 
-// =========================
+// ===============================
 // CATEGORÍAS
-// =========================
+// ===============================
 
 function setCategory(cat) {
+
   category = cat;
 
-  document.querySelectorAll(".filter").forEach(btn => {
-    btn.classList.toggle(
+  document.querySelectorAll(".filter").forEach(button => {
+    button.classList.toggle(
       "active",
-      btn.dataset.cat === cat
+      button.dataset.cat === cat
     );
   });
 
   render();
 
-  const catalogo = document.querySelector("#catalogo");
-
-  if (catalogo) {
-    catalogo.scrollIntoView({
+  document
+    .getElementById("catalogo")
+    ?.scrollIntoView({
       behavior: "smooth"
     });
-  }
 }
 
 
-// =========================
-// PRODUCTOS
-// =========================
+// ===============================
+// MOSTRAR PRODUCTOS
+// ===============================
 
 function render() {
-  const grid = document.querySelector("#grid");
+
+  const grid = document.getElementById("grid");
 
   if (!grid) return;
 
-  let list = products.filter(product => {
-    return category === "Todos" || product.cat === category;
-  });
+  let list =
+    category === "Todos"
+      ? [...products]
+      : products.filter(
+          product => product.cat === category
+        );
 
-  const sort = document.querySelector("#sort");
+  const sort =
+    document.getElementById("sort")?.value || "default";
 
-  if (sort) {
-    if (sort.value === "low") {
-      list.sort((a, b) => a.price - b.price);
-    }
-
-    if (sort.value === "high") {
-      list.sort((a, b) => b.price - a.price);
-    }
+  if (sort === "low") {
+    list.sort(
+      (a, b) => a.price - b.price
+    );
   }
 
-  const title = document.querySelector("#catTitle");
+  if (sort === "high") {
+    list.sort(
+      (a, b) => b.price - a.price
+    );
+  }
+
+  const title =
+    document.getElementById("catTitle");
 
   if (title) {
-    title.textContent = category;
+    title.textContent =
+      category === "Todos"
+        ? "Todos los productos"
+        : category;
   }
 
   grid.innerHTML = list.map(product => `
-    <article class="card" onclick="openProduct(${product.id})">
+
+    <article
+      class="card"
+      onclick="openProduct(${product.id})"
+    >
 
       <div class="card-img">
+
+        ${
+          product.badge
+            ? `<span class="badge">${product.badge}</span>`
+            : ""
+        }
+
+        <button
+          class="heart"
+          onclick="event.stopPropagation()"
+          aria-label="Favorito"
+        >
+          ♡
+        </button>
+
         <img
           src="${product.img}"
           alt="${product.name}"
           loading="lazy"
           onerror="this.style.display='none'"
         >
+
       </div>
 
       <div class="card-info">
-        <div class="card-cat">${product.cat}</div>
 
-        <h3>${product.name}</h3>
+        <small>
+          ${product.cat}
+        </small>
 
-        <div class="card-bottom">
-          <strong>${money(product.price)}</strong>
-          <span>Ver producto</span>
+        <h3>
+          ${product.name}
+        </h3>
+
+        <div class="price">
+          ${money(product.price)}
         </div>
+
       </div>
 
     </article>
+
   `).join("");
 }
 
 
-// =========================
+// ===============================
 // FILTROS
-// =========================
+// ===============================
 
-document.querySelectorAll(".filter").forEach(btn => {
-  btn.addEventListener("click", () => {
-    setCategory(btn.dataset.cat);
+document
+  .querySelectorAll(".filter")
+  .forEach(button => {
+
+    button.onclick = () => {
+
+      document
+        .querySelectorAll(".filter")
+        .forEach(x =>
+          x.classList.remove("active")
+        );
+
+      button.classList.add("active");
+
+      category =
+        button.dataset.cat;
+
+      render();
+
+      document
+        .querySelector(".filters")
+        ?.classList.remove("show");
+    };
+
   });
-});
 
-const sortSelect = document.querySelector("#sort");
 
-if (sortSelect) {
-  sortSelect.addEventListener("change", render);
+const sortElement =
+  document.getElementById("sort");
+
+if (sortElement) {
+  sortElement.onchange = render;
 }
 
 
-// =========================
-// MODAL PRODUCTO
-// =========================
+// ===============================
+// PRODUCTO / MODAL
+// ===============================
 
 function openProduct(id) {
-  current = products.find(product => product.id === id);
+
+  current =
+    products.find(
+      product => product.id === id
+    );
 
   if (!current) return;
 
-  const mImg = document.querySelector("#mImg");
-  const mCat = document.querySelector("#mCat");
-  const mName = document.querySelector("#mName");
-  const mPrice = document.querySelector("#mPrice");
-  const sizes = document.querySelector("#sizes");
-  const modal = document.querySelector("#modal");
+  document.getElementById("mImg").src =
+    current.img;
 
-  if (mImg) {
-    mImg.src = current.img;
-    mImg.alt = current.name;
-  }
+  document.getElementById("mImg").alt =
+    current.name;
 
-  if (mCat) {
-    mCat.textContent = current.cat;
-  }
+  document.getElementById("mCat").textContent =
+    current.cat;
 
-  if (mName) {
-    mName.textContent = current.name;
-  }
+  document.getElementById("mName").textContent =
+    current.name;
 
-  if (mPrice) {
-    mPrice.textContent = money(current.price);
-  }
+  document.getElementById("mPrice").textContent =
+    money(current.price);
 
-  if (sizes) {
-    sizes.innerHTML = current.sizes.map((size, index) => `
-      <button
-        class="size ${index === 0 ? "selected" : ""}"
-        onclick="selectSize(this, '${size}')"
-      >
-        ${size}
-      </button>
-    `).join("");
+  document.getElementById("sizes").innerHTML =
+    current.sizes.map(
+      (size, index) => `
 
-    current.selectedSize = current.sizes[0];
-  }
+        <button
+          class="size ${index === 0 ? "selected" : ""}"
+          onclick="selectSize(this)"
+        >
+          ${size}
+        </button>
 
-  if (modal) {
-    modal.classList.add("open");
-  }
-}
+      `
+    ).join("");
 
-function selectSize(button, size) {
-  document.querySelectorAll(".size").forEach(btn => {
-    btn.classList.remove("selected");
-  });
-
-  button.classList.add("selected");
-
-  if (current) {
-    current.selectedSize = size;
-  }
+  document
+    .getElementById("modal")
+    .classList.add("show");
 }
 
 
-// =========================
+function selectSize(element) {
+
+  document
+    .querySelectorAll("#sizes .size")
+    .forEach(button =>
+      button.classList.remove("selected")
+    );
+
+  element.classList.add("selected");
+}
+
+
+// ===============================
 // CERRAR MODAL
-// =========================
+// ===============================
 
-const modalClose = document.querySelector("#modalClose");
-
-if (modalClose) {
-  modalClose.addEventListener("click", () => {
-    document.querySelector("#modal")?.classList.remove("open");
-  });
-}
-
-const modal = document.querySelector("#modal");
-
-if (modal) {
-  modal.addEventListener("click", event => {
-    if (event.target === modal) {
-      modal.classList.remove("open");
+document
+  .getElementById("modalClose")
+  ?.addEventListener(
+    "click",
+    () => {
+      document
+        .getElementById("modal")
+        .classList.remove("show");
     }
-  });
-}
+  );
 
 
-// =========================
+document
+  .getElementById("modal")
+  ?.addEventListener(
+    "click",
+    event => {
+
+      if (event.target.id === "modal") {
+
+        event.currentTarget
+          .classList.remove("show");
+
+      }
+
+    }
+  );
+
+
+// ===============================
 // AGREGAR AL CARRITO
-// =========================
+// ===============================
 
-const mAdd = document.querySelector("#mAdd");
+document
+  .getElementById("mAdd")
+  ?.addEventListener(
+    "click",
+    () => {
 
-if (mAdd) {
-  mAdd.addEventListener("click", () => {
+      if (!current) return;
 
-    if (!current) return;
+      const selected =
+        document.querySelector(
+          "#sizes .size.selected"
+        );
 
-    const size = current.selectedSize || current.sizes[0];
+      const size =
+        selected
+          ? selected.textContent.trim()
+          : "Único";
 
-    const existing = cart.find(item => {
-      return item.id === current.id && item.size === size;
+      add(
+        current.id,
+        size
+      );
+
+      document
+        .getElementById("modal")
+        .classList.remove("show");
+
+      openCart();
+
+    }
+  );
+
+
+// ===============================
+// AGREGAR PRODUCTO
+// ===============================
+
+function add(id, size = "Único") {
+
+  const existing =
+    cart.find(
+      item =>
+        item.id === id &&
+        item.size === size
+    );
+
+  if (existing) {
+
+    existing.qty++;
+
+  } else {
+
+    cart.push({
+      id: id,
+      size: size,
+      qty: 1
     });
 
-    if (existing) {
-      existing.qty++;
-    } else {
-      cart.push({
-        id: current.id,
-        name: current.name,
-        price: current.price,
-        img: current.img,
-        size: size,
-        qty: 1
-      });
-    }
-
-    save();
-    renderCart();
-
-    document.querySelector("#modal")?.classList.remove("open");
-
-    openCart();
-  });
-}
-
-
-// =========================
-// CARRITO
-// =========================
-
-function addQty(index) {
-  if (!cart[index]) return;
-
-  cart[index].qty++;
-
-  save();
-  renderCart();
-}
-
-function removeQty(index) {
-  if (!cart[index]) return;
-
-  cart[index].qty--;
-
-  if (cart[index].qty <= 0) {
-    cart.splice(index, 1);
   }
 
   save();
   renderCart();
 }
 
-function deleteItem(index) {
-  if (!cart[index]) return;
 
-  cart.splice(index, 1);
+// ===============================
+// CAMBIAR CANTIDAD
+// ===============================
+
+function qty(id, size, amount) {
+
+  const item =
+    cart.find(
+      x =>
+        x.id === id &&
+        x.size === size
+    );
+
+  if (!item) return;
+
+  item.qty += amount;
+
+  if (item.qty < 1) {
+
+    cart =
+      cart.filter(
+        x =>
+          !(
+            x.id === id &&
+            x.size === size
+          )
+      );
+
+  }
 
   save();
   renderCart();
 }
 
+
+// ===============================
+// ELIMINAR
+// ===============================
+
+function remove(id, size) {
+
+  cart =
+    cart.filter(
+      item =>
+        !(
+          item.id === id &&
+          item.size === size
+        )
+    );
+
+  save();
+  renderCart();
+}
+
+
+// ===============================
+// MOSTRAR CARRITO
+// ===============================
 
 function renderCart() {
-  const cartItems = document.querySelector("#cartItems");
-  const cartCount = document.querySelector("#cartCount");
-  const cartTotal = document.querySelector("#cartTotal");
 
-  const totalQty = cart.reduce((sum, item) => {
-    return sum + item.qty;
-  }, 0);
+  const count =
+    document.getElementById("cartCount");
 
-  const total = cart.reduce((sum, item) => {
-    return sum + item.price * item.qty;
-  }, 0);
+  if (count) {
 
-  if (cartCount) {
-    cartCount.textContent = totalQty;
+    count.textContent =
+      cart.reduce(
+        (total, item) =>
+          total + item.qty,
+        0
+      );
+
   }
 
-  if (cartTotal) {
-    cartTotal.textContent = money(total);
-  }
+  const box =
+    document.getElementById("cartItems");
 
-  if (!cartItems) return;
+  if (!box) return;
 
-  if (cart.length === 0) {
-    cartItems.innerHTML = `
-      <div class="empty-cart">
+  if (!cart.length) {
+
+    box.innerHTML = `
+
+      <div
+        style="
+          text-align:center;
+          color:#999;
+          padding:70px 10px;
+          font-size:12px;
+        "
+      >
         Tu carrito está vacío.
       </div>
+
     `;
 
-    return;
+  } else {
+
+    box.innerHTML =
+      cart.map(item => {
+
+        const product =
+          products.find(
+            p => p.id === item.id
+          );
+
+        if (!product) return "";
+
+        return `
+
+          <div class="cart-row">
+
+            <img
+              src="${product.img}"
+              alt="${product.name}"
+            >
+
+            <div>
+
+              <h4>
+                ${product.name}
+              </h4>
+
+              <small>
+
+                ${money(product.price)}
+
+                <br>
+
+                Medida:
+                ${item.size || "Único"}
+
+              </small>
+
+              <div class="qty">
+
+                <button
+                  onclick='qty(
+                    ${product.id},
+                    ${JSON.stringify(item.size)},
+                    -1
+                  )'
+                >
+                  −
+                </button>
+
+                <span>
+                  ${item.qty}
+                </span>
+
+                <button
+                  onclick='qty(
+                    ${product.id},
+                    ${JSON.stringify(item.size)},
+                    1
+                  )'
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+            <button
+              class="remove"
+              onclick='remove(
+                ${product.id},
+                ${JSON.stringify(item.size)}
+              )'
+            >
+              ×
+            </button>
+
+          </div>
+
+        `;
+
+      }).join("");
+
   }
 
-  cartItems.innerHTML = cart.map((item, index) => `
-    <div class="cart-item">
 
-      <img
-        src="${item.img}"
-        alt="${item.name}"
-      >
+  const total =
+    cart.reduce(
+      (sum, item) => {
 
-      <div class="cart-item-info">
+        const product =
+          products.find(
+            p => p.id === item.id
+          );
 
-        <strong>${item.name}</strong>
+        return sum +
+          (
+            product
+              ? product.price * item.qty
+              : 0
+          );
 
-        <span>${item.size}</span>
+      },
+      0
+    );
 
-        <b>${money(item.price * item.qty)}</b>
 
-        <div class="qty">
+  const totalElement =
+    document.getElementById("total");
 
-          <button onclick="removeQty(${index})">
-            −
-          </button>
+  if (totalElement) {
 
-          <span>${item.qty}</span>
+    totalElement.textContent =
+      money(total);
 
-          <button onclick="addQty(${index})">
-            +
-          </button>
-
-          <button
-            class="delete"
-            onclick="deleteItem(${index})"
-          >
-            ×
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-  `).join("");
+  }
 }
 
 
-// =========================
-// ABRIR / CERRAR CARRITO
-// =========================
+// ===============================
+// ABRIR CARRITO
+// ===============================
 
 function openCart() {
-  document.querySelector("#drawer")?.classList.add("open");
-  document.querySelector("#shade")?.classList.add("open");
+
+  document
+    .getElementById("drawer")
+    ?.classList.add("open");
+
+  document
+    .getElementById("shade")
+    ?.classList.add("show");
 }
+
+
+// ===============================
+// CERRAR CARRITO
+// ===============================
 
 function closeCart() {
-  document.querySelector("#drawer")?.classList.remove("open");
-  document.querySelector("#shade")?.classList.remove("open");
+
+  document
+    .getElementById("drawer")
+    ?.classList.remove("open");
+
+  document
+    .getElementById("shade")
+    ?.classList.remove("show");
 }
 
-document.querySelector("#cartBtn")?.addEventListener("click", openCart);
 
-document.querySelector("#cartClose")?.addEventListener("click", closeCart);
+document
+  .getElementById("openCart")
+  ?.addEventListener(
+    "click",
+    openCart
+  );
 
-document.querySelector("#shade")?.addEventListener("click", closeCart);
+
+document
+  .getElementById("closeCart")
+  ?.addEventListener(
+    "click",
+    closeCart
+  );
 
 
-// =========================
-// WHATSAPP
-// =========================
+document
+  .getElementById("shade")
+  ?.addEventListener(
+    "click",
+    closeCart
+  );
 
-function orderMessage() {
 
-  if (cart.length === 0) {
-    return "Hola GOLDENFIINE, quiero consultar por algunos productos.";
+// ===============================
+// VACIAR CARRITO
+// ===============================
+
+document
+  .getElementById("empty")
+  ?.addEventListener(
+    "click",
+    () => {
+
+      cart = [];
+
+      save();
+
+      renderCart();
+
+    }
+  );
+
+
+// ===============================
+// ARMAR PEDIDO
+// ===============================
+
+function buildOrderMessage() {
+
+  if (!cart.length) {
+    return null;
   }
 
-  let message = "Hola GOLDENFIINE 👋%0A%0A";
-  message += "Quiero realizar este pedido:%0A%0A";
+  let total = 0;
 
-  cart.forEach(item => {
-    message += `• ${item.name}%0A`;
-    message += `  Tamaño: ${item.size}%0A`;
-    message += `  Cantidad: ${item.qty}%0A`;
-    message += `  Precio: ${money(item.price * item.qty)}%0A%0A`;
-  });
+  let message =
 
-  const total = cart.reduce((sum, item) => {
-    return sum + item.price * item.qty;
-  }, 0);
+`✨ GOLDENFIINE — NUEVO PEDIDO ✨
 
-  message += `Total: ${money(total)}%0A%0A`;
-  message += "Gracias.";
+Hola! Quiero realizar el siguiente pedido:
+
+`;
+
+
+  cart.forEach(
+    (item, index) => {
+
+      const product =
+        products.find(
+          p => p.id === item.id
+        );
+
+      if (!product) return;
+
+      const subtotal =
+        product.price * item.qty;
+
+      total += subtotal;
+
+      message +=
+
+`${index + 1}. ${product.name}
+   Categoría: ${product.cat}
+   Medida: ${item.size || "Único"}
+   Cantidad: ${item.qty}
+   Precio: ${money(product.price)}
+   Subtotal: ${money(subtotal)}
+
+`;
+
+    }
+  );
+
+
+  message +=
+
+`━━━━━━━━━━━━━━━━━━
+TOTAL: ${money(total)}
+
+Quedo a la espera de confirmación. ¡Gracias! 💎`;
+
 
   return message;
 }
 
-document.querySelector("#orderBtn")?.addEventListener("click", () => {
 
-  const url = `${CONFIG.whatsapp}?text=${orderMessage()}`;
+// ===============================
+// WHATSAPP
+// ===============================
 
-  window.open(url, "_blank");
-});
+document
+  .getElementById("buy")
+  ?.addEventListener(
+    "click",
+    () => {
+
+      const message =
+        buildOrderMessage();
+
+      if (!message) {
+
+        alert(
+          "Tu carrito está vacío."
+        );
+
+        return;
+      }
+
+      const url =
+        CONFIG.whatsapp +
+        "?text=" +
+        encodeURIComponent(message);
+
+      window.open(
+        url,
+        "_blank"
+      );
+
+    }
+  );
 
 
-// =========================
+// ===============================
 // INSTAGRAM
-// =========================
+// ===============================
+
+function sendInstagramOrder() {
+
+  const message =
+    buildOrderMessage();
+
+  if (!message) {
+
+    alert(
+      "Tu carrito está vacío."
+    );
+
+    return;
+  }
+
+  const openDM = () => {
+
+    window.open(
+      CONFIG.instagramDM,
+      "_blank"
+    );
+
+  };
+
+
+  if (
+    navigator.clipboard &&
+    navigator.clipboard.writeText
+  ) {
+
+    navigator.clipboard
+      .writeText(message)
+      .then(openDM)
+      .catch(openDM);
+
+  } else {
+
+    openDM();
+
+  }
+
+}
+
+
+// ===============================
+// BOTÓN INSTAGRAM
+// ===============================
 
 function createInstagramButton() {
 
-  const instagramButton = document.querySelector("#instagramBtn");
+  const buyButton =
+    document.getElementById("buy");
 
-  if (!instagramButton) return;
+  if (!buyButton) return;
 
-  instagramButton.href = CONFIG.instagramDM;
-  instagramButton.target = "_blank";
-  instagramButton.rel = "noopener";
+  if (
+    document.getElementById(
+      "instagramOrder"
+    )
+  ) {
+    return;
+  }
+
+  const button =
+    document.createElement("button");
+
+  button.id =
+    "instagramOrder";
+
+  button.className =
+    "btn full";
+
+  button.type =
+    "button";
+
+  button.textContent =
+    "PEDIR POR INSTAGRAM";
+
+  button.style.marginTop =
+    "10px";
+
+  button.onclick =
+    sendInstagramOrder;
+
+  buyButton.parentNode.insertBefore(
+    button,
+    buyButton.nextSibling
+  );
+
 }
 
 
-// =========================
+// ===============================
 // CONTACTO
-// =========================
+// ===============================
 
-document.querySelector("#contactBtn")?.addEventListener("click", () => {
-  window.open(CONFIG.whatsapp, "_blank");
-});
+const contactBtn =
+  document.getElementById(
+    "contactBtn"
+  );
 
-document.querySelector("#sideInstagram")?.addEventListener("click", () => {
-  window.open(CONFIG.instagram, "_blank");
-});
+if (contactBtn) {
 
-
-// =========================
-// MENÚ MOBILE
-// =========================
-
-const mobileMenu = document.querySelector("#mobileMenu");
-const mobileNav = document.querySelector("#mobileNav");
-
-if (mobileMenu && mobileNav) {
-
-  mobileMenu.addEventListener("click", () => {
-    mobileNav.classList.toggle("open");
-  });
+  contactBtn.href =
+    CONFIG.whatsapp;
 
 }
 
 
-// =========================
-// FILTRO MOBILE
-// =========================
+// ===============================
+// INSTAGRAM LATERAL
+// ===============================
 
-document.querySelector("#mobileFilter")?.addEventListener("change", event => {
+const sideInstagram =
+  document.getElementById(
+    "sideInstagram"
+  );
 
-  setCategory(event.target.value);
+if (sideInstagram) {
 
-});
+  sideInstagram.href =
+    CONFIG.instagram;
+
+}
 
 
-// =========================
+// ===============================
+// MENÚ CELULAR
+// ===============================
+
+const mobileMenu =
+  document.getElementById(
+    "mobileMenu"
+  );
+
+
+if (mobileMenu) {
+
+  mobileMenu.onclick = () => {
+
+    const nav =
+      document.getElementById(
+        "nav"
+      );
+
+    if (!nav) return;
+
+    nav.style.display =
+      nav.style.display === "flex"
+        ? "none"
+        : "flex";
+
+  };
+
+}
+
+
+// ===============================
+// FILTRO CELULAR
+// ===============================
+
+const filterMobile =
+  document.getElementById(
+    "filterMobile"
+  );
+
+
+if (filterMobile) {
+
+  filterMobile.onclick = () => {
+
+    document
+      .querySelector(".filters")
+      ?.classList.add("show");
+
+  };
+
+}
+
+
+const closeFilters =
+  document.getElementById(
+    "closeFilters"
+  );
+
+
+if (closeFilters) {
+
+  closeFilters.onclick = () => {
+
+    document
+      .querySelector(".filters")
+      ?.classList.remove("show");
+
+  };
+
+}
+
+
+// ===============================
 // COMPATIBILIDAD CARRITO
-// =========================
+// ===============================
 
-cart = cart.map(item => {
+cart = cart
+  .map(item => {
 
-  if (!item.qty) {
-    item.qty = 1;
-  }
+    const product =
+      products.find(
+        p => p.id === item.id
+      );
 
-  if (!item.size) {
-    item.size = "Único";
-  }
+    return {
 
-  return item;
+      id: item.id,
 
-});
+      qty:
+        item.qty || 1,
+
+      size:
+        item.size ||
+        (
+          product?.sizes?.[0] ||
+          "Único"
+        )
+
+    };
+
+  })
+  .filter(item =>
+    products.some(
+      product =>
+        product.id === item.id
+    )
+  );
+
 
 save();
 
 
-// =========================
+// ===============================
 // INICIAR
-// =========================
+// ===============================
 
 render();
+
 renderCart();
+
 createInstagramButton();
