@@ -1,917 +1,643 @@
-// ===============================
-// GOLDENFIINE
-// ===============================
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-const CONFIG = {
-  instagram: "https://www.instagram.com/joyas_goldenfiine/",
-  instagramDM: "https://ig.me/m/joyas_goldenfiine",
-  whatsapp: "https://wa.me/5491153894764"
-};
+  <title>GOLDENFIINE | Joyería</title>
 
-// ===============================
-// PRODUCTOS
-// ===============================
+  <meta
+    name="description"
+    content="GOLDENFIINE - Joyería. Cadenas, pulseras, anillos, dijes y aritos."
+  >
 
-const products = [
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  // ===== CADENAS =====
+<body>
 
-  {
-    id: 1,
-    name: "Rosario enchapado brasileño 18k",
-    cat: "Cadenas",
-    price: 45000,
-    img: "Rosario enchapado brasileño18k.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
-  },
+<header class="header">
 
-  {
-    id: 2,
-    name: "Cadena espiga con cierre mosquetón",
-    cat: "Cadenas",
-    price: 45000,
-    img: "cadena espiga con cierre mosqueton.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
-  },
+  <!-- MENÚ CELULAR -->
+  <button
+    class="icon mobile-menu"
+    id="mobileMenu"
+    aria-label="Abrir menú"
+  >
+    ☰
+  </button>
 
-  {
-    id: 3,
-    name: "Cadena París con cierre marinero",
-    cat: "Cadenas",
-    price: 45000,
-    img: "cadena paris con cierre marinero.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
-  },
 
-  {
-    id: 4,
-    name: "Cadena Singapur fina enchapada 18k",
-    cat: "Cadenas",
-    price: 45000,
-    img: "cadena singapur fina enchapada 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
-  },
+  <!-- LOGO -->
+  <a
+    href="#inicio"
+    class="logo-text"
+  >
+    GOLDENFIINE
+  </a>
 
-  {
-    id: 5,
-    name: "Cadena triple gourmet con cierre mosquetón",
-    cat: "Cadenas",
-    price: 45000,
-    img: "cadena triple gourmet con cierre mosqueton.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
-  },
 
-  {
-    id: 6,
-    name: "Combo cadena París plana enchapada 18k",
-    cat: "Cadenas",
-    price: 45000,
-    img: "combo cadena paris plana enchapada 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
-  },
+  <!-- NAVEGACIÓN -->
+  <nav id="nav">
 
-  {
-    id: 7,
-    name: "Juliana con cierre marinero",
-    cat: "Cadenas",
-    price: 45000,
-    img: "juliana con cierre marinero.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
-  },
+    <a href="#inicio">
+      Inicio
+    </a>
 
-  {
-    id: 8,
-    name: "Tourbillon con puntera Versace",
-    cat: "Cadenas",
-    price: 45000,
-    img: "tourbillon con puntera versace.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
-  },
+    <a
+      href="#catalogo"
+      onclick="setCategory('Cadenas'); return false;"
+    >
+      Cadenas
+    </a>
 
-  {
-    id: 9,
-    name: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D - Oro 18k",
-    cat: "Cadenas",
-    price: 45000,
-    img: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D - Oro 18k - 45cm + 50cm + 60cm.jpeg",
-    sizes: ["45 cm + 50 cm + 60 cm"]
-  },
+    <a
+      href="#catalogo"
+      onclick="setCategory('Pulseras'); return false;"
+    >
+      Pulseras
+    </a>
 
-  {
-    id: 10,
-    name: "Cadena Rolo Gruesa 60cm - Oro 18k",
-    cat: "Cadenas",
-    price: 45000,
-    img: "cadena-rolo-gruesa-60cm-Oro -18k.jpeg",
-    sizes: ["60 cm"]
-  },
+    <a
+      href="#catalogo"
+      onclick="setCategory('Anillos'); return false;"
+    >
+      Anillos
+    </a>
 
-  // ===== PULSERAS =====
+    <a
+      href="#catalogo"
+      onclick="setCategory('Dijes'); return false;"
+    >
+      Dijes
+    </a>
 
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 11 + i,
-    name: `Pulsera ${i + 1}`,
-    cat: "Pulseras",
-    price: 38000,
-    img: `images/pulsera-${i + 1}.jpg`,
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  })),
+    <a
+      href="#catalogo"
+      onclick="setCategory('Aritos'); return false;"
+    >
+      Aritos
+    </a>
 
-  // ===== ANILLOS =====
+    <a href="#contacto">
+      Contacto
+    </a>
 
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 21 + i,
-    name: `Anillo ${i + 1}`,
-    cat: "Anillos",
-    price: 35000,
-    img: `images/anillo-${i + 1}.jpg`,
-    sizes: ["16", "18", "20", "22"]
-  })),
+  </nav>
 
-  // ===== DIJES =====
 
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 31 + i,
-    name: `Dije ${i + 1}`,
-    cat: "Dijes",
-    price: 28000,
-    img: `images/dije-${i + 1}.jpg`,
-    sizes: ["Único"]
-  })),
+  <!-- CARRITO -->
+  <button
+    class="icon cart-open"
+    id="openCart"
+    aria-label="Abrir carrito"
+  >
+    🛒
 
-  // ===== ARITOS =====
+    <b id="cartCount">
+      0
+    </b>
 
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: 41 + i,
-    name: `Arito ${i + 1}`,
-    cat: "Aritos",
-    price: 30000,
-    img: `images/arito-${i + 1}.jpg`,
-    sizes: ["Único"]
-  }))
-];
+  </button>
 
-// ===============================
-// VARIABLES
-// ===============================
+</header>
 
-let cart = JSON.parse(localStorage.getItem("gf_cart") || "[]");
-let category = "Todos";
-let current = null;
 
-const money = n =>
-  "$" + Number(n).toLocaleString("es-AR");
+<main>
 
-// ===============================
-// GUARDAR CARRITO
-// ===============================
 
-function save() {
-  localStorage.setItem("gf_cart", JSON.stringify(cart));
-}
+  <!-- =========================
+       INICIO
+  ========================== -->
 
-// ===============================
-// CATEGORÍAS
-// ===============================
+  <section
+    class="hero"
+    id="inicio"
+  >
 
-function setCategory(cat) {
-  category = cat;
+    <div class="hero-content">
 
-  document.querySelectorAll("[data-cat]").forEach(button => {
-    button.classList.toggle(
-      "active",
-      button.dataset.cat === cat
-    );
-  });
+      <p class="mini">
+        GOLDENFIINE
+      </p>
 
-  const title = document.querySelector("#catTitle");
+      <h1>
+        JOYAS QUE<br>
+        DEFINEN TU ESTILO
+      </h1>
 
-  if (title) {
-    title.textContent =
-      cat === "Todos"
-        ? "Todos los productos"
-        : cat;
-  }
+      <p>
+        Descubrí nuestra selección de joyería
+        diseñada para destacar.
+      </p>
 
-  render();
+      <a
+        href="#catalogo"
+        class="btn"
+      >
+        VER COLECCIÓN
+      </a>
 
-  const catalogo = document.querySelector("#catalogo");
+    </div>
 
-  if (catalogo) {
-    catalogo.scrollIntoView({
-      behavior: "smooth"
-    });
-  }
-}
+  </section>
 
-// ===============================
-// MOSTRAR PRODUCTOS
-// ===============================
 
-function render() {
+  <!-- =========================
+       INFORMACIÓN
+  ========================== -->
 
-  const grid = document.querySelector("#grid");
+  <section class="trust">
 
-  if (!grid) return;
+    <div>
+      <strong>
+        ENVÍOS
+      </strong>
 
-  let list =
-    category === "Todos"
-      ? products
-      : products.filter(
-          product => product.cat === category
-        );
+      <span>
+        A TODO EL PAÍS
+      </span>
+    </div>
 
-  // Ordenamiento
-  const sort = document.querySelector("#sort");
 
-  if (sort) {
+    <div>
+      <strong>
+        CALIDAD
+      </strong>
 
-    if (sort.value === "low") {
-      list.sort((a, b) => a.price - b.price);
-    }
+      <span>
+        PRODUCTOS SELECCIONADOS
+      </span>
+    </div>
 
-    if (sort.value === "high") {
-      list.sort((a, b) => b.price - a.price);
-    }
-  }
 
-  grid.innerHTML = list.map(product => `
+    <div>
+      <strong>
+        CONSULTAS
+      </strong>
 
-    <article
-      class="product-card"
-      onclick="openProduct(${product.id})"
+      <span>
+        POR WHATSAPP
+      </span>
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CATÁLOGO
+  ========================== -->
+
+  <section
+    class="shop"
+    id="catalogo"
+  >
+
+
+    <!-- FILTROS -->
+
+    <aside
+      class="filters"
+      id="filters"
     >
 
-      <div class="product-image">
+      <div class="filter-head">
 
-        <img
-          src="${product.img}"
-          alt="${product.name}"
-          onerror="this.style.display='none'"
+        <h2>
+          CATEGORÍAS
+        </h2>
+
+        <button
+          id="closeFilters"
+          class="filter-close"
+          aria-label="Cerrar filtros"
         >
+          ×
+        </button>
 
       </div>
 
-      <div class="product-info">
-
-        <span class="product-category">
-          ${product.cat}
-        </span>
-
-        <h3>
-          ${product.name}
-        </h3>
-
-        <strong>
-          ${money(product.price)}
-        </strong>
-
-      </div>
-
-    </article>
-
-  `).join("");
-}
-
-// ===============================
-// ABRIR PRODUCTO
-// ===============================
-
-function openProduct(id) {
-
-  current = products.find(
-    product => product.id === id
-  );
-
-  if (!current) return;
-
-  const modal = document.querySelector("#modal");
-
-  if (!modal) return;
-
-  const image = document.querySelector("#mImg");
-  const cat = document.querySelector("#mCat");
-  const name = document.querySelector("#mName");
-  const price = document.querySelector("#mPrice");
-  const sizes = document.querySelector("#sizes");
-
-  if (image) {
-    image.src = current.img;
-    image.alt = current.name;
-  }
-
-  if (cat) {
-    cat.textContent = current.cat;
-  }
-
-  if (name) {
-    name.textContent = current.name;
-  }
-
-  if (price) {
-    price.textContent = money(current.price);
-  }
-
-  if (sizes) {
-
-    sizes.innerHTML = current.sizes.map(size => `
 
       <button
-        class="size-btn"
-        onclick="selectSize('${size}', this)"
+        class="filter active"
+        data-cat="Todos"
       >
-        ${size}
+        Todos
       </button>
 
-    `).join("");
 
-  }
+      <button
+        class="filter"
+        data-cat="Cadenas"
+      >
+        Cadenas
+      </button>
 
-  modal.classList.add("active");
-}
 
-// ===============================
-// SELECCIONAR TALLE
-// ===============================
+      <button
+        class="filter"
+        data-cat="Pulseras"
+      >
+        Pulseras
+      </button>
 
-function selectSize(size, button) {
 
-  document
-    .querySelectorAll(".size-btn")
-    .forEach(btn =>
-      btn.classList.remove("active")
-    );
+      <button
+        class="filter"
+        data-cat="Anillos"
+      >
+        Anillos
+      </button>
 
-  button.classList.add("active");
 
-  if (current) {
-    current.selectedSize = size;
-  }
-}
+      <button
+        class="filter"
+        data-cat="Dijes"
+      >
+        Dijes
+      </button>
 
-// ===============================
-// CERRAR MODAL
-// ===============================
 
-function closeProduct() {
+      <button
+        class="filter"
+        data-cat="Aritos"
+      >
+        Aritos
+      </button>
 
-  const modal =
-    document.querySelector("#modal");
 
-  if (modal) {
-    modal.classList.remove("active");
-  }
+      <hr>
 
-  current = null;
-}
 
-// ===============================
-// AGREGAR AL CARRITO
-// ===============================
+      <p class="filter-note">
+        ¿Buscás algo en particular?
+      </p>
 
-function addToCart() {
 
-  if (!current) return;
+      <a
+        id="sideInstagram"
+        href="https://wa.me/5491153894764"
+        target="_blank"
+        rel="noopener"
+        class="outline"
+      >
+        CONSULTAR
+      </a>
 
-  const selected =
-    document.querySelector(".size-btn.active");
+    </aside>
 
-  if (!selected) {
 
-    alert(
-      "Seleccioná una medida antes de agregar el producto."
-    );
+    <!-- PRODUCTOS -->
 
-    return;
-  }
+    <div class="catalog">
 
-  const size =
-    selected.textContent.trim();
 
-  const existing = cart.find(item =>
-    item.id === current.id &&
-    item.size === size
-  );
+      <div class="catalog-top">
 
-  if (existing) {
+        <div>
 
-    existing.qty++;
-
-  } else {
-
-    cart.push({
-      id: current.id,
-      name: current.name,
-      price: current.price,
-      img: current.img,
-      size: size,
-      qty: 1
-    });
-
-  }
-
-  save();
-  renderCart();
-  closeProduct();
-  openCart();
-}
-
-// ===============================
-// MOSTRAR CARRITO
-// ===============================
-
-function renderCart() {
-
-  const container =
-    document.querySelector("#cartItems");
-
-  const totalElement =
-    document.querySelector("#total");
-
-  const countElement =
-    document.querySelector("#cartCount");
-
-  if (!container) return;
-
-  if (cart.length === 0) {
-
-    container.innerHTML = `
-      <div class="empty-cart">
-        <p>Tu carrito está vacío.</p>
-      </div>
-    `;
-
-  } else {
-
-    container.innerHTML = cart.map(
-      (item, index) => `
-
-      <div class="cart-item">
-
-        <img
-          src="${item.img}"
-          alt="${item.name}"
-        >
-
-        <div class="cart-item-info">
-
-          <h4>
-            ${item.name}
-          </h4>
-
-          <p>
-            Tamaño: ${item.size}
+          <p class="mini">
+            COLECCIÓN
           </p>
 
-          <strong>
-            ${money(item.price * item.qty)}
-          </strong>
+          <h2 id="catTitle">
+            Todos los productos
+          </h2>
 
-          <div class="cart-controls">
+        </div>
 
-            <button
-              onclick="changeQty(${index}, -1)"
-            >
-              −
-            </button>
 
-            <span>
-              ${item.qty}
-            </span>
+        <div class="catalog-actions">
 
-            <button
-              onclick="changeQty(${index}, 1)"
-            >
-              +
-            </button>
+          <button
+            id="filterMobile"
+            class="filter-mobile"
+          >
+            FILTRAR
+          </button>
 
-            <button
-              onclick="removeFromCart(${index})"
-            >
-              Eliminar
-            </button>
 
-          </div>
+          <select id="sort">
+
+            <option value="default">
+              Ordenar
+            </option>
+
+            <option value="low">
+              Precio: menor a mayor
+            </option>
+
+            <option value="high">
+              Precio: mayor a menor
+            </option>
+
+          </select>
 
         </div>
 
       </div>
 
-    `
-    ).join("");
-  }
 
-  const total = cart.reduce(
-    (sum, item) =>
-      sum + item.price * item.qty,
-    0
-  );
+      <!-- LOS PRODUCTOS LOS CARGA SCRIPT.JS -->
 
-  const count = cart.reduce(
-    (sum, item) =>
-      sum + item.qty,
-    0
-  );
+      <div
+        class="grid"
+        id="grid"
+      ></div>
 
-  if (totalElement) {
-    totalElement.textContent =
-      money(total);
-  }
+    </div>
 
-  if (countElement) {
-    countElement.textContent =
-      count;
-  }
-}
+  </section>
 
-// ===============================
-// CANTIDAD
-// ===============================
 
-function changeQty(index, amount) {
+  <!-- =========================
+       BANNER
+  ========================== -->
 
-  if (!cart[index]) return;
+  <section class="banner">
 
-  cart[index].qty += amount;
+    <div>
 
-  if (cart[index].qty <= 0) {
-    cart.splice(index, 1);
-  }
+      <p class="mini">
+        GOLDENFIINE
+      </p>
 
-  save();
-  renderCart();
-}
+      <h2>
+        EL DETALLE<br>
+        HACE LA DIFERENCIA
+      </h2>
 
-// ===============================
-// ELIMINAR
-// ===============================
+      <p>
+        Elegí la pieza que representa tu estilo.
+      </p>
 
-function removeFromCart(index) {
+    </div>
 
-  cart.splice(index, 1);
+  </section>
 
-  save();
-  renderCart();
-}
 
-// ===============================
-// VACIAR CARRITO
-// ===============================
+  <!-- =========================
+       CONTACTO
+  ========================== -->
 
-function emptyCart() {
+  <section
+    class="contact"
+    id="contacto"
+  >
 
-  if (cart.length === 0) return;
+    <p class="mini">
+      CONTACTO
+    </p>
 
-  if (
-    confirm(
-      "¿Querés vaciar el carrito?"
-    )
-  ) {
+    <h2>
+      ¿TENÉS ALGUNA CONSULTA?
+    </h2>
 
-    cart = [];
+    <p>
+      Consultanos por stock, medidas,
+      entregas y disponibilidad.
+    </p>
 
-    save();
-    renderCart();
-  }
-}
+    <p class="contact-phone">
+      +54 9 11 5389-4764
+    </p>
 
-// ===============================
-// ABRIR CARRITO
-// ===============================
 
-function openCart() {
+    <a
+      id="contactBtn"
+      href="https://wa.me/5491153894764"
+      target="_blank"
+      rel="noopener"
+      class="btn"
+    >
+      CONSULTAR POR WHATSAPP
+    </a>
 
-  const drawer =
-    document.querySelector("#drawer");
+  </section>
 
-  const shade =
-    document.querySelector("#shade");
+</main>
 
-  if (drawer) {
-    drawer.classList.add("active");
-  }
 
-  if (shade) {
-    shade.classList.add("active");
-  }
+<!-- =========================
+     FOOTER
+========================= -->
 
-  renderCart();
-}
+<footer>
 
-// ===============================
-// CERRAR CARRITO
-// ===============================
 
-function closeCart() {
+  <div class="footer-brand">
 
-  const drawer =
-    document.querySelector("#drawer");
+    <span class="logo">
+      GOLDENFIINE
+    </span>
 
-  const shade =
-    document.querySelector("#shade");
+    <p>
+      Joyería.
+    </p>
 
-  if (drawer) {
-    drawer.classList.remove("active");
-  }
+  </div>
 
-  if (shade) {
-    shade.classList.remove("active");
-  }
-}
 
-// ===============================
-// MENSAJE WHATSAPP
-// ===============================
+  <div>
 
-function buildOrderMessage() {
+    <p>
+      Instagram
+    </p>
 
-  if (cart.length === 0) {
+    <a
+      href="https://www.instagram.com/joyas_goldenfiine/"
+      target="_blank"
+      rel="noopener"
+    >
+      @joyas_goldenfiine
+    </a>
 
-    return `
-Hola GOLDENFIINE 👋
+  </div>
 
-Quiero consultar por algunos productos.
-`;
-  }
 
-  let message =
-    "Hola GOLDENFIINE 👋\n\n";
+  <div>
 
-  message +=
-    "Quiero consultar por este pedido:\n\n";
+    <p>
+      WhatsApp
+    </p>
 
-  cart.forEach(item => {
+    <a
+      href="https://wa.me/5491153894764"
+      target="_blank"
+      rel="noopener"
+    >
+      +54 9 11 5389-4764
+    </a>
 
-    message +=
-      `• ${item.name}\n`;
+  </div>
 
-    message +=
-      `  Medida: ${item.size}\n`;
+</footer>
 
-    message +=
-      `  Cantidad: ${item.qty}\n`;
 
-    message +=
-      `  Precio: ${money(
-        item.price * item.qty
-      )}\n\n`;
-  });
+<!-- =========================
+     FONDO DEL CARRITO
+========================= -->
 
-  const total = cart.reduce(
-    (sum, item) =>
-      sum + item.price * item.qty,
-    0
-  );
+<div
+  class="shade"
+  id="shade"
+></div>
 
-  message +=
-    `Total: ${money(total)}\n\n`;
 
-  message +=
-    "¿Me pueden confirmar disponibilidad?";
+<!-- =========================
+     CARRITO
+========================= -->
 
-  return message;
-}
+<aside
+  class="drawer"
+  id="drawer"
+>
 
-// ===============================
-// WHATSAPP
-// ===============================
 
-function sendWhatsApp() {
+  <div class="drawer-head">
 
-  const message =
-    encodeURIComponent(
-      buildOrderMessage()
-    );
+    <h2>
+      Tu carrito
+    </h2>
 
-  window.open(
-    `${CONFIG.whatsapp}?text=${message}`,
-    "_blank"
-  );
-}
+    <button
+      id="closeCart"
+      aria-label="Cerrar carrito"
+    >
+      ×
+    </button>
 
-// ===============================
-// INSTAGRAM
-// ===============================
+  </div>
 
-function sendInstagram() {
 
-  window.open(
-    CONFIG.instagramDM,
-    "_blank"
-  );
-}
+  <div
+    class="drawer-items"
+    id="cartItems"
+  ></div>
 
-// ===============================
-// INICIO
-// ===============================
 
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
+  <div class="drawer-foot">
 
-    // FILTROS
-    document
-      .querySelectorAll("[data-cat]")
-      .forEach(button => {
 
-        button.addEventListener(
-          "click",
-          () => {
+    <div class="cart-total">
 
-            setCategory(
-              button.dataset.cat
-            );
+      <span>
+        Total
+      </span>
 
-          }
-        );
+      <strong id="total">
+        $0
+      </strong>
 
-      });
+    </div>
 
-    // ORDENAR
-    const sort =
-      document.querySelector("#sort");
 
-    if (sort) {
+    <button
+      id="empty"
+      class="outline full"
+    >
+      VACIAR CARRITO
+    </button>
 
-      sort.addEventListener(
-        "change",
-        render
-      );
 
-    }
+    <button
+      id="buy"
+      class="btn full"
+    >
+      CONSULTAR PEDIDO
+    </button>
 
-    // BOTÓN CARRITO
-    const openCartButton =
-      document.querySelector("#openCart");
+  </div>
 
-    if (openCartButton) {
+</aside>
 
-      openCartButton.addEventListener(
-        "click",
-        openCart
-      );
 
-    }
+<!-- =========================
+     MODAL PRODUCTO
+========================= -->
 
-    // CERRAR CARRITO
-    const closeCartButton =
-      document.querySelector("#closeCart");
+<div
+  class="modal"
+  id="modal"
+>
 
-    if (closeCartButton) {
+  <div class="modal-card">
 
-      closeCartButton.addEventListener(
-        "click",
-        closeCart
-      );
 
-    }
+    <button
+      id="modalClose"
+      class="modal-close"
+      aria-label="Cerrar producto"
+    >
+      ×
+    </button>
 
-    // FONDO CARRITO
-    const shade =
-      document.querySelector("#shade");
 
-    if (shade) {
+    <div class="modal-img">
 
-      shade.addEventListener(
-        "click",
-        closeCart
-      );
+      <img
+        id="mImg"
+        src=""
+        alt="Producto"
+      >
 
-    }
+    </div>
 
-    // VACIAR
-    const emptyButton =
-      document.querySelector("#empty");
 
-    if (emptyButton) {
+    <div class="modal-info">
 
-      emptyButton.addEventListener(
-        "click",
-        emptyCart
-      );
 
-    }
+      <p
+        class="mini"
+        id="mCat"
+      ></p>
 
-    // COMPRAR / WHATSAPP
-    const buyButton =
-      document.querySelector("#buy");
 
-    if (buyButton) {
+      <h2
+        id="mName"
+      ></h2>
 
-      buyButton.addEventListener(
-        "click",
-        sendWhatsApp
-      );
 
-    }
+      <div
+        class="price"
+        id="mPrice"
+      ></div>
 
-    // AGREGAR AL CARRITO
-    const addButton =
-      document.querySelector("#mAdd");
 
-    if (addButton) {
+      <p class="description">
+        Una pieza seleccionada para complementar
+        tu estilo. Consultá disponibilidad y medidas
+        por WhatsApp.
+      </p>
 
-      addButton.addEventListener(
-        "click",
-        addToCart
-      );
 
-    }
+      <p class="mini">
+        MEDIDA / TALLE
+      </p>
 
-    // CERRAR MODAL
-    const modalClose =
-      document.querySelector("#modalClose");
 
-    if (modalClose) {
+      <div id="sizes"></div>
 
-      modalClose.addEventListener(
-        "click",
-        closeProduct
-      );
 
-    }
+      <button
+        id="mAdd"
+        class="btn full"
+      >
+        AGREGAR AL CARRITO
+      </button>
 
-    // CERRAR MODAL AL TOCAR AFUERA
-    const modal =
-      document.querySelector("#modal");
+    </div>
 
-    if (modal) {
+  </div>
 
-      modal.addEventListener(
-        "click",
-        event => {
+</div>
 
-          if (event.target === modal) {
-            closeProduct();
-          }
 
-        }
-      );
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
-    }
+<script src="script.js"></script>
 
-    // MENÚ CELULAR
-    const mobileMenu =
-      document.querySelector("#mobileMenu");
-
-    const nav =
-      document.querySelector("#nav");
-
-    if (mobileMenu && nav) {
-
-      mobileMenu.addEventListener(
-        "click",
-        () => {
-
-          nav.classList.toggle("active");
-
-        }
-      );
-
-    }
-
-    // BOTÓN FILTRAR EN CELULAR
-    const filterMobile =
-      document.querySelector("#filterMobile");
-
-    const filters =
-      document.querySelector("#filters");
-
-    if (filterMobile && filters) {
-
-      filterMobile.addEventListener(
-        "click",
-        () => {
-
-          filters.classList.add("active");
-
-        }
-      );
-
-    }
-
-    // CERRAR FILTROS
-    const closeFilters =
-      document.querySelector("#closeFilters");
-
-    if (closeFilters && filters) {
-
-      closeFilters.addEventListener(
-        "click",
-        () => {
-
-          filters.classList.remove("active");
-
-        }
-      );
-
-    }
-
-    // CARGAR PRODUCTOS
-    render();
-
-    // CARGAR CARRITO
-    renderCart();
-
-  }
-);
+</body>
+</html>
