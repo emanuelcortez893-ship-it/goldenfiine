@@ -16,14 +16,14 @@ const products = [
 
   // ===== CADENAS =====
 
- {
-  id: 1,
-  name: "Rosario enchapado brasileño 18k",
-  category: "Cadenas",
-  price: 45000,
-  img: "Rosario enchapado brasileño 18k.jpeg",
-  sizes: ["45 cm", "50 cm", "60 cm"]
-},
+  {
+    id: 1,
+    name: "Rosario enchapado brasileño 18k",
+    cat: "Cadenas",
+    price: 45000,
+    img: "Rosario enchapado brasileño 18k.jpeg",
+    sizes: ["45 cm", "50 cm", "60 cm"]
+  },
 
   {
     id: 2,
@@ -66,7 +66,7 @@ const products = [
     name: "Combo cadena París plana enchapada 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "combo cadena paris plana enchapada 18k.jpeg",
+    img: "combo cadena paris plana enchapada 18kjpeg",
     sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
@@ -75,7 +75,7 @@ const products = [
     name: "Juliana con cierre marinero",
     cat: "Cadenas",
     price: 45000,
-    img: "juliana con cierre marinero.jpeg",
+    img: "juliana con cierre marinero jpeg",
     sizes: ["45 cm", "50 cm", "55 cm"]
   },
 
@@ -102,387 +102,63 @@ const products = [
     name: "Cadena Rolo Gruesa 60cm - Oro 18k",
     cat: "Cadenas",
     price: 45000,
-    "img: "Cadena Rolo Gruesa 60cm - Oro 18k.jpeg","
+    img: "cadena-rolo-gruesa-60cm-Oro -18k.jpeg",
     sizes: ["60 cm"]
   },
 
   // ===== PULSERAS =====
 
-  {
-    id: 11,
-    name: "Pulsera 1",
+  ...Array.from({ length: 10 }, (_, i) => ({
+    id: 11 + i,
+    name: `Pulsera ${i + 1}`,
     cat: "Pulseras",
     price: 38000,
-    img: "images/pulsera-1.jpg",
+    img: `imagenes/pulsera-${i + 1}.jpg`,
     sizes: ["18 cm", "20 cm", "22 cm"]
-  },
-
-  {
-    id: 12,
-    name: "Pulsera 2",
-    cat: "Pulseras",
-    price: 38000,
-    img: "images/pulsera-2.jpg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  },
-
-  {
-    id: 13,
-    name: "Pulsera 3",
-    cat: "Pulseras",
-    price: 38000,
-    img: "images/pulsera-3.jpg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  },
-
-  {
-    id: 14,
-    name: "Pulsera 4",
-    cat: "Pulseras",
-    price: 38000,
-    img: "images/pulsera-4.jpg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  },
-
-  {
-    id: 15,
-    name: "Pulsera 5",
-    cat: "Pulseras",
-    price: 38000,
-    img: "images/pulsera-5.jpg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  },
-
-  {
-    id: 16,
-    name: "Pulsera 6",
-    cat: "Pulseras",
-    price: 38000,
-    img: "images/pulsera-6.jpg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  },
-
-  {
-    id: 17,
-    name: "Pulsera 7",
-    cat: "Pulseras",
-    price: 38000,
-    img: "images/pulsera-7.jpg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  },
-
-  {
-    id: 18,
-    name: "Pulsera 8",
-    cat: "Pulseras",
-    price: 38000,
-    img: "images/pulsera-8.jpg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  },
-
-  {
-    id: 19,
-    name: "Pulsera 9",
-    cat: "Pulseras",
-    price: 38000,
-    img: "images/pulsera-9.jpg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  },
-
-  {
-    id: 20,
-    name: "Pulsera 10",
-    cat: "Pulseras",
-    price: 38000,
-    img: "images/pulsera-10.jpg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
-  },
+  })),
 
   // ===== ANILLOS =====
 
-  {
-    id: 21,
-    name: "Anillo 1",
+  ...Array.from({ length: 10 }, (_, i) => ({
+    id: 21 + i,
+    name: `Anillo ${i + 1}`,
     cat: "Anillos",
     price: 35000,
-    img: "images/anillo-1.jpg",
+    img: `imagenes/anillo-${i + 1}.jpg`,
     sizes: ["16", "18", "20", "22"]
-  },
-
-  {
-    id: 22,
-    name: "Anillo 2",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo-2.jpg",
-    sizes: ["16", "18", "20", "22"]
-  },
-
-  {
-    id: 23,
-    name: "Anillo 3",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo-3.jpg",
-    sizes: ["16", "18", "20", "22"]
-  },
-
-  {
-    id: 24,
-    name: "Anillo 4",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo-4.jpg",
-    sizes: ["16", "18", "20", "22"]
-  },
-
-  {
-    id: 25,
-    name: "Anillo 5",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo-5.jpg",
-    sizes: ["16", "18", "20", "22"]
-  },
-
-  {
-    id: 26,
-    name: "Anillo 6",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo-6.jpg",
-    sizes: ["16", "18", "20", "22"]
-  },
-
-  {
-    id: 27,
-    name: "Anillo 7",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo-7.jpg",
-    sizes: ["16", "18", "20", "22"]
-  },
-
-  {
-    id: 28,
-    name: "Anillo 8",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo-8.jpg",
-    sizes: ["16", "18", "20", "22"]
-  },
-
-  {
-    id: 29,
-    name: "Anillo 9",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo-9.jpg",
-    sizes: ["16", "18", "20", "22"]
-  },
-
-  {
-    id: 30,
-    name: "Anillo 10",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo-10.jpg",
-    sizes: ["16", "18", "20", "22"]
-  },
+  })),
 
   // ===== DIJES =====
 
-  {
-    id: 31,
-    name: "Dije 1",
+  ...Array.from({ length: 10 }, (_, i) => ({
+    id: 31 + i,
+    name: `Dije ${i + 1}`,
     cat: "Dijes",
     price: 28000,
-    img: "images/dije-1.jpg",
+    img: `imagenes/dije-${i + 1}.jpg`,
     sizes: ["Único"]
-  },
-
-  {
-    id: 32,
-    name: "Dije 2",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije-2.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 33,
-    name: "Dije 3",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije-3.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 34,
-    name: "Dije 4",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije-4.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 35,
-    name: "Dije 5",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije-5.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 36,
-    name: "Dije 6",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije-6.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 37,
-    name: "Dije 7",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije-7.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 38,
-    name: "Dije 8",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije-8.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 39,
-    name: "Dije 9",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije-9.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 40,
-    name: "Dije 10",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije-10.jpg",
-    sizes: ["Único"]
-  },
+  })),
 
   // ===== ARITOS =====
 
-  {
-    id: 41,
-    name: "Arito 1",
+  ...Array.from({ length: 10 }, (_, i) => ({
+    id: 41 + i,
+    name: `Arito ${i + 1}`,
     cat: "Aritos",
     price: 30000,
-    img: "images/arito-1.jpg",
+    img: `imagenes/arito-${i + 1}.jpg`,
     sizes: ["Único"]
-  },
+  }))
 
-  {
-    id: 42,
-    name: "Arito 2",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/arito-2.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 43,
-    name: "Arito 3",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/arito-3.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 44,
-    name: "Arito 4",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/arito-4.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 45,
-    name: "Arito 5",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/arito-5.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 46,
-    name: "Arito 6",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/arito-6.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 47,
-    name: "Arito 7",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/arito-7.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 48,
-    name: "Arito 8",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/arito-8.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 49,
-    name: "Arito 9",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/arito-9.jpg",
-    sizes: ["Único"]
-  },
-
-  {
-    id: 50,
-    name: "Arito 10",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/arito-10.jpg",
-    sizes: ["Único"]
-  }
 ];
 
 // ===============================
 // VARIABLES
 // ===============================
 
-let cart =
-  JSON.parse(
-    localStorage.getItem("gf_cart") || "[]"
-  );
+let cart = JSON.parse(
+  localStorage.getItem("gf_cart") || "[]"
+);
 
 let category = "Todos";
 let current = null;
@@ -508,12 +184,10 @@ function setCategory(cat) {
   document
     .querySelectorAll(".filter")
     .forEach(button => {
-
       button.classList.toggle(
         "active",
         button.dataset.cat === cat
       );
-
     });
 
   render();
@@ -549,46 +223,38 @@ function render() {
       ?.value || "default";
 
   if (sort === "low") {
-
     list.sort(
       (a, b) =>
         a.price - b.price
     );
-
   }
 
   if (sort === "high") {
-
     list.sort(
       (a, b) =>
         b.price - a.price
     );
-
   }
 
   const title =
-    document.getElementById(
-      "catTitle"
-    );
+    document.getElementById("catTitle");
 
   if (title) {
-
     title.textContent =
       category === "Todos"
         ? "Todos los productos"
         : category;
-
   }
 
   grid.innerHTML =
     list.map(product => `
 
       <article
-        class="card"
+        class="product-card"
         onclick="openProduct(${product.id})"
       >
 
-        <div class="card-img">
+        <div class="product-image">
 
           ${
             product.badge
@@ -612,7 +278,7 @@ function render() {
 
         </div>
 
-        <div class="card-info">
+        <div class="product-info">
 
           <small>
             ${product.cat}
@@ -658,8 +324,7 @@ document
 
       document
         .querySelector(".filters")
-        ?.classList.remove("show");
-
+        ?.classList.remove("open");
     };
 
   });
@@ -722,24 +387,20 @@ function openProduct(id) {
 
   document
     .getElementById("modal")
-    .classList.add("show");
+    .classList.add("open");
 }
 
 function selectSize(element) {
 
   document
-    .querySelectorAll(
-      "#sizes .size"
-    )
+    .querySelectorAll("#sizes .size")
     .forEach(button =>
       button.classList.remove(
         "selected"
       )
     );
 
-  element.classList.add(
-    "selected"
-  );
+  element.classList.add("selected");
 }
 
 // ===============================
@@ -754,9 +415,7 @@ document
 
       document
         .getElementById("modal")
-        .classList.remove(
-          "show"
-        );
+        .classList.remove("open");
 
     }
   );
@@ -768,14 +427,11 @@ document
     event => {
 
       if (
-        event.target.id ===
-        "modal"
+        event.target.id === "modal"
       ) {
 
         event.currentTarget
-          .classList.remove(
-            "show"
-          );
+          .classList.remove("open");
 
       }
 
@@ -804,16 +460,11 @@ document
           ? selected.textContent.trim()
           : "Único";
 
-      add(
-        current.id,
-        size
-      );
+      add(current.id, size);
 
       document
         .getElementById("modal")
-        .classList.remove(
-          "show"
-        );
+        .classList.remove("open");
 
       openCart();
 
@@ -843,8 +494,8 @@ function add(
   } else {
 
     cart.push({
-      id: id,
-      size: size,
+      id,
+      size,
       qty: 1
     });
 
@@ -921,9 +572,7 @@ function remove(
 function renderCart() {
 
   const count =
-    document.getElementById(
-      "cartCount"
-    );
+    document.getElementById("cartCount");
 
   if (count) {
 
@@ -937,16 +586,13 @@ function renderCart() {
   }
 
   const box =
-    document.getElementById(
-      "cartItems"
-    );
+    document.getElementById("cartItems");
 
   if (!box) return;
 
   if (!cart.length) {
 
     box.innerHTML = `
-
       <div
         style="
           text-align:center;
@@ -957,7 +603,6 @@ function renderCart() {
       >
         Tu carrito está vacío.
       </div>
-
     `;
 
   } else {
@@ -989,14 +634,10 @@ function renderCart() {
               </h4>
 
               <small>
-
                 ${money(product.price)}
-
                 <br>
-
                 Medida:
                 ${item.size || "Único"}
-
               </small>
 
               <div class="qty">
@@ -1004,9 +645,7 @@ function renderCart() {
                 <button
                   onclick='qty(
                     ${product.id},
-                    ${JSON.stringify(
-                      item.size
-                    )},
+                    ${JSON.stringify(item.size)},
                     -1
                   )'
                 >
@@ -1020,9 +659,7 @@ function renderCart() {
                 <button
                   onclick='qty(
                     ${product.id},
-                    ${JSON.stringify(
-                      item.size
-                    )},
+                    ${JSON.stringify(item.size)},
                     1
                   )'
                 >
@@ -1037,9 +674,7 @@ function renderCart() {
               class="remove"
               onclick='remove(
                 ${product.id},
-                ${JSON.stringify(
-                  item.size
-                )}
+                ${JSON.stringify(item.size)}
               )'
             >
               ×
@@ -1066,8 +701,7 @@ function renderCart() {
         return sum +
           (
             product
-              ? product.price *
-                item.qty
+              ? product.price * item.qty
               : 0
           );
 
@@ -1076,15 +710,11 @@ function renderCart() {
     );
 
   const totalElement =
-    document.getElementById(
-      "total"
-    );
+    document.getElementById("total");
 
   if (totalElement) {
-
     totalElement.textContent =
       money(total);
-
   }
 
 }
@@ -1097,30 +727,22 @@ function openCart() {
 
   document
     .getElementById("drawer")
-    ?.classList.add(
-      "open"
-    );
+    ?.classList.add("open");
 
   document
     .getElementById("shade")
-    ?.classList.add(
-      "show"
-    );
+    ?.classList.add("open");
 }
 
 function closeCart() {
 
   document
     .getElementById("drawer")
-    ?.classList.remove(
-      "open"
-    );
+    ?.classList.remove("open");
 
   document
     .getElementById("shade")
-    ?.classList.remove(
-      "show"
-    );
+    ?.classList.remove("open");
 }
 
 document
@@ -1246,9 +868,7 @@ document
       const url =
         CONFIG.whatsapp +
         "?text=" +
-        encodeURIComponent(
-          message
-        );
+        encodeURIComponent(message);
 
       window.open(
         url,
@@ -1310,9 +930,7 @@ function sendInstagramOrder() {
 function createInstagramButton() {
 
   const buyButton =
-    document.getElementById(
-      "buy"
-    );
+    document.getElementById("buy");
 
   if (!buyButton) return;
 
@@ -1325,9 +943,7 @@ function createInstagramButton() {
   }
 
   const button =
-    document.createElement(
-      "button"
-    );
+    document.createElement("button");
 
   button.id =
     "instagramOrder";
@@ -1355,57 +971,22 @@ function createInstagramButton() {
 }
 
 // ===============================
-// CONTACTO
-// ===============================
-
-const contactBtn =
-  document.getElementById(
-    "contactBtn"
-  );
-
-if (contactBtn) {
-
-  contactBtn.href =
-    CONFIG.whatsapp;
-
-}
-
-const sideInstagram =
-  document.getElementById(
-    "sideInstagram"
-  );
-
-if (sideInstagram) {
-
-  sideInstagram.href =
-    CONFIG.whatsapp;
-
-}
-
-// ===============================
 // MENÚ CELULAR
 // ===============================
 
 const mobileMenu =
-  document.getElementById(
-    "mobileMenu"
-  );
+  document.getElementById("mobileMenu");
 
 if (mobileMenu) {
 
   mobileMenu.onclick = () => {
 
     const nav =
-      document.getElementById(
-        "nav"
-      );
+      document.getElementById("nav");
 
     if (!nav) return;
 
-    nav.style.display =
-      nav.style.display === "flex"
-        ? "none"
-        : "flex";
+    nav.classList.toggle("open");
 
   };
 
@@ -1416,9 +997,7 @@ if (mobileMenu) {
 // ===============================
 
 const filterMobile =
-  document.getElementById(
-    "filterMobile"
-  );
+  document.getElementById("filterMobile");
 
 if (filterMobile) {
 
@@ -1426,18 +1005,14 @@ if (filterMobile) {
 
     document
       .querySelector(".filters")
-      ?.classList.add(
-        "show"
-      );
+      ?.classList.add("open");
 
   };
 
 }
 
 const closeFilters =
-  document.getElementById(
-    "closeFilters"
-  );
+  document.getElementById("closeFilters");
 
 if (closeFilters) {
 
@@ -1445,9 +1020,7 @@ if (closeFilters) {
 
     document
       .querySelector(".filters")
-      ?.classList.remove(
-        "show"
-      );
+      ?.classList.remove("open");
 
   };
 
