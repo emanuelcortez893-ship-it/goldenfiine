@@ -5,6 +5,10 @@ const CONFIG = {
 };
 
 const products = [
+  // =========================
+  // CADENAS
+  // =========================
+
   {
     id: 1,
     name: "Rosario enchapado brasileño 18k",
@@ -13,14 +17,16 @@ const products = [
     img: "Rosario enchapado brasileño 18k.jpeg",
     sizes: ["45 cm", "50 cm", "60 cm"]
   },
+
   {
     id: 2,
     name: "Cadena espiga con cierre mosquetón",
     cat: "Cadenas",
     price: 45000,
     img: "cadena espiga con cierre mosqueton.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
+    sizes: ["45 cm", "50 cm", "60 cm"]
   },
+
   {
     id: 3,
     name: "Cadena París con cierre marinero",
@@ -29,30 +35,34 @@ const products = [
     img: "cadena paris con cierre marinero.jpeg",
     sizes: ["45 cm", "50 cm", "60 cm"]
   },
+
   {
     id: 4,
     name: "Cadena Singapur fina enchapada 18k",
     cat: "Cadenas",
     price: 45000,
     img: "cadena singapur fina enchapada 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
+    sizes: ["45 cm", "50 cm", "60 cm"]
   },
+
   {
     id: 5,
-    name: "Cadena Triple Gourmet con cierre mosquetón",
+    name: "Cadena triple gourmet con cierre mosquetón",
     cat: "Cadenas",
     price: 45000,
     img: "cadena triple gourmet con cierre mosqueton.jpeg",
     sizes: ["45 cm", "50 cm", "60 cm"]
   },
+
   {
     id: 6,
-    name: "Combo Cadena París plana enchapada 18k",
+    name: "Combo cadena París plana enchapada 18k",
     cat: "Cadenas",
     price: 45000,
     img: "combo cadena paris plana enchapada 18k.jpeg",
-    sizes: ["45 cm + 50 cm"]
+    sizes: ["45 cm", "50 cm", "60 cm"]
   },
+
   {
     id: 7,
     name: "Juliana con cierre marinero",
@@ -61,6 +71,7 @@ const products = [
     img: "juliana con cierre marinero.jpeg",
     sizes: ["45 cm", "50 cm", "60 cm"]
   },
+
   {
     id: 8,
     name: "Tourbillon con puntera Versace",
@@ -69,795 +80,911 @@ const products = [
     img: "tourbillon con puntera versace.jpeg",
     sizes: ["45 cm", "50 cm", "60 cm"]
   },
+
   {
     id: 9,
-    name: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D - Oro 18k",
+    name: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D",
     cat: "Cadenas",
     price: 45000,
     img: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D - Oro 18k - 45cm + 50cm + 60cm.jpeg",
-    sizes: ["45 cm + 50 cm + 60 cm"]
+    sizes: ["45 cm", "50 cm", "60 cm"]
   },
+
   {
     id: 10,
     name: "Cadena Rolo Gruesa 60cm - Oro 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "Cadena Rolo Gruesa 60cm - Oro 18k.jpeg",
+    img: "cadena-rolo-gruesa-60cm-Oro -18k.jpeg",
     sizes: ["60 cm"]
   },
 
+
+  // =========================
+  // PULSERAS
+  // =========================
+
   {
     id: 11,
-    name: "Pulsera Dorada Clásica",
+    name: "Pulsera 1",
     cat: "Pulseras",
     price: 38000,
-    img: "images/pulsera1.jpeg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
+    img: "images/pulsera-1.jpg",
+    sizes: ["Única"]
   },
+
   {
     id: 12,
-    name: "Pulsera Miami",
+    name: "Pulsera 2",
     cat: "Pulseras",
     price: 38000,
-    img: "images/pulsera2.jpeg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
+    img: "images/pulsera-2.jpg",
+    sizes: ["Única"]
   },
+
   {
     id: 13,
-    name: "Pulsera Eslabón",
+    name: "Pulsera 3",
     cat: "Pulseras",
     price: 38000,
-    img: "images/pulsera3.jpeg",
-    sizes: ["18 cm", "20 cm"]
+    img: "images/pulsera-3.jpg",
+    sizes: ["Única"]
   },
+
   {
     id: 14,
-    name: "Pulsera Premium",
+    name: "Pulsera 4",
     cat: "Pulseras",
     price: 38000,
-    img: "images/pulsera4.jpeg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
+    img: "images/pulsera-4.jpg",
+    sizes: ["Única"]
   },
+
   {
     id: 15,
-    name: "Pulsera Doble",
+    name: "Pulsera 5",
     cat: "Pulseras",
     price: 38000,
-    img: "images/pulsera5.jpeg",
-    sizes: ["18 cm", "20 cm"]
+    img: "images/pulsera-5.jpg",
+    sizes: ["Única"]
   },
+
   {
     id: 16,
-    name: "Pulsera Cadena",
+    name: "Pulsera 6",
     cat: "Pulseras",
     price: 38000,
-    img: "images/pulsera6.jpeg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
+    img: "images/pulsera-6.jpg",
+    sizes: ["Única"]
   },
+
   {
     id: 17,
-    name: "Pulsera Gold",
+    name: "Pulsera 7",
     cat: "Pulseras",
     price: 38000,
-    img: "images/pulsera7.jpeg",
-    sizes: ["18 cm", "20 cm"]
+    img: "images/pulsera-7.jpg",
+    sizes: ["Única"]
   },
+
   {
     id: 18,
-    name: "Pulsera Elegance",
+    name: "Pulsera 8",
     cat: "Pulseras",
     price: 38000,
-    img: "images/pulsera8.jpeg",
-    sizes: ["18 cm", "20 cm", "22 cm"]
+    img: "images/pulsera-8.jpg",
+    sizes: ["Única"]
   },
 
   {
     id: 19,
-    name: "Anillo Dorado Clásico",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo1.jpeg",
-    sizes: ["16", "18", "20", "22"]
+    name: "Pulsera 9",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-9.jpg",
+    sizes: ["Única"]
   },
+
   {
     id: 20,
-    name: "Anillo Premium",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo2.jpeg",
-    sizes: ["16", "18", "20", "22"]
+    name: "Pulsera 10",
+    cat: "Pulseras",
+    price: 38000,
+    img: "images/pulsera-10.jpg",
+    sizes: ["Única"]
   },
+
+
+  // =========================
+  // ANILLOS
+  // =========================
+
   {
     id: 21,
-    name: "Anillo Elegance",
+    name: "Anillo 1",
     cat: "Anillos",
     price: 35000,
-    img: "images/anillo3.jpeg",
+    img: "images/anillo-1.jpg",
     sizes: ["16", "18", "20", "22"]
   },
+
   {
     id: 22,
-    name: "Anillo Signet",
+    name: "Anillo 2",
     cat: "Anillos",
     price: 35000,
-    img: "images/anillo4.jpeg",
-    sizes: ["18", "20", "22", "24"]
-  },
-  {
-    id: 23,
-    name: "Anillo Luxury",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo5.jpeg",
-    sizes: ["18", "20", "22"]
-  },
-  {
-    id: 24,
-    name: "Anillo Gold",
-    cat: "Anillos",
-    price: 35000,
-    img: "images/anillo6.jpeg",
+    img: "images/anillo-2.jpg",
     sizes: ["16", "18", "20", "22"]
   },
+
+  {
+    id: 23,
+    name: "Anillo 3",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-3.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
+  {
+    id: 24,
+    name: "Anillo 4",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-4.jpg",
+    sizes: ["16", "18", "20", "22"]
+  },
+
   {
     id: 25,
-    name: "Anillo Royal",
+    name: "Anillo 5",
     cat: "Anillos",
     price: 35000,
-    img: "images/anillo7.jpeg",
-    sizes: ["18", "20", "22"]
+    img: "images/anillo-5.jpg",
+    sizes: ["16", "18", "20", "22"]
   },
+
   {
     id: 26,
-    name: "Anillo Classic",
+    name: "Anillo 6",
     cat: "Anillos",
     price: 35000,
-    img: "images/anillo8.jpeg",
+    img: "images/anillo-6.jpg",
     sizes: ["16", "18", "20", "22"]
   },
 
   {
     id: 27,
-    name: "Dije Cruz Dorado",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije1.jpeg",
-    sizes: ["Único"]
+    name: "Anillo 7",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-7.jpg",
+    sizes: ["16", "18", "20", "22"]
   },
+
   {
     id: 28,
-    name: "Dije Corazón",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije2.jpeg",
-    sizes: ["Único"]
+    name: "Anillo 8",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-8.jpg",
+    sizes: ["16", "18", "20", "22"]
   },
+
   {
     id: 29,
-    name: "Dije Estrella",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije3.jpeg",
-    sizes: ["Único"]
+    name: "Anillo 9",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-9.jpg",
+    sizes: ["16", "18", "20", "22"]
   },
+
   {
     id: 30,
-    name: "Dije Infinito",
-    cat: "Dijes",
-    price: 28000,
-    img: "images/dije4.jpeg",
-    sizes: ["Único"]
+    name: "Anillo 10",
+    cat: "Anillos",
+    price: 35000,
+    img: "images/anillo-10.jpg",
+    sizes: ["16", "18", "20", "22"]
   },
+
+
+  // =========================
+  // DIJES
+  // =========================
+
   {
     id: 31,
-    name: "Dije Inicial",
+    name: "Dije 1",
     cat: "Dijes",
     price: 28000,
-    img: "images/dije5.jpeg",
+    img: "images/dije-1.jpg",
     sizes: ["Único"]
   },
+
   {
     id: 32,
-    name: "Dije Cruz Premium",
+    name: "Dije 2",
     cat: "Dijes",
     price: 28000,
-    img: "images/dije6.jpeg",
+    img: "images/dije-2.jpg",
     sizes: ["Único"]
   },
+
   {
     id: 33,
-    name: "Dije Medalla",
+    name: "Dije 3",
     cat: "Dijes",
     price: 28000,
-    img: "images/dije7.jpeg",
+    img: "images/dije-3.jpg",
     sizes: ["Único"]
   },
+
   {
     id: 34,
-    name: "Dije Corona",
+    name: "Dije 4",
     cat: "Dijes",
     price: 28000,
-    img: "images/dije8.jpeg",
+    img: "images/dije-4.jpg",
     sizes: ["Único"]
   },
 
   {
     id: 35,
-    name: "Aritos Dorados Clásicos",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/aritos1.jpeg",
+    name: "Dije 5",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-5.jpg",
     sizes: ["Único"]
   },
+
   {
     id: 36,
-    name: "Aritos Argolla",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/aritos2.jpeg",
+    name: "Dije 6",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-6.jpg",
     sizes: ["Único"]
   },
+
   {
     id: 37,
-    name: "Aritos Premium",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/aritos3.jpeg",
+    name: "Dije 7",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-7.jpg",
     sizes: ["Único"]
   },
+
   {
     id: 38,
-    name: "Aritos Corazón",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/aritos4.jpeg",
+    name: "Dije 8",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-8.jpg",
     sizes: ["Único"]
   },
+
   {
     id: 39,
-    name: "Aritos Estrella",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/aritos5.jpeg",
+    name: "Dije 9",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-9.jpg",
     sizes: ["Único"]
   },
+
   {
     id: 40,
-    name: "Aritos Elegance",
-    cat: "Aritos",
-    price: 30000,
-    img: "images/aritos6.jpeg",
+    name: "Dije 10",
+    cat: "Dijes",
+    price: 28000,
+    img: "images/dije-10.jpg",
     sizes: ["Único"]
   },
+
+
+  // =========================
+  // ARITOS
+  // =========================
+
   {
     id: 41,
-    name: "Aritos Gold",
+    name: "Arito 1",
     cat: "Aritos",
     price: 30000,
-    img: "images/aritos7.jpeg",
+    img: "images/arito-1.jpg",
     sizes: ["Único"]
   },
+
   {
     id: 42,
-    name: "Aritos Luxury",
+    name: "Arito 2",
     cat: "Aritos",
     price: 30000,
-    img: "images/aritos8.jpeg",
+    img: "images/arito-2.jpg",
     sizes: ["Único"]
   },
 
   {
     id: 43,
-    name: "Cadena Premium Gold",
-    cat: "Cadenas",
-    price: 45000,
-    img: "images/cadena1.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    name: "Arito 3",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-3.jpg",
+    sizes: ["Único"]
   },
+
   {
     id: 44,
-    name: "Cadena Eslabón",
-    cat: "Cadenas",
-    price: 45000,
-    img: "images/cadena2.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    name: "Arito 4",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-4.jpg",
+    sizes: ["Único"]
   },
+
   {
     id: 45,
-    name: "Cadena Miami",
-    cat: "Cadenas",
-    price: 45000,
-    img: "images/cadena3.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    name: "Arito 5",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-5.jpg",
+    sizes: ["Único"]
   },
+
   {
     id: 46,
-    name: "Cadena Royal",
-    cat: "Cadenas",
-    price: 45000,
-    img: "images/cadena4.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    name: "Arito 6",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-6.jpg",
+    sizes: ["Único"]
   },
+
   {
     id: 47,
-    name: "Cadena Elegance",
-    cat: "Cadenas",
-    price: 45000,
-    img: "images/cadena5.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    name: "Arito 7",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-7.jpg",
+    sizes: ["Único"]
   },
+
   {
     id: 48,
-    name: "Cadena Luxury",
-    cat: "Cadenas",
-    price: 45000,
-    img: "images/cadena6.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    name: "Arito 8",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-8.jpg",
+    sizes: ["Único"]
   },
+
   {
     id: 49,
-    name: "Cadena Classic",
-    cat: "Cadenas",
-    price: 45000,
-    img: "images/cadena7.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    name: "Arito 9",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-9.jpg",
+    sizes: ["Único"]
   },
+
   {
     id: 50,
-    name: "Cadena Gold",
-    cat: "Cadenas",
-    price: 45000,
-    img: "images/cadena8.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    name: "Arito 10",
+    cat: "Aritos",
+    price: 30000,
+    img: "images/arito-10.jpg",
+    sizes: ["Único"]
   }
 ];
 
-let currentCategory = "Cadenas";
-let currentSort = "default";
-let cart = [];
 
-const $ = (selector) => document.querySelector(selector);
-const $$ = (selector) => document.querySelectorAll(selector);
+let cart = JSON.parse(localStorage.getItem("gf_cart") || "[]");
+let category = "Todos";
+let current = null;
 
-function formatPrice(price) {
-  return "$" + Number(price).toLocaleString("es-AR");
+
+// =========================
+// FUNCIONES GENERALES
+// =========================
+
+function money(value) {
+  return new Intl.NumberFormat("es-AR", {
+    style: "currency",
+    currency: "ARS",
+    maximumFractionDigits: 0
+  }).format(value);
 }
 
-function getProducts() {
-  let result = products.filter(product => product.cat === currentCategory);
-
-  if (currentSort === "price-low") {
-    result.sort((a, b) => a.price - b.price);
-  }
-
-  if (currentSort === "price-high") {
-    result.sort((a, b) => b.price - a.price);
-  }
-
-  if (currentSort === "name") {
-    result.sort((a, b) => a.name.localeCompare(b.name));
-  }
-
-  return result;
+function save() {
+  localStorage.setItem("gf_cart", JSON.stringify(cart));
 }
+
+
+// =========================
+// CATEGORÍAS
+// =========================
+
+function setCategory(cat) {
+  category = cat;
+
+  document.querySelectorAll(".filter").forEach(btn => {
+    btn.classList.toggle(
+      "active",
+      btn.dataset.cat === cat
+    );
+  });
+
+  render();
+
+  const catalogo = document.querySelector("#catalogo");
+
+  if (catalogo) {
+    catalogo.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+}
+
+
+// =========================
+// PRODUCTOS
+// =========================
 
 function render() {
-  const grid = $("#productGrid");
+  const grid = document.querySelector("#grid");
 
   if (!grid) return;
 
-  const list = getProducts();
+  let list = products.filter(product => {
+    return category === "Todos" || product.cat === category;
+  });
 
-  if (!list.length) {
-    grid.innerHTML = `
-      <div class="empty-products">
-        <h3>No hay productos disponibles</h3>
-        <p>Estamos agregando nuevos productos.</p>
-      </div>
-    `;
-    return;
+  const sort = document.querySelector("#sort");
+
+  if (sort) {
+    if (sort.value === "low") {
+      list.sort((a, b) => a.price - b.price);
+    }
+
+    if (sort.value === "high") {
+      list.sort((a, b) => b.price - a.price);
+    }
+  }
+
+  const title = document.querySelector("#catTitle");
+
+  if (title) {
+    title.textContent = category;
   }
 
   grid.innerHTML = list.map(product => `
-    <article class="product-card" onclick="openProduct(${product.id})">
-      <div class="product-image">
+    <article class="card" onclick="openProduct(${product.id})">
+
+      <div class="card-img">
         <img
           src="${product.img}"
           alt="${product.name}"
           loading="lazy"
-          onerror="this.style.display='none'; this.parentElement.classList.add('image-error');"
+          onerror="this.style.display='none'"
         >
       </div>
 
-      <div class="product-info">
-        <div class="product-category">${product.cat}</div>
+      <div class="card-info">
+        <div class="card-cat">${product.cat}</div>
+
         <h3>${product.name}</h3>
-        <div class="product-price">${formatPrice(product.price)}</div>
-        <button class="product-button" onclick="event.stopPropagation(); openProduct(${product.id})">
-          VER PRODUCTO
-        </button>
+
+        <div class="card-bottom">
+          <strong>${money(product.price)}</strong>
+          <span>Ver producto</span>
+        </div>
       </div>
+
     </article>
   `).join("");
 }
 
-function setCategory(category) {
-  currentCategory = category;
-  currentSort = "default";
 
-  $$(".filter").forEach(button => {
-    button.classList.toggle(
-      "active",
-      button.dataset.cat === category
-    );
+// =========================
+// FILTROS
+// =========================
+
+document.querySelectorAll(".filter").forEach(btn => {
+  btn.addEventListener("click", () => {
+    setCategory(btn.dataset.cat);
   });
+});
 
-  const select = $("#sortSelect");
-  if (select) {
-    select.value = "default";
-  }
+const sortSelect = document.querySelector("#sort");
 
-  render();
-
-  const productsSection = $("#productos");
-  if (productsSection) {
-    productsSection.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  }
-
-  closeMobileMenu();
+if (sortSelect) {
+  sortSelect.addEventListener("change", render);
 }
 
+
+// =========================
+// MODAL PRODUCTO
+// =========================
+
 function openProduct(id) {
-  const product = products.find(item => item.id === id);
+  current = products.find(product => product.id === id);
 
-  if (!product) return;
+  if (!current) return;
 
-  const modal = $("#productModal");
+  const mImg = document.querySelector("#mImg");
+  const mCat = document.querySelector("#mCat");
+  const mName = document.querySelector("#mName");
+  const mPrice = document.querySelector("#mPrice");
+  const sizes = document.querySelector("#sizes");
+  const modal = document.querySelector("#modal");
 
-  if (!modal) return;
-
-  const image = $("#modalImage");
-  const title = $("#modalTitle");
-  const category = $("#modalCategory");
-  const price = $("#modalPrice");
-  const sizes = $("#modalSizes");
-
-  if (image) {
-    image.src = product.img;
-    image.alt = product.name;
-    image.onerror = function () {
-      this.style.display = "none";
-    };
+  if (mImg) {
+    mImg.src = current.img;
+    mImg.alt = current.name;
   }
 
-  if (title) {
-    title.textContent = product.name;
+  if (mCat) {
+    mCat.textContent = current.cat;
   }
 
-  if (category) {
-    category.textContent = product.cat;
+  if (mName) {
+    mName.textContent = current.name;
   }
 
-  if (price) {
-    price.textContent = formatPrice(product.price);
+  if (mPrice) {
+    mPrice.textContent = money(current.price);
   }
 
   if (sizes) {
-    sizes.innerHTML = product.sizes
-      .map(size => `<button class="size-option">${size}</button>`)
-      .join("");
+    sizes.innerHTML = current.sizes.map((size, index) => `
+      <button
+        class="size ${index === 0 ? "selected" : ""}"
+        onclick="selectSize(this, '${size}')"
+      >
+        ${size}
+      </button>
+    `).join("");
+
+    current.selectedSize = current.sizes[0];
   }
-
-  modal.classList.add("show");
-  document.body.classList.add("modal-open");
-
-  createInstagramButton(product);
-}
-
-function closeProduct() {
-  const modal = $("#productModal");
 
   if (modal) {
-    modal.classList.remove("show");
+    modal.classList.add("open");
   }
-
-  document.body.classList.remove("modal-open");
 }
 
-function createInstagramButton(product) {
-  const container = $("#instagramButtonContainer");
+function selectSize(button, size) {
+  document.querySelectorAll(".size").forEach(btn => {
+    btn.classList.remove("selected");
+  });
 
-  if (!container) return;
+  button.classList.add("selected");
 
-  const message = encodeURIComponent(
-    `Hola GOLDENFIINE, quiero consultar por ${product.name} - ${formatPrice(product.price)}`
-  );
-
-  container.innerHTML = `
-    <a
-      href="${CONFIG.instagramDM}"
-      target="_blank"
-      class="instagram-order-button"
-    >
-      CONSULTAR POR INSTAGRAM
-    </a>
-  `;
+  if (current) {
+    current.selectedSize = size;
+  }
 }
 
-function addToCart(id) {
-  const product = products.find(item => item.id === id);
 
-  if (!product) return;
+// =========================
+// CERRAR MODAL
+// =========================
 
-  const existing = cart.find(item => item.id === id);
+const modalClose = document.querySelector("#modalClose");
 
-  if (existing) {
-    existing.quantity++;
-  } else {
-    cart.push({
-      ...product,
-      quantity: 1
+if (modalClose) {
+  modalClose.addEventListener("click", () => {
+    document.querySelector("#modal")?.classList.remove("open");
+  });
+}
+
+const modal = document.querySelector("#modal");
+
+if (modal) {
+  modal.addEventListener("click", event => {
+    if (event.target === modal) {
+      modal.classList.remove("open");
+    }
+  });
+}
+
+
+// =========================
+// AGREGAR AL CARRITO
+// =========================
+
+const mAdd = document.querySelector("#mAdd");
+
+if (mAdd) {
+  mAdd.addEventListener("click", () => {
+
+    if (!current) return;
+
+    const size = current.selectedSize || current.sizes[0];
+
+    const existing = cart.find(item => {
+      return item.id === current.id && item.size === size;
     });
+
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({
+        id: current.id,
+        name: current.name,
+        price: current.price,
+        img: current.img,
+        size: size,
+        qty: 1
+      });
+    }
+
+    save();
+    renderCart();
+
+    document.querySelector("#modal")?.classList.remove("open");
+
+    openCart();
+  });
+}
+
+
+// =========================
+// CARRITO
+// =========================
+
+function addQty(index) {
+  if (!cart[index]) return;
+
+  cart[index].qty++;
+
+  save();
+  renderCart();
+}
+
+function removeQty(index) {
+  if (!cart[index]) return;
+
+  cart[index].qty--;
+
+  if (cart[index].qty <= 0) {
+    cart.splice(index, 1);
   }
 
-  updateCart();
+  save();
+  renderCart();
 }
 
-function removeFromCart(id) {
-  cart = cart.filter(item => item.id !== id);
-  updateCart();
+function deleteItem(index) {
+  if (!cart[index]) return;
+
+  cart.splice(index, 1);
+
+  save();
+  renderCart();
 }
 
-function changeQuantity(id, amount) {
-  const item = cart.find(product => product.id === id);
 
-  if (!item) return;
+function renderCart() {
+  const cartItems = document.querySelector("#cartItems");
+  const cartCount = document.querySelector("#cartCount");
+  const cartTotal = document.querySelector("#cartTotal");
 
-  item.quantity += amount;
+  const totalQty = cart.reduce((sum, item) => {
+    return sum + item.qty;
+  }, 0);
 
-  if (item.quantity <= 0) {
-    removeFromCart(id);
-    return;
-  }
-
-  updateCart();
-}
-
-function updateCart() {
-  const cartCount = $("#cartCount");
-  const cartItems = $("#cartItems");
-  const cartTotal = $("#cartTotal");
-
-  const totalItems = cart.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
-
-  const totalPrice = cart.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+  const total = cart.reduce((sum, item) => {
+    return sum + item.price * item.qty;
+  }, 0);
 
   if (cartCount) {
-    cartCount.textContent = totalItems;
+    cartCount.textContent = totalQty;
   }
 
   if (cartTotal) {
-    cartTotal.textContent = formatPrice(totalPrice);
+    cartTotal.textContent = money(total);
   }
 
-  if (cartItems) {
-    if (!cart.length) {
-      cartItems.innerHTML = `
-        <div class="empty-cart">
-          <p>Tu carrito está vacío.</p>
-        </div>
-      `;
-      return;
-    }
+  if (!cartItems) return;
 
-    cartItems.innerHTML = cart.map(item => `
-      <div class="cart-item">
-        <img src="${item.img}" alt="${item.name}">
-
-        <div class="cart-item-info">
-          <h4>${item.name}</h4>
-          <p>${formatPrice(item.price)}</p>
-
-          <div class="quantity-controls">
-            <button onclick="changeQuantity(${item.id}, -1)">−</button>
-            <span>${item.quantity}</span>
-            <button onclick="changeQuantity(${item.id}, 1)">+</button>
-          </div>
-        </div>
-
-        <button
-          class="remove-cart-item"
-          onclick="removeFromCart(${item.id})"
-        >
-          ×
-        </button>
+  if (cart.length === 0) {
+    cartItems.innerHTML = `
+      <div class="empty-cart">
+        Tu carrito está vacío.
       </div>
-    `).join("");
-  }
-}
+    `;
 
-function openCart() {
-  const cartPanel = $("#cartPanel");
-
-  if (cartPanel) {
-    cartPanel.classList.add("show");
-  }
-
-  document.body.classList.add("cart-open");
-}
-
-function closeCart() {
-  const cartPanel = $("#cartPanel");
-
-  if (cartPanel) {
-    cartPanel.classList.remove("show");
-  }
-
-  document.body.classList.remove("cart-open");
-}
-
-function sendWhatsAppOrder() {
-  if (!cart.length) {
-    alert("Tu carrito está vacío.");
     return;
   }
 
+  cartItems.innerHTML = cart.map((item, index) => `
+    <div class="cart-item">
+
+      <img
+        src="${item.img}"
+        alt="${item.name}"
+      >
+
+      <div class="cart-item-info">
+
+        <strong>${item.name}</strong>
+
+        <span>${item.size}</span>
+
+        <b>${money(item.price * item.qty)}</b>
+
+        <div class="qty">
+
+          <button onclick="removeQty(${index})">
+            −
+          </button>
+
+          <span>${item.qty}</span>
+
+          <button onclick="addQty(${index})">
+            +
+          </button>
+
+          <button
+            class="delete"
+            onclick="deleteItem(${index})"
+          >
+            ×
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  `).join("");
+}
+
+
+// =========================
+// ABRIR / CERRAR CARRITO
+// =========================
+
+function openCart() {
+  document.querySelector("#drawer")?.classList.add("open");
+  document.querySelector("#shade")?.classList.add("open");
+}
+
+function closeCart() {
+  document.querySelector("#drawer")?.classList.remove("open");
+  document.querySelector("#shade")?.classList.remove("open");
+}
+
+document.querySelector("#cartBtn")?.addEventListener("click", openCart);
+
+document.querySelector("#cartClose")?.addEventListener("click", closeCart);
+
+document.querySelector("#shade")?.addEventListener("click", closeCart);
+
+
+// =========================
+// WHATSAPP
+// =========================
+
+function orderMessage() {
+
+  if (cart.length === 0) {
+    return "Hola GOLDENFIINE, quiero consultar por algunos productos.";
+  }
+
   let message = "Hola GOLDENFIINE 👋%0A%0A";
-  message += "Quiero consultar por estos productos:%0A%0A";
+  message += "Quiero realizar este pedido:%0A%0A";
 
   cart.forEach(item => {
-    message += `• ${item.name} x${item.quantity} - ${formatPrice(item.price * item.quantity)}%0A`;
+    message += `• ${item.name}%0A`;
+    message += `  Tamaño: ${item.size}%0A`;
+    message += `  Cantidad: ${item.qty}%0A`;
+    message += `  Precio: ${money(item.price * item.qty)}%0A%0A`;
   });
 
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  const total = cart.reduce((sum, item) => {
+    return sum + item.price * item.qty;
+  }, 0);
 
-  message += `%0ATotal: ${formatPrice(total)}`;
+  message += `Total: ${money(total)}%0A%0A`;
+  message += "Gracias.";
 
-  window.open(
-    `${CONFIG.whatsapp}?text=${message}`,
-    "_blank"
-  );
+  return message;
 }
 
-function openInstagram() {
-  window.open(CONFIG.instagram, "_blank");
-}
+document.querySelector("#orderBtn")?.addEventListener("click", () => {
 
-function openInstagramDM() {
-  window.open(CONFIG.instagramDM, "_blank");
-}
+  const url = `${CONFIG.whatsapp}?text=${orderMessage()}`;
 
-function openWhatsApp() {
-  window.open(CONFIG.whatsapp, "_blank");
-}
-
-function toggleMobileMenu() {
-  const menu = $("#mobileMenu");
-
-  if (menu) {
-    menu.classList.toggle("show");
-  }
-}
-
-function closeMobileMenu() {
-  const menu = $("#mobileMenu");
-
-  if (menu) {
-    menu.classList.remove("show");
-  }
-}
-
-function setupEvents() {
-  $$(".filter").forEach(button => {
-    button.addEventListener("click", () => {
-      setCategory(button.dataset.cat);
-    });
-  });
-
-  const sortSelect = $("#sortSelect");
-
-  if (sortSelect) {
-    sortSelect.addEventListener("change", event => {
-      currentSort = event.target.value;
-      render();
-    });
-  }
-
-  const cartButton = $("#cartButton");
-
-  if (cartButton) {
-    cartButton.addEventListener("click", openCart);
-  }
-
-  const closeCartButton = $("#closeCart");
-
-  if (closeCartButton) {
-    closeCartButton.addEventListener("click", closeCart);
-  }
-
-  const closeModalButton = $("#closeModal");
-
-  if (closeModalButton) {
-    closeModalButton.addEventListener("click", closeProduct);
-  }
-
-  const modal = $("#productModal");
-
-  if (modal) {
-    modal.addEventListener("click", event => {
-      if (event.target === modal) {
-        closeProduct();
-      }
-    });
-  }
-
-  const cartPanel = $("#cartPanel");
-
-  if (cartPanel) {
-    cartPanel.addEventListener("click", event => {
-      if (event.target === cartPanel) {
-        closeCart();
-      }
-    });
-  }
-
-  const mobileButton = $("#mobileMenuButton");
-
-  if (mobileButton) {
-    mobileButton.addEventListener("click", toggleMobileMenu);
-  }
-
-  const sideInstagram = $("#sideInstagram");
-
-  if (sideInstagram) {
-    sideInstagram.href = CONFIG.whatsapp;
-    sideInstagram.target = "_blank";
-  }
-
-  const sideWhatsApp = $("#sideWhatsApp");
-
-  if (sideWhatsApp) {
-    sideWhatsApp.href = CONFIG.whatsapp;
-    sideWhatsApp.target = "_blank";
-  }
-
-  const instagramLinks = $$(".instagram-link");
-
-  instagramLinks.forEach(link => {
-    link.href = CONFIG.instagram;
-    link.target = "_blank";
-  });
-
-  const whatsappLinks = $$(".whatsapp-link");
-
-  whatsappLinks.forEach(link => {
-    link.href = CONFIG.whatsapp;
-    link.target = "_blank";
-  });
-
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-      closeProduct();
-      closeCart();
-      closeMobileMenu();
-    }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  setupEvents();
-  render();
-  updateCart();
+  window.open(url, "_blank");
 });
+
+
+// =========================
+// INSTAGRAM
+// =========================
+
+function createInstagramButton() {
+
+  const instagramButton = document.querySelector("#instagramBtn");
+
+  if (!instagramButton) return;
+
+  instagramButton.href = CONFIG.instagramDM;
+  instagramButton.target = "_blank";
+  instagramButton.rel = "noopener";
+}
+
+
+// =========================
+// CONTACTO
+// =========================
+
+document.querySelector("#contactBtn")?.addEventListener("click", () => {
+  window.open(CONFIG.whatsapp, "_blank");
+});
+
+document.querySelector("#sideInstagram")?.addEventListener("click", () => {
+  window.open(CONFIG.instagram, "_blank");
+});
+
+
+// =========================
+// MENÚ MOBILE
+// =========================
+
+const mobileMenu = document.querySelector("#mobileMenu");
+const mobileNav = document.querySelector("#mobileNav");
+
+if (mobileMenu && mobileNav) {
+
+  mobileMenu.addEventListener("click", () => {
+    mobileNav.classList.toggle("open");
+  });
+
+}
+
+
+// =========================
+// FILTRO MOBILE
+// =========================
+
+document.querySelector("#mobileFilter")?.addEventListener("change", event => {
+
+  setCategory(event.target.value);
+
+});
+
+
+// =========================
+// COMPATIBILIDAD CARRITO
+// =========================
+
+cart = cart.map(item => {
+
+  if (!item.qty) {
+    item.qty = 1;
+  }
+
+  if (!item.size) {
+    item.size = "Único";
+  }
+
+  return item;
+
+});
+
+save();
+
+
+// =========================
+// INICIAR
+// =========================
+
+render();
+renderCart();
+createInstagramButton();
