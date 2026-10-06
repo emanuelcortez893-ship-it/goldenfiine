@@ -18,7 +18,6 @@
 
 <header class="header">
 
-  <!-- MENÚ CELULAR -->
   <button
     class="icon mobile-menu"
     id="mobileMenu"
@@ -27,77 +26,50 @@
     ☰
   </button>
 
-
-  <!-- LOGO -->
-  <a
-    href="#inicio"
-    class="logo-text"
-  >
+  <a href="#inicio" class="logo-text">
     GOLDENFIINE
   </a>
 
-
-  <!-- NAVEGACIÓN -->
   <nav id="nav">
 
-    <a href="#inicio">
-      Inicio
-    </a>
+    <a href="#inicio">Inicio</a>
 
-    <a
-      href="#catalogo"
-      onclick="setCategory('Cadenas'); return false;"
-    >
+    <a href="#catalogo"
+       onclick="setCategory('Cadenas'); return false;">
       Cadenas
     </a>
 
-    <a
-      href="#catalogo"
-      onclick="setCategory('Pulseras'); return false;"
-    >
+    <a href="#catalogo"
+       onclick="setCategory('Pulseras'); return false;">
       Pulseras
     </a>
 
-    <a
-      href="#catalogo"
-      onclick="setCategory('Anillos'); return false;"
-    >
+    <a href="#catalogo"
+       onclick="setCategory('Anillos'); return false;">
       Anillos
     </a>
 
-    <a
-      href="#catalogo"
-      onclick="setCategory('Dijes'); return false;"
-    >
+    <a href="#catalogo"
+       onclick="setCategory('Dijes'); return false;">
       Dijes
     </a>
 
-    <a
-      href="#catalogo"
-      onclick="setCategory('Aritos'); return false;"
-    >
+    <a href="#catalogo"
+       onclick="setCategory('Aritos'); return false;">
       Aritos
     </a>
 
-    <a href="#contacto">
-      Contacto
-    </a>
+    <a href="#contacto">Contacto</a>
 
   </nav>
 
-
-  <!-- CARRITO -->
   <button
     class="icon cart-open"
     id="openCart"
     aria-label="Abrir carrito"
   >
     🛒
-
-    <b id="cartCount">
-      0
-    </b>
-
+    <b id="cartCount">0</b>
   </button>
 
 </header>
@@ -105,21 +77,13 @@
 
 <main>
 
+  <!-- INICIO -->
 
-  <!-- =========================
-       INICIO
-  ========================== -->
-
-  <section
-    class="hero"
-    id="inicio"
-  >
+  <section class="hero" id="inicio">
 
     <div class="hero-content">
 
-      <p class="mini">
-        GOLDENFIINE
-      </p>
+      <p class="mini">GOLDENFIINE</p>
 
       <h1>
         JOYAS QUE<br>
@@ -131,10 +95,7 @@
         diseñada para destacar.
       </p>
 
-      <a
-        href="#catalogo"
-        class="btn"
-      >
+      <a href="#catalogo" class="btn">
         VER COLECCIÓN
       </a>
 
@@ -143,69 +104,37 @@
   </section>
 
 
-  <!-- =========================
-       INFORMACIÓN
-  ========================== -->
+  <!-- INFORMACIÓN -->
 
   <section class="trust">
 
     <div>
-      <strong>
-        ENVÍOS
-      </strong>
-
-      <span>
-        A TODO EL PAÍS
-      </span>
+      <strong>ENVÍOS</strong>
+      <span>A TODO EL PAÍS</span>
     </div>
 
-
     <div>
-      <strong>
-        CALIDAD
-      </strong>
-
-      <span>
-        PRODUCTOS SELECCIONADOS
-      </span>
+      <strong>CALIDAD</strong>
+      <span>PRODUCTOS SELECCIONADOS</span>
     </div>
 
-
     <div>
-      <strong>
-        CONSULTAS
-      </strong>
-
-      <span>
-        POR WHATSAPP
-      </span>
+      <strong>CONSULTAS</strong>
+      <span>POR WHATSAPP</span>
     </div>
 
   </section>
 
 
-  <!-- =========================
-       CATÁLOGO
-  ========================== -->
+  <!-- CATÁLOGO -->
 
-  <section
-    class="shop"
-    id="catalogo"
-  >
+  <section class="shop" id="catalogo">
 
-
-    <!-- FILTROS -->
-
-    <aside
-      class="filters"
-      id="filters"
-    >
+    <aside class="filters" id="filters">
 
       <div class="filter-head">
 
-        <h2>
-          CATEGORÍAS
-        </h2>
+        <h2>CATEGORÍAS</h2>
 
         <button
           id="closeFilters"
@@ -217,65 +146,37 @@
 
       </div>
 
-
-      <button
-        class="filter active"
-        data-cat="Todos"
-      >
+      <button class="filter active" data-cat="Todos">
         Todos
       </button>
 
-
-      <button
-        class="filter"
-        data-cat="Cadenas"
-      >
+      <button class="filter" data-cat="Cadenas">
         Cadenas
       </button>
 
-
-      <button
-        class="filter"
-        data-cat="Pulseras"
-      >
+      <button class="filter" data-cat="Pulseras">
         Pulseras
       </button>
 
-
-      <button
-        class="filter"
-        data-cat="Anillos"
-      >
+      <button class="filter" data-cat="Anillos">
         Anillos
       </button>
 
-
-      <button
-        class="filter"
-        data-cat="Dijes"
-      >
+      <button class="filter" data-cat="Dijes">
         Dijes
       </button>
 
-
-      <button
-        class="filter"
-        data-cat="Aritos"
-      >
+      <button class="filter" data-cat="Aritos">
         Aritos
       </button>
 
-
       <hr>
-
 
       <p class="filter-note">
         ¿Buscás algo en particular?
       </p>
 
-
       <a
-        id="sideInstagram"
         href="https://wa.me/5491153894764"
         target="_blank"
         rel="noopener"
@@ -287,25 +188,19 @@
     </aside>
 
 
-    <!-- PRODUCTOS -->
-
     <div class="catalog">
-
 
       <div class="catalog-top">
 
         <div>
 
-          <p class="mini">
-            COLECCIÓN
-          </p>
+          <p class="mini">COLECCIÓN</p>
 
           <h2 id="catTitle">
             Todos los productos
           </h2>
 
         </div>
-
 
         <div class="catalog-actions">
 
@@ -315,7 +210,6 @@
           >
             FILTRAR
           </button>
-
 
           <select id="sort">
 
@@ -337,30 +231,20 @@
 
       </div>
 
-
-      <!-- LOS PRODUCTOS LOS CARGA SCRIPT.JS -->
-
-      <div
-        class="grid"
-        id="grid"
-      ></div>
+      <div class="grid" id="grid"></div>
 
     </div>
 
   </section>
 
 
-  <!-- =========================
-       BANNER
-  ========================== -->
+  <!-- BANNER -->
 
   <section class="banner">
 
     <div>
 
-      <p class="mini">
-        GOLDENFIINE
-      </p>
+      <p class="mini">GOLDENFIINE</p>
 
       <h2>
         EL DETALLE<br>
@@ -376,22 +260,13 @@
   </section>
 
 
-  <!-- =========================
-       CONTACTO
-  ========================== -->
+  <!-- CONTACTO -->
 
-  <section
-    class="contact"
-    id="contacto"
-  >
+  <section class="contact" id="contacto">
 
-    <p class="mini">
-      CONTACTO
-    </p>
+    <p class="mini">CONTACTO</p>
 
-    <h2>
-      ¿TENÉS ALGUNA CONSULTA?
-    </h2>
+    <h2>¿TENÉS ALGUNA CONSULTA?</h2>
 
     <p>
       Consultanos por stock, medidas,
@@ -402,9 +277,7 @@
       +54 9 11 5389-4764
     </p>
 
-
     <a
-      id="contactBtn"
       href="https://wa.me/5491153894764"
       target="_blank"
       rel="noopener"
@@ -418,12 +291,9 @@
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
-
 
   <div class="footer-brand">
 
@@ -431,18 +301,13 @@
       GOLDENFIINE
     </span>
 
-    <p>
-      Joyería.
-    </p>
+    <p>Joyería.</p>
 
   </div>
 
-
   <div>
 
-    <p>
-      Instagram
-    </p>
+    <p>Instagram</p>
 
     <a
       href="https://www.instagram.com/joyas_goldenfiine/"
@@ -454,12 +319,9 @@
 
   </div>
 
-
   <div>
 
-    <p>
-      WhatsApp
-    </p>
+    <p>WhatsApp</p>
 
     <a
       href="https://wa.me/5491153894764"
@@ -474,56 +336,35 @@
 </footer>
 
 
-<!-- =========================
-     FONDO DEL CARRITO
-========================= -->
+<!-- FONDO CARRITO -->
 
-<div
-  class="shade"
-  id="shade"
-></div>
+<div class="shade" id="shade"></div>
 
 
-<!-- =========================
-     CARRITO
-========================= -->
+<!-- CARRITO -->
 
-<aside
-  class="drawer"
-  id="drawer"
->
-
+<aside class="drawer" id="drawer">
 
   <div class="drawer-head">
 
-    <h2>
-      Tu carrito
-    </h2>
+    <h2>Tu carrito</h2>
 
-    <button
-      id="closeCart"
-      aria-label="Cerrar carrito"
-    >
+    <button id="closeCart" aria-label="Cerrar carrito">
       ×
     </button>
 
   </div>
-
 
   <div
     class="drawer-items"
     id="cartItems"
   ></div>
 
-
   <div class="drawer-foot">
-
 
     <div class="cart-total">
 
-      <span>
-        Total
-      </span>
+      <span>Total</span>
 
       <strong id="total">
         $0
@@ -531,14 +372,12 @@
 
     </div>
 
-
     <button
       id="empty"
       class="outline full"
     >
       VACIAR CARRITO
     </button>
-
 
     <button
       id="buy"
@@ -552,17 +391,11 @@
 </aside>
 
 
-<!-- =========================
-     MODAL PRODUCTO
-========================= -->
+<!-- MODAL -->
 
-<div
-  class="modal"
-  id="modal"
->
+<div class="modal" id="modal">
 
   <div class="modal-card">
-
 
     <button
       id="modalClose"
@@ -571,7 +404,6 @@
     >
       ×
     </button>
-
 
     <div class="modal-img">
 
@@ -583,26 +415,13 @@
 
     </div>
 
-
     <div class="modal-info">
 
+      <p class="mini" id="mCat"></p>
 
-      <p
-        class="mini"
-        id="mCat"
-      ></p>
+      <h2 id="mName"></h2>
 
-
-      <h2
-        id="mName"
-      ></h2>
-
-
-      <div
-        class="price"
-        id="mPrice"
-      ></div>
-
+      <div class="price" id="mPrice"></div>
 
       <p class="description">
         Una pieza seleccionada para complementar
@@ -610,14 +429,11 @@
         por WhatsApp.
       </p>
 
-
       <p class="mini">
         MEDIDA / TALLE
       </p>
 
-
       <div id="sizes"></div>
-
 
       <button
         id="mAdd"
@@ -632,10 +448,6 @@
 
 </div>
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script src="script.js"></script>
 
