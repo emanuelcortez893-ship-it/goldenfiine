@@ -8,6 +8,7 @@ const CONFIG = {
   whatsapp: "https://wa.me/5491153894764"
 };
 
+
 // ===============================
 // PRODUCTOS
 // ===============================
@@ -16,14 +17,14 @@ const products = [
 
   // ===== CADENAS =====
 
- {
-  id: 1,
-  name: "Rosario enchapado brasileño 18k",
-  category: "Cadenas",
-  price: 45000,
-  img: "Rosario enchapado brasileño 18k.jpeg",
-  sizes: ["45 cm", "50 cm", "60 cm"]
-},
+  {
+    id: 1,
+    name: "Rosario enchapado brasileño 18k",
+    cat: "Cadenas",
+    price: 45000,
+    img: "Rosario enchapado brasileño 18k.jpeg",
+    sizes: ["45 cm", "50 cm", "60 cm"]
+  },
 
   {
     id: 2,
@@ -102,9 +103,10 @@ const products = [
     name: "Cadena Rolo Gruesa 60cm - Oro 18k",
     cat: "Cadenas",
     price: 45000,
-    "img: "Cadena Rolo Gruesa 60cm - Oro 18k.jpeg","
+    img: "Cadena Rolo Gruesa 60cm - Oro 18k.jpeg",
     sizes: ["60 cm"]
   },
+
 
   // ===== PULSERAS =====
 
@@ -198,6 +200,7 @@ const products = [
     sizes: ["18 cm", "20 cm", "22 cm"]
   },
 
+
   // ===== ANILLOS =====
 
   {
@@ -289,6 +292,7 @@ const products = [
     img: "images/anillo-10.jpg",
     sizes: ["16", "18", "20", "22"]
   },
+
 
   // ===== DIJES =====
 
@@ -382,6 +386,7 @@ const products = [
     sizes: ["Único"]
   },
 
+
   // ===== ARITOS =====
 
   {
@@ -473,7 +478,9 @@ const products = [
     img: "images/arito-10.jpg",
     sizes: ["Único"]
   }
+
 ];
+
 
 // ===============================
 // VARIABLES
@@ -490,12 +497,14 @@ let current = null;
 const money = n =>
   "$" + Number(n).toLocaleString("es-AR");
 
+
 function save() {
   localStorage.setItem(
     "gf_cart",
     JSON.stringify(cart)
   );
 }
+
 
 // ===============================
 // CATEGORÍAS
@@ -523,7 +532,9 @@ function setCategory(cat) {
     ?.scrollIntoView({
       behavior: "smooth"
     });
+
 }
+
 
 // ===============================
 // MOSTRAR PRODUCTOS
@@ -567,9 +578,7 @@ function render() {
   }
 
   const title =
-    document.getElementById(
-      "catTitle"
-    );
+    document.getElementById("catTitle");
 
   if (title) {
 
@@ -631,7 +640,9 @@ function render() {
       </article>
 
     `).join("");
+
 }
+
 
 // ===============================
 // FILTROS
@@ -664,12 +675,14 @@ document
 
   });
 
+
 document
   .getElementById("sort")
   ?.addEventListener(
     "change",
     render
   );
+
 
 // ===============================
 // PRODUCTO
@@ -723,24 +736,22 @@ function openProduct(id) {
   document
     .getElementById("modal")
     .classList.add("show");
+
 }
+
 
 function selectSize(element) {
 
   document
-    .querySelectorAll(
-      "#sizes .size"
-    )
+    .querySelectorAll("#sizes .size")
     .forEach(button =>
-      button.classList.remove(
-        "selected"
-      )
+      button.classList.remove("selected")
     );
 
-  element.classList.add(
-    "selected"
-  );
+  element.classList.add("selected");
+
 }
+
 
 // ===============================
 // CERRAR MODAL
@@ -754,12 +765,11 @@ document
 
       document
         .getElementById("modal")
-        .classList.remove(
-          "show"
-        );
+        .classList.remove("show");
 
     }
   );
+
 
 document
   .getElementById("modal")
@@ -768,19 +778,17 @@ document
     event => {
 
       if (
-        event.target.id ===
-        "modal"
+        event.target.id === "modal"
       ) {
 
         event.currentTarget
-          .classList.remove(
-            "show"
-          );
+          .classList.remove("show");
 
       }
 
     }
   );
+
 
 // ===============================
 // AGREGAR AL CARRITO
@@ -811,14 +819,13 @@ document
 
       document
         .getElementById("modal")
-        .classList.remove(
-          "show"
-        );
+        .classList.remove("show");
 
       openCart();
 
     }
   );
+
 
 // ===============================
 // AGREGAR PRODUCTO
@@ -852,7 +859,9 @@ function add(
 
   save();
   renderCart();
+
 }
+
 
 // ===============================
 // CANTIDAD
@@ -890,7 +899,9 @@ function qty(
 
   save();
   renderCart();
+
 }
+
 
 // ===============================
 // ELIMINAR
@@ -912,7 +923,9 @@ function remove(
 
   save();
   renderCart();
+
 }
+
 
 // ===============================
 // CARRITO
@@ -921,9 +934,7 @@ function remove(
 function renderCart() {
 
   const count =
-    document.getElementById(
-      "cartCount"
-    );
+    document.getElementById("cartCount");
 
   if (count) {
 
@@ -937,9 +948,7 @@ function renderCart() {
   }
 
   const box =
-    document.getElementById(
-      "cartItems"
-    );
+    document.getElementById("cartItems");
 
   if (!box) return;
 
@@ -1004,9 +1013,7 @@ function renderCart() {
                 <button
                   onclick='qty(
                     ${product.id},
-                    ${JSON.stringify(
-                      item.size
-                    )},
+                    ${JSON.stringify(item.size)},
                     -1
                   )'
                 >
@@ -1020,9 +1027,7 @@ function renderCart() {
                 <button
                   onclick='qty(
                     ${product.id},
-                    ${JSON.stringify(
-                      item.size
-                    )},
+                    ${JSON.stringify(item.size)},
                     1
                   )'
                 >
@@ -1037,9 +1042,7 @@ function renderCart() {
               class="remove"
               onclick='remove(
                 ${product.id},
-                ${JSON.stringify(
-                  item.size
-                )}
+                ${JSON.stringify(item.size)}
               )'
             >
               ×
@@ -1066,8 +1069,7 @@ function renderCart() {
         return sum +
           (
             product
-              ? product.price *
-                item.qty
+              ? product.price * item.qty
               : 0
           );
 
@@ -1076,9 +1078,7 @@ function renderCart() {
     );
 
   const totalElement =
-    document.getElementById(
-      "total"
-    );
+    document.getElementById("total");
 
   if (totalElement) {
 
@@ -1089,6 +1089,7 @@ function renderCart() {
 
 }
 
+
 // ===============================
 // ABRIR / CERRAR CARRITO
 // ===============================
@@ -1097,31 +1098,27 @@ function openCart() {
 
   document
     .getElementById("drawer")
-    ?.classList.add(
-      "open"
-    );
+    ?.classList.add("open");
 
   document
     .getElementById("shade")
-    ?.classList.add(
-      "show"
-    );
+    ?.classList.add("show");
+
 }
+
 
 function closeCart() {
 
   document
     .getElementById("drawer")
-    ?.classList.remove(
-      "open"
-    );
+    ?.classList.remove("open");
 
   document
     .getElementById("shade")
-    ?.classList.remove(
-      "show"
-    );
+    ?.classList.remove("show");
+
 }
+
 
 document
   .getElementById("openCart")
@@ -1130,6 +1127,7 @@ document
     openCart
   );
 
+
 document
   .getElementById("closeCart")
   ?.addEventListener(
@@ -1137,12 +1135,14 @@ document
     closeCart
   );
 
+
 document
   .getElementById("shade")
   ?.addEventListener(
     "click",
     closeCart
   );
+
 
 // ===============================
 // VACIAR CARRITO
@@ -1162,6 +1162,7 @@ document
 
     }
   );
+
 
 // ===============================
 // PEDIDO
@@ -1194,8 +1195,7 @@ Hola! Quiero realizar el siguiente pedido:
       if (!product) return;
 
       const subtotal =
-        product.price *
-        item.qty;
+        product.price * item.qty;
 
       total += subtotal;
 
@@ -1219,7 +1219,9 @@ TOTAL: ${money(total)}
 Quedo a la espera de confirmación. ¡Gracias! 💎`;
 
   return message;
+
 }
+
 
 // ===============================
 // WHATSAPP
@@ -1246,9 +1248,7 @@ document
       const url =
         CONFIG.whatsapp +
         "?text=" +
-        encodeURIComponent(
-          message
-        );
+        encodeURIComponent(message);
 
       window.open(
         url,
@@ -1257,6 +1257,7 @@ document
 
     }
   );
+
 
 // ===============================
 // INSTAGRAM
@@ -1303,6 +1304,7 @@ function sendInstagramOrder() {
 
 }
 
+
 // ===============================
 // BOTÓN INSTAGRAM
 // ===============================
@@ -1310,24 +1312,18 @@ function sendInstagramOrder() {
 function createInstagramButton() {
 
   const buyButton =
-    document.getElementById(
-      "buy"
-    );
+    document.getElementById("buy");
 
   if (!buyButton) return;
 
   if (
-    document.getElementById(
-      "instagramOrder"
-    )
+    document.getElementById("instagramOrder")
   ) {
     return;
   }
 
   const button =
-    document.createElement(
-      "button"
-    );
+    document.createElement("button");
 
   button.id =
     "instagramOrder";
@@ -1354,51 +1350,20 @@ function createInstagramButton() {
 
 }
 
-// ===============================
-// CONTACTO
-// ===============================
-
-const contactBtn =
-  document.getElementById(
-    "contactBtn"
-  );
-
-if (contactBtn) {
-
-  contactBtn.href =
-    CONFIG.whatsapp;
-
-}
-
-const sideInstagram =
-  document.getElementById(
-    "sideInstagram"
-  );
-
-if (sideInstagram) {
-
-  sideInstagram.href =
-    CONFIG.whatsapp;
-
-}
 
 // ===============================
 // MENÚ CELULAR
 // ===============================
 
 const mobileMenu =
-  document.getElementById(
-    "mobileMenu"
-  );
+  document.getElementById("mobileMenu");
 
 if (mobileMenu) {
 
   mobileMenu.onclick = () => {
 
     const nav =
-      document.getElementById(
-        "nav"
-      );
+      document.getElementById("nav");
 
     if (!nav) return;
 
@@ -1411,14 +1376,13 @@ if (mobileMenu) {
 
 }
 
+
 // ===============================
 // FILTRO CELULAR
 // ===============================
 
 const filterMobile =
-  document.getElementById(
-    "filterMobile"
-  );
+  document.getElementById("filterMobile");
 
 if (filterMobile) {
 
@@ -1426,18 +1390,15 @@ if (filterMobile) {
 
     document
       .querySelector(".filters")
-      ?.classList.add(
-        "show"
-      );
+      ?.classList.add("show");
 
   };
 
 }
 
+
 const closeFilters =
-  document.getElementById(
-    "closeFilters"
-  );
+  document.getElementById("closeFilters");
 
 if (closeFilters) {
 
@@ -1445,13 +1406,12 @@ if (closeFilters) {
 
     document
       .querySelector(".filters")
-      ?.classList.remove(
-        "show"
-      );
+      ?.classList.remove("show");
 
   };
 
 }
+
 
 // ===============================
 // COMPATIBILIDAD CARRITO
@@ -1492,6 +1452,7 @@ cart =
     );
 
 save();
+
 
 // ===============================
 // INICIAR
