@@ -22,7 +22,7 @@ const products = [
     name: "Rosario enchapado brasileño 18k",
     cat: "Cadenas",
     price: 45000,
-    img: "Rosario enchapado brasileño 18k.jpeg",
+    img: "Rosario enchapado brasileño18k.jpeg",
     sizes: ["45 cm", "50 cm", "60 cm"]
   },
 
@@ -100,7 +100,7 @@ const products = [
 
   {
     id: 10,
-    name: "cadena-rolo-Gruesa-60cm-Oro- -18k.",
+    name: "Cadena rolo gruesa 60 cm oro 18k",
     cat: "Cadenas",
     price: 45000,
     img: "Cadena-rolo-Gruesa-60cm-Oro- -18k.jpeg",
@@ -486,10 +486,9 @@ const products = [
 // VARIABLES
 // ===============================
 
-let cart =
-  JSON.parse(
-    localStorage.getItem("gf_cart") || "[]"
-  );
+let cart = JSON.parse(
+  localStorage.getItem("gf_cart") || "[]"
+);
 
 let category = "Todos";
 let current = null;
@@ -511,28 +510,20 @@ function save() {
 // ===============================
 
 function setCategory(cat) {
-
   category = cat;
 
-  document
-    .querySelectorAll(".filter")
-    .forEach(button => {
-
-      button.classList.toggle(
-        "active",
-        button.dataset.cat === cat
-      );
-
-    });
+  document.querySelectorAll(".filter").forEach(button => {
+    button.classList.toggle(
+      "active",
+      button.dataset.cat === cat
+    );
+  });
 
   render();
 
-  document
-    .getElementById("catalogo")
-    ?.scrollIntoView({
-      behavior: "smooth"
-    });
-
+  document.getElementById("catalogo")?.scrollIntoView({
+    behavior: "smooth"
+  });
 }
 
 
@@ -541,106 +532,71 @@ function setCategory(cat) {
 // ===============================
 
 function render() {
-
-  const grid =
-    document.getElementById("grid");
+  const grid = document.getElementById("grid");
 
   if (!grid) return;
 
-  let list =
-    category === "Todos"
-      ? [...products]
-      : products.filter(
-          product =>
-            product.cat === category
-        );
+  let list = category === "Todos"
+    ? [...products]
+    : products.filter(product => product.cat === category);
 
   const sort =
-    document.getElementById("sort")
-      ?.value || "default";
+    document.getElementById("sort")?.value || "default";
 
   if (sort === "low") {
-
-    list.sort(
-      (a, b) =>
-        a.price - b.price
-    );
-
+    list.sort((a, b) => a.price - b.price);
   }
 
   if (sort === "high") {
-
-    list.sort(
-      (a, b) =>
-        b.price - a.price
-    );
-
+    list.sort((a, b) => b.price - a.price);
   }
 
-  const title =
-    document.getElementById("catTitle");
+  const title = document.getElementById("catTitle");
 
   if (title) {
-
     title.textContent =
       category === "Todos"
         ? "Todos los productos"
         : category;
-
   }
 
-  grid.innerHTML =
-    list.map(product => `
+  grid.innerHTML = list.map(product => `
+    <article
+      class="card"
+      onclick="openProduct(${product.id})"
+    >
+      <div class="card-img">
 
-      <article
-        class="card"
-        onclick="openProduct(${product.id})"
-      >
+        ${
+          product.badge
+            ? `<span class="badge">${product.badge}</span>`
+            : ""
+        }
 
-        <div class="card-img">
+        <button
+          class="heart"
+          onclick="event.stopPropagation()"
+          aria-label="Favorito"
+        >
+          ♡
+        </button>
 
-          ${
-            product.badge
-              ? `<span class="badge">${product.badge}</span>`
-              : ""
-          }
+        <img
+          src="${product.img}"
+          alt="${product.name}"
+          loading="lazy"
+          onerror="this.onerror=null; this.alt='No se pudo cargar la imagen';"
+        >
 
-          <button
-            class="heart"
-            onclick="event.stopPropagation()"
-            aria-label="Favorito"
-          >
-            ♡
-          </button>
+      </div>
 
-          <img
-            src="${product.img}"
-            alt="${product.name}"
-            loading="lazy"
-          >
-
-        </div>
-
-        <div class="card-info">
-
-          <small>
-            ${product.cat}
-          </small>
-
-          <h3>
-            ${product.name}
-          </h3>
-
-          <div class="price">
-            ${money(product.price)}
-          </div>
-
-        </div>
-
-      </article>
-
-    `).join("");
-
+      <div class="card-info">
+        <small>${product.cat}</small>
+        <h3>${product.name}</h3>
+        <div class="price">${money(product.price)}</div>
+      </div>
+    </article>
+  `).join("");
 }
 
 
@@ -648,40 +604,22 @@ function render() {
 // FILTROS
 // ===============================
 
-document
-  .querySelectorAll(".filter")
-  .forEach(button => {
+document.querySelectorAll(".filter").forEach(button => {
+  button.onclick = () => {
+    document.querySelectorAll(".filter").forEach(x => {
+      x.classList.remove("active");
+    });
 
-    button.onclick = () => {
+    button.classList.add("active");
+    category = button.dataset.cat;
 
-      document
-        .querySelectorAll(".filter")
-        .forEach(x =>
-          x.classList.remove("active")
-        );
+    render();
 
-      button.classList.add("active");
+    document.querySelector(".filters")?.classList.remove("show");
+  };
+});
 
-      category =
-        button.dataset.cat;
-
-      render();
-
-      document
-        .querySelector(".filters")
-        ?.classList.remove("show");
-
-    };
-
-  });
-
-
-document
-  .getElementById("sort")
-  ?.addEventListener(
-    "change",
-    render
-  );
+document.getElementById("sort")?.addEventListener("change", render);
 
 
 // ===============================
@@ -689,67 +627,38 @@ document
 // ===============================
 
 function openProduct(id) {
-
-  current =
-    products.find(
-      product =>
-        product.id === id
-    );
+  current = products.find(product => product.id === id);
 
   if (!current) return;
 
-  document.getElementById("mImg").src =
-    current.img;
+  document.getElementById("mImg").src = current.img;
+  document.getElementById("mImg").alt = current.name;
 
-  document.getElementById("mImg").alt =
-    current.name;
+  document.getElementById("mCat").textContent = current.cat;
+  document.getElementById("mName").textContent = current.name;
+  document.getElementById("mPrice").textContent = money(current.price);
 
-  document.getElementById("mCat").textContent =
-    current.cat;
+  document.getElementById("sizes").innerHTML = current.sizes.map(
+    (size, index) => `
+      <button
+        class="size ${index === 0 ? "selected" : ""}"
+        onclick="selectSize(this)"
+      >
+        ${size}
+      </button>
+    `
+  ).join("");
 
-  document.getElementById("mName").textContent =
-    current.name;
-
-  document.getElementById("mPrice").textContent =
-    money(current.price);
-
-  document.getElementById("sizes").innerHTML =
-    current.sizes
-      .map(
-        (size, index) => `
-
-          <button
-            class="size ${
-              index === 0
-                ? "selected"
-                : ""
-            }"
-            onclick="selectSize(this)"
-          >
-            ${size}
-          </button>
-
-        `
-      )
-      .join("");
-
-  document
-    .getElementById("modal")
-    .classList.add("show");
-
+  document.getElementById("modal").classList.add("show");
 }
 
 
 function selectSize(element) {
-
-  document
-    .querySelectorAll("#sizes .size")
-    .forEach(button =>
-      button.classList.remove("selected")
-    );
+  document.querySelectorAll("#sizes .size").forEach(button => {
+    button.classList.remove("selected");
+  });
 
   element.classList.add("selected");
-
 }
 
 
@@ -757,109 +666,59 @@ function selectSize(element) {
 // CERRAR MODAL
 // ===============================
 
-document
-  .getElementById("modalClose")
-  ?.addEventListener(
-    "click",
-    () => {
+document.getElementById("modalClose")?.addEventListener("click", () => {
+  document.getElementById("modal").classList.remove("show");
+});
 
-      document
-        .getElementById("modal")
-        .classList.remove("show");
-
-    }
-  );
-
-
-document
-  .getElementById("modal")
-  ?.addEventListener(
-    "click",
-    event => {
-
-      if (
-        event.target.id === "modal"
-      ) {
-
-        event.currentTarget
-          .classList.remove("show");
-
-      }
-
-    }
-  );
+document.getElementById("modal")?.addEventListener("click", event => {
+  if (event.target.id === "modal") {
+    event.currentTarget.classList.remove("show");
+  }
+});
 
 
 // ===============================
 // AGREGAR AL CARRITO
 // ===============================
 
-document
-  .getElementById("mAdd")
-  ?.addEventListener(
-    "click",
-    () => {
+document.getElementById("mAdd")?.addEventListener("click", () => {
+  if (!current) return;
 
-      if (!current) return;
+  const selected = document.querySelector("#sizes .size.selected");
 
-      const selected =
-        document.querySelector(
-          "#sizes .size.selected"
-        );
+  const size = selected
+    ? selected.textContent.trim()
+    : "Único";
 
-      const size =
-        selected
-          ? selected.textContent.trim()
-          : "Único";
+  add(current.id, size);
 
-      add(
-        current.id,
-        size
-      );
+  document.getElementById("modal").classList.remove("show");
 
-      document
-        .getElementById("modal")
-        .classList.remove("show");
-
-      openCart();
-
-    }
-  );
+  openCart();
+});
 
 
 // ===============================
 // AGREGAR PRODUCTO
 // ===============================
 
-function add(
-  id,
-  size = "Único"
-) {
-
-  const existing =
-    cart.find(
-      item =>
-        item.id === id &&
-        item.size === size
-    );
+function add(id, size = "Único") {
+  const existing = cart.find(item =>
+    item.id === id && item.size === size
+  );
 
   if (existing) {
-
     existing.qty++;
-
   } else {
-
     cart.push({
       id: id,
       size: size,
       qty: 1
     });
-
   }
 
   save();
   renderCart();
-
 }
 
 
@@ -867,39 +726,23 @@ function add(
 // CANTIDAD
 // ===============================
 
-function qty(
-  id,
-  size,
-  amount
-) {
-
-  const item =
-    cart.find(
-      x =>
-        x.id === id &&
-        x.size === size
-    );
+function qty(id, size, amount) {
+  const item = cart.find(x =>
+    x.id === id && x.size === size
+  );
 
   if (!item) return;
 
   item.qty += amount;
 
   if (item.qty < 1) {
-
-    cart =
-      cart.filter(
-        x =>
-          !(
-            x.id === id &&
-            x.size === size
-          )
-      );
-
+    cart = cart.filter(x =>
+      !(x.id === id && x.size === size)
+    );
   }
 
   save();
   renderCart();
-
 }
 
 
@@ -907,23 +750,13 @@ function qty(
 // ELIMINAR
 // ===============================
 
-function remove(
-  id,
-  size
-) {
-
-  cart =
-    cart.filter(
-      item =>
-        !(
-          item.id === id &&
-          item.size === size
-        )
-    );
+function remove(id, size) {
+  cart = cart.filter(item =>
+    !(item.id === id && item.size === size)
+  );
 
   save();
   renderCart();
-
 }
 
 
@@ -932,161 +765,87 @@ function remove(
 // ===============================
 
 function renderCart() {
-
-  const count =
-    document.getElementById("cartCount");
+  const count = document.getElementById("cartCount");
 
   if (count) {
-
-    count.textContent =
-      cart.reduce(
-        (total, item) =>
-          total + item.qty,
-        0
-      );
-
+    count.textContent = cart.reduce(
+      (total, item) => total + item.qty,
+      0
+    );
   }
 
-  const box =
-    document.getElementById("cartItems");
+  const box = document.getElementById("cartItems");
 
   if (!box) return;
 
   if (!cart.length) {
-
     box.innerHTML = `
-
-      <div
-        style="
-          text-align:center;
-          color:#999;
-          padding:70px 10px;
-          font-size:12px;
-        "
-      >
+      <div style="
+        text-align:center;
+        color:#999;
+        padding:70px 10px;
+        font-size:12px;
+      ">
         Tu carrito está vacío.
       </div>
-
     `;
-
   } else {
+    box.innerHTML = cart.map(item => {
+      const product = products.find(p => p.id === item.id);
 
-    box.innerHTML =
-      cart.map(item => {
+      if (!product) return "";
 
-        const product =
-          products.find(
-            p =>
-              p.id === item.id
-          );
+      return `
+        <div class="cart-row">
 
-        if (!product) return "";
+          <img
+            src="${product.img}"
+            alt="${product.name}"
+          >
 
-        return `
+          <div>
+            <h4>${product.name}</h4>
 
-          <div class="cart-row">
+            <small>
+              ${money(product.price)}
+              <br>
+              Medida: ${item.size || "Único"}
+            </small>
 
-            <img
-              src="${product.img}"
-              alt="${product.name}"
-            >
-
-            <div>
-
-              <h4>
-                ${product.name}
-              </h4>
-
-              <small>
-
-                ${money(product.price)}
-
-                <br>
-
-                Medida:
-                ${item.size || "Único"}
-
-              </small>
-
-              <div class="qty">
-
-                <button
-                  onclick='qty(
-                    ${product.id},
-                    ${JSON.stringify(item.size)},
-                    -1
-                  )'
-                >
-                  −
-                </button>
-
-                <span>
-                  ${item.qty}
-                </span>
-
-                <button
-                  onclick='qty(
-                    ${product.id},
-                    ${JSON.stringify(item.size)},
-                    1
-                  )'
-                >
-                  +
-                </button>
-
-              </div>
-
+            <div class="qty">
+              <button onclick='qty(${product.id}, ${JSON.stringify(item.size)}, -1)'>−</button>
+              <span>${item.qty}</span>
+              <button onclick='qty(${product.id}, ${JSON.stringify(item.size)}, 1)'>+</button>
             </div>
-
-            <button
-              class="remove"
-              onclick='remove(
-                ${product.id},
-                ${JSON.stringify(item.size)}
-              )'
-            >
-              ×
-            </button>
-
           </div>
 
-        `;
+          <button
+            class="remove"
+            onclick='remove(${product.id}, ${JSON.stringify(item.size)})'
+          >
+            ×
+          </button>
 
-      }).join("");
-
+        </div>
+      `;
+    }).join("");
   }
 
-  const total =
-    cart.reduce(
-      (sum, item) => {
+  const total = cart.reduce((sum, item) => {
+    const product = products.find(p => p.id === item.id);
 
-        const product =
-          products.find(
-            p =>
-              p.id === item.id
-          );
-
-        return sum +
-          (
-            product
-              ? product.price * item.qty
-              : 0
-          );
-
-      },
-      0
+    return sum + (
+      product
+        ? product.price * item.qty
+        : 0
     );
+  }, 0);
 
-  const totalElement =
-    document.getElementById("total");
+  const totalElement = document.getElementById("total");
 
   if (totalElement) {
-
-    totalElement.textContent =
-      money(total);
-
+    totalElement.textContent = money(total);
   }
-
 }
 
 
@@ -1095,73 +854,29 @@ function renderCart() {
 // ===============================
 
 function openCart() {
-
-  document
-    .getElementById("drawer")
-    ?.classList.add("open");
-
-  document
-    .getElementById("shade")
-    ?.classList.add("show");
-
+  document.getElementById("drawer")?.classList.add("open");
+  document.getElementById("shade")?.classList.add("show");
 }
-
 
 function closeCart() {
-
-  document
-    .getElementById("drawer")
-    ?.classList.remove("open");
-
-  document
-    .getElementById("shade")
-    ?.classList.remove("show");
-
+  document.getElementById("drawer")?.classList.remove("open");
+  document.getElementById("shade")?.classList.remove("show");
 }
 
-
-document
-  .getElementById("openCart")
-  ?.addEventListener(
-    "click",
-    openCart
-  );
-
-
-document
-  .getElementById("closeCart")
-  ?.addEventListener(
-    "click",
-    closeCart
-  );
-
-
-document
-  .getElementById("shade")
-  ?.addEventListener(
-    "click",
-    closeCart
-  );
+document.getElementById("openCart")?.addEventListener("click", openCart);
+document.getElementById("closeCart")?.addEventListener("click", closeCart);
+document.getElementById("shade")?.addEventListener("click", closeCart);
 
 
 // ===============================
 // VACIAR CARRITO
 // ===============================
 
-document
-  .getElementById("empty")
-  ?.addEventListener(
-    "click",
-    () => {
-
-      cart = [];
-
-      save();
-
-      renderCart();
-
-    }
-  );
+document.getElementById("empty")?.addEventListener("click", () => {
+  cart = [];
+  save();
+  renderCart();
+});
 
 
 // ===============================
@@ -1169,38 +884,28 @@ document
 // ===============================
 
 function buildOrderMessage() {
-
   if (!cart.length) {
     return null;
   }
 
   let total = 0;
 
-  let message =
-`✨ GOLDENFIINE — NUEVO PEDIDO ✨
+  let message = `✨ GOLDENFIINE — NUEVO PEDIDO ✨
 
 Hola! Quiero realizar el siguiente pedido:
 
 `;
 
-  cart.forEach(
-    (item, index) => {
+  cart.forEach((item, index) => {
+    const product = products.find(p => p.id === item.id);
 
-      const product =
-        products.find(
-          p =>
-            p.id === item.id
-        );
+    if (!product) return;
 
-      if (!product) return;
+    const subtotal = product.price * item.qty;
 
-      const subtotal =
-        product.price * item.qty;
+    total += subtotal;
 
-      total += subtotal;
-
-      message +=
-`${index + 1}. ${product.name}
+    message += `${index + 1}. ${product.name}
    Categoría: ${product.cat}
    Medida: ${item.size || "Único"}
    Cantidad: ${item.qty}
@@ -1208,18 +913,14 @@ Hola! Quiero realizar el siguiente pedido:
    Subtotal: ${money(subtotal)}
 
 `;
+  });
 
-    }
-  );
-
-  message +=
-`━━━━━━━━━━━━━━━━━━
+  message += `━━━━━━━━━━━━━━━━━━
 TOTAL: ${money(total)}
 
 Quedo a la espera de confirmación. ¡Gracias! 💎`;
 
   return message;
-
 }
 
 
@@ -1227,36 +928,18 @@ Quedo a la espera de confirmación. ¡Gracias! 💎`;
 // WHATSAPP
 // ===============================
 
-document
-  .getElementById("buy")
-  ?.addEventListener(
-    "click",
-    () => {
+document.getElementById("buy")?.addEventListener("click", () => {
+  const message = buildOrderMessage();
 
-      const message =
-        buildOrderMessage();
+  if (!message) {
+    alert("Tu carrito está vacío.");
+    return;
+  }
 
-      if (!message) {
+  const url = CONFIG.whatsapp + "?text=" + encodeURIComponent(message);
 
-        alert(
-          "Tu carrito está vacío."
-        );
-
-        return;
-      }
-
-      const url =
-        CONFIG.whatsapp +
-        "?text=" +
-        encodeURIComponent(message);
-
-      window.open(
-        url,
-        "_blank"
-      );
-
-    }
-  );
+  window.open(url, "_blank");
+});
 
 
 // ===============================
@@ -1264,44 +947,24 @@ document
 // ===============================
 
 function sendInstagramOrder() {
-
-  const message =
-    buildOrderMessage();
+  const message = buildOrderMessage();
 
   if (!message) {
-
-    alert(
-      "Tu carrito está vacío."
-    );
-
+    alert("Tu carrito está vacío.");
     return;
   }
 
   const openDM = () => {
-
-    window.open(
-      CONFIG.instagramDM,
-      "_blank"
-    );
-
+    window.open(CONFIG.instagramDM, "_blank");
   };
 
-  if (
-    navigator.clipboard &&
-    navigator.clipboard.writeText
-  ) {
-
-    navigator.clipboard
-      .writeText(message)
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(message)
       .then(openDM)
       .catch(openDM);
-
   } else {
-
     openDM();
-
   }
-
 }
 
 
@@ -1310,44 +973,24 @@ function sendInstagramOrder() {
 // ===============================
 
 function createInstagramButton() {
-
-  const buyButton =
-    document.getElementById("buy");
+  const buyButton = document.getElementById("buy");
 
   if (!buyButton) return;
 
-  if (
-    document.getElementById("instagramOrder")
-  ) {
+  if (document.getElementById("instagramOrder")) {
     return;
   }
 
-  const button =
-    document.createElement("button");
+  const button = document.createElement("button");
 
-  button.id =
-    "instagramOrder";
+  button.id = "instagramOrder";
+  button.className = "btn full";
+  button.type = "button";
+  button.textContent = "PEDIR POR INSTAGRAM";
+  button.style.marginTop = "10px";
+  button.onclick = sendInstagramOrder;
 
-  button.className =
-    "btn full";
-
-  button.type =
-    "button";
-
-  button.textContent =
-    "PEDIR POR INSTAGRAM";
-
-  button.style.marginTop =
-    "10px";
-
-  button.onclick =
-    sendInstagramOrder;
-
-  buyButton.parentNode.insertBefore(
-    button,
-    buyButton.nextSibling
-  );
-
+  buyButton.parentNode.insertBefore(button, buyButton.nextSibling);
 }
 
 
@@ -1355,15 +998,11 @@ function createInstagramButton() {
 // MENÚ CELULAR
 // ===============================
 
-const mobileMenu =
-  document.getElementById("mobileMenu");
+const mobileMenu = document.getElementById("mobileMenu");
 
 if (mobileMenu) {
-
   mobileMenu.onclick = () => {
-
-    const nav =
-      document.getElementById("nav");
+    const nav = document.getElementById("nav");
 
     if (!nav) return;
 
@@ -1371,9 +1010,7 @@ if (mobileMenu) {
       nav.style.display === "flex"
         ? "none"
         : "flex";
-
   };
-
 }
 
 
@@ -1381,35 +1018,20 @@ if (mobileMenu) {
 // FILTRO CELULAR
 // ===============================
 
-const filterMobile =
-  document.getElementById("filterMobile");
+const filterMobile = document.getElementById("filterMobile");
 
 if (filterMobile) {
-
   filterMobile.onclick = () => {
-
-    document
-      .querySelector(".filters")
-      ?.classList.add("show");
-
+    document.querySelector(".filters")?.classList.add("show");
   };
-
 }
 
-
-const closeFilters =
-  document.getElementById("closeFilters");
+const closeFilters = document.getElementById("closeFilters");
 
 if (closeFilters) {
-
   closeFilters.onclick = () => {
-
-    document
-      .querySelector(".filters")
-      ?.classList.remove("show");
-
+    document.querySelector(".filters")?.classList.remove("show");
   };
-
 }
 
 
@@ -1417,39 +1039,17 @@ if (closeFilters) {
 // COMPATIBILIDAD CARRITO
 // ===============================
 
-cart =
-  cart
-    .map(item => {
+cart = cart.map(item => {
+  const product = products.find(p => p.id === item.id);
 
-      const product =
-        products.find(
-          p =>
-            p.id === item.id
-        );
-
-      return {
-
-        id: item.id,
-
-        qty:
-          item.qty || 1,
-
-        size:
-          item.size ||
-          (
-            product?.sizes?.[0] ||
-            "Único"
-          )
-
-      };
-
-    })
-    .filter(item =>
-      products.some(
-        product =>
-          product.id === item.id
-      )
-    );
+  return {
+    id: item.id,
+    qty: item.qty || 1,
+    size: item.size || (product?.sizes?.[0] || "Único")
+  };
+}).filter(item =>
+  products.some(product => product.id === item.id)
+);
 
 save();
 
@@ -1459,7 +1059,5 @@ save();
 // ===============================
 
 render();
-
 renderCart();
-
 createInstagramButton();
