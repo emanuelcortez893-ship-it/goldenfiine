@@ -100,10 +100,10 @@ const products = [
 
   {
     id: 10,
-    name: "Cadena Rolo Gruesa 60cm - Oro 18k",
+    name: "cadena-rolo-Gruesa-60cm-Oro- -18k.",
     cat: "Cadenas",
     price: 45000,
-    img: "Cadena Rolo Gruesa 60cm - Oro 18k.jpeg",
+    img: "Cadena-rolo-Gruesa-60cm-Oro- -18k.jpeg",
     sizes: ["60 cm"]
   },
 
