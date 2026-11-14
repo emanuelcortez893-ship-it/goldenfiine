@@ -21,45 +21,45 @@ const products = [
     id: 1,
     name: "Rosario enchapado brasileño 18k",
     cat: "Cadenas",
-    price: 45000,
+    price: 55000,
     img: "Rosario enchapado brasileño18k.jpeg",
-    sizes: ["45 cm", "50 cm", "60 cm"]
+    sizes: ["45 cm"]
   },
 
   {
     id: 2,
     name: "Cadena espiga con cierre mosquetón",
     cat: "Cadenas",
-    price: 45000,
+    price: 85000,
     img: "cadena espiga con cierre mosqueton.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
+    sizes: ["45 cm", "60 cm"]
   },
 
   {
     id: 3,
     name: "Cadena París con cierre marinero",
     cat: "Cadenas",
-    price: 45000,
+    price: 75000 ,
     img: "cadena paris con cierre marinero.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
+    sizes: ["45 cm", "60 cm"]
   },
 
   {
     id: 4,
     name: "Cadena Singapur fina enchapada 18k",
     cat: "Cadenas",
-    price: 45000,
+    price: 75000,
     img: "cadena singapur fina enchapada 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
+    sizes: ["45 cm", "60 cm"]
   },
 
   {
     id: 5,
     name: "Cadena triple gourmet con cierre mosquetón",
     cat: "Cadenas",
-    price: 45000,
+    price: 88000,
     img: "cadena triple gourmet con cierre mosqueton.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
+    sizes: ["45 cm", "60 cm"]
   },
 
   {
@@ -68,7 +68,7 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "combo cadena paris plana enchapada 18k.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
+    sizes: ["45 cm", "60 cm"]
   },
 
   {
@@ -77,7 +77,7 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "juliana con cierre marinero.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
+    sizes: ["45 cm", "60 cm"]
   },
 
   {
@@ -86,7 +86,7 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "tourbillon con puntera versace.jpeg",
-    sizes: ["45 cm", "50 cm", "55 cm"]
+    sizes: ["45 cm","60 cm"]
   },
 
   {
@@ -95,7 +95,7 @@ const products = [
     cat: "Cadenas",
     price: 45000,
     img: "Conjunto Collar Triple Cadena Singapur Torzada + Dije Cruz 3D - Oro 18k - 45cm + 50cm + 60cm.jpeg",
-    sizes: ["45 cm + 50 cm + 60 cm"]
+    sizes: ["45 cm + 60 cm"]
   },
 
   {
