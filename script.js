@@ -66,7 +66,7 @@ const products = [
     id: 6,
     name: "Combo cadena París plana enchapada 18k",
     cat: "Cadenas",
-    price: 45000,
+    price: 75000,
     img: "combo cadena paris plana enchapada 18k.jpeg",
     sizes: ["45 cm", "60 cm"]
   },
@@ -75,7 +75,7 @@ const products = [
     id: 7,
     name: "Juliana con cierre marinero",
     cat: "Cadenas",
-    price: 45000,
+    price: 77000,
     img: "juliana con cierre marinero.jpeg",
     sizes: ["45 cm", "60 cm"]
   },
@@ -84,7 +84,7 @@ const products = [
     id: 8,
     name: "Tourbillon con puntera Versace",
     cat: "Cadenas",
-    price: 45000,
+    price: 96000,
     img: "tourbillon con puntera versace.jpeg",
     sizes: ["45 cm","60 cm"]
   },
